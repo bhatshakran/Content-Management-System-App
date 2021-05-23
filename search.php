@@ -47,11 +47,9 @@
                        } else {
                             
                 
-                $query = "SELECT * FROM posts";
-                $select_all_posts_query = mysqli_query($connection, $query);
+              
                     
-                    while($row = mysqli_fetch_assoc($select_all_posts_query)) {
-                        
+                    while($row = mysqli_fetch_assoc($search_query)) {      
                         $post_title = $row['post_title'];
                         $post_author = $row['post_author'];
                         $post_content = $row['post_content'];
