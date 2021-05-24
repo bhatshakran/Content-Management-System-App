@@ -102,8 +102,26 @@
                                     echo "
                                     <td>{$cat_title}</td>
                                     ";
+                                     echo "
+                                    <td><a href='categories.php?delete={$cat_id}'>Delete</a></td>
+                                    ";
                                      echo "<tr></tr>";
                                 }
+                                        ?>
+                                        
+                                        
+                                        
+                                        <?php
+                                        
+                                        if(isset($_GET['delete'])) {
+
+                                            $the_cat_id = $_GET['delete'];
+                                            $query = "DELETE FROM categories WHERE id = {$the_cat_id} ";
+                                            
+                                            $delete_query = mysqli_query($connection, $query);
+                                            header("Location: categories.php");
+                                        }
+                                        
                                         ?>
                                          
                                     </tr>
