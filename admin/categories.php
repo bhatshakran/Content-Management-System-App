@@ -72,6 +72,61 @@
                                     value="Add Category" class="btn btn-primary">
                                 </div>
                             </form>
+                            
+                            
+                            
+                            <form action="categories.php" method="post">
+                                <div class="form-group">
+                                   
+                                   <label for="cat_title">
+                                       Edit Category
+                                   </label>
+                                   
+                                   <?php 
+                                    if(isset($_GET['edit'])) {
+                                        
+                                        
+                                        $cat_id = $_GET['edit'];
+                                        
+                                        
+                                             $query = "SELECT * FROM categories WHERE id = $cat_id ";
+                                $select_categories = mysqli_query($connection, $query);
+                                        
+                                        
+                                         while($row = mysqli_fetch_assoc($select_categories)) {
+                                    $cat_title = $row['cat_title'];
+                                   $cat_id = $row['id'];
+                                    ?>
+                                    
+                                   <input type="text"
+                                   value="<?php if(isset($cat_title)){
+                                        echo $cat_title;
+                                    } ?>"
+                                    name="cat_title" class="form-control">  
+
+                                 <?php   }
+                                    
+                                  
+                                    }
+                                    
+                                    
+                                    
+                                    ?>
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                </div>
+                                 <div class="form-group">
+                                    <input type="submit"
+                                    name="submit"
+                                    value="Add Category" class="btn btn-primary">
+                                </div>
+                            </form>
                         </div>
                         
                         <div class="col-xs-6">
@@ -104,6 +159,9 @@
                                     ";
                                      echo "
                                     <td><a href='categories.php?delete={$cat_id}'>Delete</a></td>
+                                    ";
+                                      echo "
+                                    <td><a href='categories.php?edit={$cat_id}'>Edit</a></td>
                                     ";
                                      echo "<tr></tr>";
                                 }
