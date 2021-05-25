@@ -37,8 +37,8 @@ if(isset($_GET['source'])) {
         case 'add_post':
         include "includes/add_posts.php";
         break;
-        case '100':
-        echo "Nice 100";
+        case 'edit_post':
+        include "includes/edit_post.php";
         break;
         case '200':
         echo "Nice 200";
