@@ -37,7 +37,7 @@
                         $post_content = $row['post_content'];
                         $post_image = $row['post_image'];
                         $post_date = $row['post_date'];
-                        echo $post_image;
+                 
                       ?>
                          <h1 class="page-header">
                     Page Heading

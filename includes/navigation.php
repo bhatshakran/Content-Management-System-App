@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="/cms/index.php">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -35,17 +35,10 @@
                     
                     
                 ?>
-<!--
-                    <li>
-                        <a href="#">About</a>
+                 <li>
+                        <a href="admin/index.php">Admin</a>
                     </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
--->
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
