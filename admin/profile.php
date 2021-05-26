@@ -16,7 +16,7 @@ if(isset($_SESSION['username'])) {
     
     while($row = mysqli_fetch_array($select_user_profile)) {
 
-    $user_id =  $row['user_id'];    
+    $the_user_id =  $row['user_id'];    
     $user_email =  $row['user_email'];
     $user_firstname =  $row['user_firstname'];
     $user_lastname =  $row['user_lastname'];
@@ -30,7 +30,40 @@ if(isset($_SESSION['username'])) {
 
 
 
+if(isset($_POST['update_user'])) {
+    
+   $changed_username =  $_POST['username'];
+   $changed_firstname =  $_POST['user_firstname'];
+   $changed_lastname =  $_POST['user_lastname'];
+   $changed_email =  $_POST['user_email'];
+   $changed_password =  $_POST['user_password'];
+//   $changed_username =  $_POST['username'];
+//    
+    
+$query = "UPDATE users SET ";
+$query .="username = '{$changed_username}', ";
+$query .="user_firstname = '{$changed_firstname}',  ";
+$query .= "user_lastname = '{$changed_lastname}',  ";
+$query .= "user_email = '{$changed_email}', ";
+$query .= "user_password = '{$changed_password}' ";
+$query .= "WHERE user_id = $the_user_id ";
+    
+    
+    $update_user_query = mysqli_query($connection, $query);
+    
+    if(!$update_user_query) {
+        die("QUERY FAILED" . mysqli_error($connection));
+    }
+    
+    header("Location: profile.php");
+   
+}
+
+
 ?>
+   
+   
+   
     
 
 
