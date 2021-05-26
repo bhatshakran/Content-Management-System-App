@@ -62,6 +62,8 @@ if(!isset($_SESSION['role'])) {header("Location: /cms/index.php");}
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  
 
    
 
