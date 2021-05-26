@@ -97,6 +97,24 @@ confirm($update_post);
 
 ?>
   
+  <!--
+       
+        
+//         $query = "SELECT * FROM users ";
+//                                        
+//
+//        $select_users = mysqli_query($connection, $query);
+//
+//        confirm($select_categories);
+//             while($row = mysqli_fetch_assoc($select_users)) {
+//                $user_role = $row['user_role'];
+//                $user_id = $row['user_id'];
+//
+//                echo "<option value='{$user_id}'>{user_role}</option>" ;
+//                 }
+        
+        ?>
+-->
   
   
   

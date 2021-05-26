@@ -2,38 +2,42 @@
 <?php
 
 
-if(isset($_POST['create_post'])) {
+if(isset($_POST['create_user'])) {
     
-    $post_title = $_POST['title'];
+
         
-        $post_author = $_POST['author'];                           
+      echo  $user_firstname = $_POST['user_firstname'];  
+    
+        $user_lastname = $_POST['user_lastname']; 
+    
+        $user_role = $_POST['user_role'];                           
                             
-        $post_category_id = $_POST['post_category'];                             
-        $post_status = $_POST['post_status'];                             
-        $post_image = $_FILES['image']['name'];
- 
-        $post_image_temp = $_FILES['image']['tmp_name']; 
+        $username = $_POST['username'];
     
-        $post_tags = $_POST['post_tags'];
+        $user_email = $_POST['user_email'];                             
+//        $post_image = $_FILES['image']['name'];
+// 
+//        $post_image_temp = $_FILES['image']['tmp_name']; 
     
-      $post_content = $_POST['post_content'];
+        $user_password = $_POST['user_password'];
+    
+    
      
-    
-        $post_date = date('d-m-y'); 
+
     
 
     
-    move_uploaded_file($post_image_temp, "../images/$post_image");
+//    move_uploaded_file($post_image_temp, "../images/$post_image");
     
     
-    $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status)";
+    $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password)";
     
-    $query .= "VALUES({$post_category_id}, '{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}' )";
+    $query .= "VALUES({$user_firstname}, '{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}' )";
     
     
-    $create_post_query = mysqli_query($connection, $query);
+    $create_user_query = mysqli_query($connection, $query);
     
-    confirm($create_post_query);
+    confirm($create_user_query);
     
 }
 
@@ -48,11 +52,11 @@ if(isset($_POST['create_post'])) {
   <form action="" method="post" enctype="multipart/form-data">
    
    <div class="form-group">
-    <label for="">Firstname</label>
+    <label for="user_firstname">Firstname</label>
     <input type="text" class="form-control" name="user_firstname">
     </div>
     <div class="form-group">
-    <label for="post_tags">Lastname</label>
+    <label for="user_lastname">Lastname</label>
     <input type="text" class="form-control" name="user_lastname">
     </div>
     
@@ -60,28 +64,10 @@ if(isset($_POST['create_post'])) {
     
     
     <select name="user_role" id="">
-        
-        
-        <?php
-        
-         $query = "SELECT * FROM users ";
-                                        
-
-        $select_users = mysqli_query($connection, $query);
-
-        confirm($select_categories);
-             while($row = mysqli_fetch_assoc($select_users)) {
-                $user_role = $row['user_role'];
-                $user_id = $row['user_id'];
-
-                echo "<option value='{$user_id}'>{user_role}</option>" ;
-                 }
-        
-        ?>
-        
-     
-        
-        
+        <option value="subscriber">Select Options</option>
+        <option value="admin">Admin</option>
+        <option value="subscriber">Subscriber</option>
+  
     </select>
     
     
@@ -92,20 +78,21 @@ if(isset($_POST['create_post'])) {
    
     
     <div class="form-group">
-    <label for="post_image">Username</label>
-    <input type="file" name="username">
+    <label for="username">Username</label>
+    <input type="text" name="username" class="form-control">
+      </div>
     <div class="form-group">
-    <label for="post_status">Email</label>
+    <label for="user_email">Email</label>
     <input type="email" class="form-control" name="user_email">
     </div>
     <div class="form-group">
-    <label for="post_content">Password</label>
+    <label for="user_password">Password</label>
         <input type="password" class="form-control" name="user_password">
     </div>
-    </div>
+   
     <div class="form_group">
     <input type="submit" value="Create User" name="create_user" class="btn btn-primary">
     </div>
-    </div>
+    
     
 </form>
