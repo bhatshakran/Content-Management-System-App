@@ -18,6 +18,25 @@
                     </div>
                     </form>
                 </div>
+                <!--Login form-->
+                    <div class="well">
+                    <h4>Login</h4>
+                    <form action = "includes/login.php"  method="post">
+                    <div class="form-group">
+                        <input name="username" type="text" class="form-control" placeholder="Enter username" />
+                        
+                    </div>
+                     <div class="input-group">
+                        <input name="passowrd" type="password" class="form-control" placeholder="Enter password" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary">
+                                Submit
+                            </button>
+                        </span>
+                        
+                    </div>
+                    </form>
+                   </div>
 
                 <!-- Blog Categories Well -->
                 <div class="well">
@@ -40,12 +59,16 @@
                                 }
                                 
                                 ?>
-                                </li>
+                              
                             </ul>
                         </div>
                      
                         <!-- /.col-lg-6 -->
                     </div>
+>
+                    
+                    
+                    
                     <!-- /.row -->
                 </div>
 
