@@ -5,6 +5,45 @@
 <?php ob_start(); ?>
 <?php session_start();?>
 
+
+
+
+
+
+
+
+<?php
+
+
+
+if(!isset($_SESSION['role'])) {header("Location: /cms/index.php");}
+    
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
