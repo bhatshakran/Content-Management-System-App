@@ -175,17 +175,49 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses', 'Profit'],
-          ['2014', 1000, 400, 200],
-          ['2015', 1170, 460, 250],
-          ['2016', 660, 1120, 300],
-          ['2017', 1030, 540, 350]
+          ['Data', 'Count'],
+            
+            
+           <?php
+             
+                            
+            $element_text =['Active Posts', 'Categories', 'Users', 'Comments'];
+                        
+            $element_count =[$post_count, $categories_count, $user_count, $comment_count];    
+                        
+                        
+            for($i = 0; $i < 4; $i++) {
+                
+                
+    echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
+                
+                
+                
+                
+            }
+                            
+                                
+                            
+                            
+                            
+                            
+                            
+           ?>
+            
+            
+            
+            
+            
+            
+            
+
+          
         ]);
 
         var options = {
           chart: {
-            title: 'Company Performance',
-            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+            title: '',
+            subtitle: '',
           }
         };
 
@@ -197,7 +229,7 @@
          </div>          
                 
 
-     <div id="columnchart_material" style="width: 800px; height: 500px;"></div>               
+     <div id="columnchart_material" style="width: 'auto'; height: 500px;"></div>               
 
                 
                 
