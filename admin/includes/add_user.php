@@ -6,7 +6,7 @@ if(isset($_POST['create_user'])) {
     
 
         
-      echo  $user_firstname = $_POST['user_firstname'];  
+        $user_firstname = $_POST['user_firstname'];  
     
         $user_lastname = $_POST['user_lastname']; 
     
@@ -30,9 +30,10 @@ if(isset($_POST['create_user'])) {
 //    move_uploaded_file($post_image_temp, "../images/$post_image");
     
     
-    $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password)";
+    $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
     
-    $query .= "VALUES({$user_firstname}, '{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}' )";
+    $query .= "VALUES('{$user_firstname}', '{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}' )";
+    
     
     
     $create_user_query = mysqli_query($connection, $query);
