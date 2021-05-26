@@ -79,15 +79,23 @@ if(isset($_POST['edit_user'])) {
 //    move_uploaded_file($post_image_temp, "../images/$post_image");
     
     
-    $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
+       
     
-    $query .= "VALUES('{$user_firstname}', '{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}' )";
+$query = "UPDATE users SET ";
+$query .="user_firstname = '{$user_firstname}', ";
+$query .="user_lastname = '{$user_lastname}', ";
+$query .= "user_role = '{$user_role}', ";
+$query .= "username = '{$username}', ";
+$query .= "user_email = '{$user_email}', ";
+$query .= "user_password = '{$user_password}' ";
+
+    
+$query .= "WHERE user_id = {$the_user_id} ";
+$update_user = mysqli_query($connection,$query);
     
     
+    confirm($update_user);
     
-    $create_user_query = mysqli_query($connection, $query);
-    
-    confirm($create_user_query);
     
 }
 

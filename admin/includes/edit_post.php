@@ -160,7 +160,7 @@ confirm($update_post);
     <div class="form-group">
     <img width = "100" src="../images/<?php echo $post_image; ?>" alt="image" >
        
-        </br>
+<!--        </br>-->
      <label for="post_image">Change Image</label>
     <input type="file" name="image">
       </div>
