@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between bg-white" >
+<nav class="flex items-center justify-between " >
             <!-- Brand and toggle get grouped for better mobile display -->
  <div id="home" class="flex items-center ml-6 text-blue-600 md:ml-4">
    

@@ -8,18 +8,7 @@
                                             </div>
                                             <div class="text-right col-xs-9">
                                             
-                                            <?php
-                                                
-                                                $query = "SELECT * FROM posts ";
-                                                $select_all_posts = mysqli_query($connection, $query);
-                                                
-                                            $post_count = mysqli_num_rows($select_all_posts);
-                                                
-                                                
-                                                echo "<div class='huge'>$post_count</div>
-                                                <div>Posts</div>
-                                            </div>"
-                                            ?>
+                                           
                     
                 </div>
                                                 </div>
