@@ -49,7 +49,8 @@
                 
               
                     
-                    while($row = mysqli_fetch_assoc($search_query)) {      
+                    while($row = mysqli_fetch_assoc($search_query)) {  
+                        $post_id = $row['post_id'];    
                         $post_title = $row['post_title'];
                         $post_author = $row['post_author'];
                         $post_content = $row['post_content'];
@@ -62,7 +63,7 @@
                 <div class="px-10 py-4 mt-4 border-2 border-gray-100 rounded">
 
                         <!-- post title with icon -->
-                <div class="flex items-center mb-4 text-2xl font-normal text-blue-600 hover:text-blue-800">
+                <div class="flex items-center mb-4 text-4xl font-normal text-blue-600 hover:text-blue-800">
                
                     <a  href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title?></a>
                     <div id="icon">
@@ -82,7 +83,7 @@
                <!-- image -->
                 <img class="w-24 h-24 mt-2 mb-3" src="images/<?php echo $post_image;?> " alt="image">
                <!-- content -->
-                <p class="text-sm "><?php echo $post_content?></p>
+                <p class="text-lg font-light "><?php echo $post_content?></p>
                 <!-- Read more -->
                 <a class="text-blue-400 hover:text-blue-800" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 

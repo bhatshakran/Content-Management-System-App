@@ -8,9 +8,9 @@
    <?php include "includes/navigation.php"; ?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container mx-auto my-4 lg:w-1/2">
 
-        <div class="row">
+        <div class="grid px-6 ">
 
             <!-- Blog Entries Column -->
             
@@ -39,27 +39,21 @@
                         $post_date = $row['post_date'];
                  
                       ?>
-                         <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
+                        
 
-                <!-- First Blog Post -->
+               
                 <h2>
                     <a href="#"><?php echo $post_title?></a>
                 </h2>
-                <p class="lead">
+                <p class="w-full mx-auto text-center">
                     by <a href="index.php"><?php echo $post_author?></a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
-                <hr>
-                <img class="img-responsive" src="images/<?php echo $post_image;?> " alt="image">
-                <hr>
-                <p><?php echo $post_content?></p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-                <hr>    
-                          
+                <p class="text-center"> <span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
+               
+                <img class="w-auto my-4 " src="images/<?php echo $post_image;?> " alt="image">
+               
+                <p class="text-justify mx"><?php echo $post_content?></p>
+          
                  <?php   }   ?>
                   
                   
@@ -109,7 +103,7 @@
                 ?>
                   
                   
-                   <div class="well">
+                   <div class="w-full px-2 py-6 my-4 border-t-2">
                     <h4>Leave a Comment:</h4>
                     <form action="" method="post" role="form">
                        <div class="form-group">
@@ -130,7 +124,7 @@
                     </form>
                 </div>
 
-                <hr>
+          
 
                 <!-- Posted Comments -->
                 
@@ -162,15 +156,15 @@
                     ?>
                     
                        <!-- Comment -->
-                <div class="media">
-                    <a class="pull-left" href="#">
+                <div class="px-4 py-2 my-4 text-white bg-gray-400">
+                    <a class="" href="#">
                         <img class="media-object" src="http://placehold.it/64x64" alt="">
                     </a>
                     <div class="media-body">
-                        <h4 class="media-heading"><?php echo $comment_author; ?>
-                            <small><?php echo $comment_date;?></small>
-                        </h4>
-                       <?php echo $comment_content; ?>.
+                        <p class="mb-2"><?php echo $comment_author; ?>  
+                        </p>
+                        <small class="text-xs"><?php echo $comment_date;?></small></br>
+                      <h5> <?php echo $comment_content; ?></h5>
                     </div>
                 </div>
           
@@ -194,7 +188,7 @@
              
 
             <!-- Blog Sidebar Widgets Column -->
-            <?php include "includes/sidebar.php"; ?>
+      
         <!-- /.row -->
 
         <hr>
