@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+@layer base {
+    .nav-links{
+        @apply mr-6 capitalize transition delay-75 border-b-2 hover:border-blue-500;
+    }
+
+}

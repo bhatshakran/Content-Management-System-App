@@ -1,25 +1,16 @@
 
+
+
        
-       
-       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/cms/index.php">Home</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                
-                
-                
-                <?php
+    <nav class="py-6 bg-white border-b-2">
+    <div class="container flex items-center justify-between md:justify-around">
+    <div id="home" class="ml-6 md:ml-4">
+    <a href="/cms/index.php">Home</a>
+    </div>
+    <div id="links" class="hidden md:block">
+    <ul class="flex ">
+
+    <?php
                     
                     $query = "SELECT * FROM categories";
                     $select_all_categories_query = mysqli_query($connection, $query);
@@ -28,20 +19,28 @@
                         
                         $cat_title = $row['cat_title'];
                         
-                        echo "<li><a href='#'>{$cat_title}</a></li>";
+                        echo "<li class='nav-links'><a href='#'>{$cat_title}</a></li>";
                     }
                     
                     
                     
                     
                 ?>
-                 <li>
+                 <li class='nav-links'>
                         <a href="admin/index.php">Admin</a>
                     </li>
-
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
+    </ul>
+    </div>
+    <div id="menu" class="cursor-pointer md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+  <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+</svg>
+    </div>
+    </div>
     </nav>
+
+
+       
+       
+      
+                
