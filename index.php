@@ -10,13 +10,13 @@
     <!-- Page Content -->
     <div class="container mx-auto ">
 
-        <div class="grid gap-10 md:grid-cols-2">
+        <div class="grid w-full gap-10 lg:grid-cols-2">
 
             <!-- Blog Entries Column -->
             
             
             
-            <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <div class="grid grid-cols-1 gap-6 m-2 ">
                 
                 
                 <?php 
@@ -35,28 +35,32 @@
                       ?>
                        
 
-                <!-- First Blog Post -->
+                <!--  Post -->
                 <div class="px-10 py-4 mt-4 border-2 border-gray-100 rounded">
 
-
+                        <!-- post title with icon -->
                 <div class="flex items-center mb-4 text-2xl font-normal text-blue-400 hover:text-blue-800">
                
                     <a  href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title?></a>
                     <div id="icon">
+                    <!-- post icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                         </svg>
                     </div>
                     
                 </div>
+                <!-- author -->
                 <p class="mb-1 text-gray-500 text-md">
                     by <a href="index.php"><?php echo $post_author?></a>
                 </p>
+                <!-- date -->
                 <p class="text-xs font-thin text-gray-500"><span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
-               
+               <!-- image -->
                 <img class="w-24 h-24 mt-2 mb-3" src="images/<?php echo $post_image;?> " alt="image">
-               
+               <!-- content -->
                 <p class="text-sm "><?php echo $post_content?></p>
+                <!-- Read more -->
                 <a class="text-blue-400 hover:text-blue-800" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <!-- <hr>   -->
@@ -76,7 +80,7 @@
         <!-- /.row -->
 
     
-
-      
-
+        </div>
+        </div>
+   
   <?php include "./includes/footer.php"; ?>
