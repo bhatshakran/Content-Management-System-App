@@ -568,6 +568,49 @@ video {
   transition-delay: 75ms;
 }
 
+.form-control{
+  --tw-border-opacity: 1;
+  border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+}
+
+.form-control:focus {
+  --tw-border-opacity: 1;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+
+.form-control {
+  border-radius: 0.25rem;
+  border-width: 1px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-control:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.form-control {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+}
+
+h2{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+h3{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .container {
   width: 100%;
 }
