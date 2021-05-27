@@ -1,22 +1,27 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="flex items-center justify-between bg-white" >
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">CMS Admin</a>
-            </div>
+ <div id="home" class="flex items-center ml-6 text-blue-600 md:ml-4">
+   
+   <a class="mr-3 text-3xl italic" href="/cms/index.php">CMS</a>
+   <div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+        </svg>
+   </div>
+   </div>
+   <div>
             <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">      
-              
-               
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
+            <ul class="cursor-pointer ">      
+              <li class="flex items-center">
+              <!-- <i class="mr-2 fa fa-user"></i> John Smith   </a> -->
+              <a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+              <span class="mr-4 ">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                </span>
+                <!-- <ul class="dropdown">
+                <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                         </li>
                       
@@ -25,52 +30,21 @@
                         <li>
                             <a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
+                </ul> -->
+              </li>
+               
+                <!-- <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
                     </ul>
-                </li>
+                </li> -->
             </ul>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#posts_dropdown"><i class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="posts_dropdown" class="collapse">
-                            <li>
-                                <a href="posts.php">View All Post </a>
-                            </li>
-                            <li>
-                                <a href="posts.php?source=add_post">Add Post</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="categories.php"><i class="fa fa-fw fa-wrench"></i> Categories</a>
-                    </li>
-                   
-                    <li class="">
-                        <a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
-                    </li>
-                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="users.php">View All user</a>
-                            </li>
-                            <li>
-                                <a href="users.php?source=add_user">Create User</a>
-                            </li>
-                           
-                        </ul>
-                    </li>
-                     <li>
-                        <a href="profile.php"><i class="fa fa-fw fa-dashboard"></i> Profile</a>
-                    </li>
-                     <li>
-                                <a href="/cms/index.php">Go Back</a>
-                            </li>
-                </ul>
             </div>
             <!-- /.navbar-collapse -->
         </nav>
+
+        <!-- sidebar -->
+
+         
