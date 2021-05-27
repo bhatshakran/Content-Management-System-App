@@ -4,8 +4,14 @@
        
     <nav class="py-6 bg-white border-b-2">
     <div class="container flex items-center justify-between md:justify-around">
-    <div id="home" class="ml-6 md:ml-4">
-    <a href="/cms/index.php">Home</a>
+    <div id="home" class="flex items-center ml-6 text-blue-600 md:ml-4">
+   
+    <a class="mr-3 text-3xl italic" href="/cms/index.php">CMS</a>
+    <div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+</svg>
+    </div>
     </div>
     <div id="links" class="hidden md:block">
     <ul class="flex ">
@@ -19,15 +25,20 @@
                         
                         $cat_title = $row['cat_title'];
                         
-                        echo "<li class='nav-links'><a href='#'>{$cat_title}</a></li>";
+                        echo "<li class='nav-links'><a class='text-gray-500 ' href='#'>{$cat_title}</a></li>";
                     }
                     
                     
                     
                     
                 ?>
-                 <li class='nav-links'>
-                        <a href="admin/index.php">Admin</a>
+                 <li class='flex items-center text-gray-500 nav-links'>
+                 <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                        </svg>
+                        </div>
+                        <a class='text-gray-500 ' href="admin/index.php">Admin</a>
                     </li>
     </ul>
     </div>

@@ -62,7 +62,7 @@
                 <div class="px-10 py-4 mt-4 border-2 border-gray-100 rounded">
 
                         <!-- post title with icon -->
-                <div class="flex items-center mb-4 text-2xl font-normal text-blue-400 hover:text-blue-800">
+                <div class="flex items-center mb-4 text-2xl font-normal text-blue-600 hover:text-blue-800">
                
                     <a  href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title?></a>
                     <div id="icon">
