@@ -70,4 +70,4 @@ if(!isset($_SESSION['role'])) {header("Location: /cms/index.php");}
 
 </head>
 
-<body>
+<body class=" debug-screens">

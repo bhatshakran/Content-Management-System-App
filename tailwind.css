@@ -22,17 +22,26 @@
     h4{
         @apply mb-4 text-2xl ;
     }
-    
+    .panel{
+        @apply  w-48 py-4 mx-auto my-8 mb-0 text-xl font-bold text-center text-gray-800 bg-white border shadow-lg md:w-40 lg:w-44 xl:w-full h-44 border-gray-50 rounded-3xl;
+    }
 
 }
 
 @layer utilities {
     .glass {
-        background: rgba(255,255,255, 0.50 );
+        background: rgba(255,255,255, 0.80 );
         box-shadow: 0 8px 32px 0 #ececec;
         backdrop-filter: blur( 20.0px );
         -webkit-backdrop-filter: blur( 2.0px );
         border-radius: 10px;
         border: 1px solid #ececec;
     }
+    .bars{
+       @screen md {
+           width: 768px;
+       }
+    }
+
+    
 }

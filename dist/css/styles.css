@@ -617,6 +617,50 @@ h4{
   margin-bottom: 1rem;
 }
 
+.panel{
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgba(249, 250, 251, var(--tw-border-opacity));
+  border-radius: 1.5rem;
+  border-width: 1px;
+  font-weight: 700;
+  height: 11rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(31, 41, 55, var(--tw-text-opacity));
+  width: 12rem;
+}
+
+@media (min-width: 768px) {
+  .panel {
+    width: 10rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .panel {
+    width: 11rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel {
+    width: 100%;
+  }
+}
+
 .container {
   width: 100%;
 }
@@ -648,6 +692,51 @@ h4{
 @media (min-width: 1536px) {
   .container {
     max-width: 1536px;
+  }
+}
+
+.debug-screens::before {
+  position: fixed;
+  z-index: 2147483647;
+  top: 0;
+  right: 0;
+  padding: .3333333em .5em;
+  font-size: 12px;
+  line-height: 1;
+  font-family: sans-serif;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 0 0 1px #fff;
+  content: 'screen: _';
+}
+
+@media (min-width: 640px) {
+  .debug-screens::before {
+    content: 'screen: sm';
+  }
+}
+
+@media (min-width: 768px) {
+  .debug-screens::before {
+    content: 'screen: md';
+  }
+}
+
+@media (min-width: 1024px) {
+  .debug-screens::before {
+    content: 'screen: lg';
+  }
+}
+
+@media (min-width: 1280px) {
+  .debug-screens::before {
+    content: 'screen: xl';
+  }
+}
+
+@media (min-width: 1536px) {
+  .debug-screens::before {
+    content: 'screen: 2xl';
   }
 }
 
@@ -31898,12 +31987,18 @@ h4{
 }
 
 .glass {
-  background: rgba(255,255,255, 0.50 );
+  background: rgba(255,255,255, 0.80 );
   box-shadow: 0 8px 32px 0 #ececec;
   backdrop-filter: blur( 20.0px );
   -webkit-backdrop-filter: blur( 2.0px );
   border-radius: 10px;
   border: 1px solid #ececec;
+}
+
+.bars{
+  @media (min-width: 768px) {
+    width: 768px;
+  }
 }
 
 @media (min-width: 640px) {

@@ -27,4 +27,4 @@
 
 </head>
 
-<body>
+<body class="debug-screens">
