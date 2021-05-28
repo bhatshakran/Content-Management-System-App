@@ -11,7 +11,7 @@
 
       
 
-            <div class="container mx-auto">
+            <div class="container w-full text-center sm:mx-auto">
 
              
                         

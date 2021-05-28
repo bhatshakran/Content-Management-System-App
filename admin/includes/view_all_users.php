@@ -1,16 +1,16 @@
-     <table class="table-auto ">
-                            <thead class="bg-purple-300 ">
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Username</th>
-                                    <th>Firstname</th>
-                                    <th>Lastname</th>
-                                    <th>Email</th>
-                                      <th>Role</th>
-                                        <th>Action</th>
-                                    <th>Action</th>
-                                    <th>Action</th>
-                                    <th>Action</th>
+     <table class="mt-20 extrasmall md:table-auto glass md:mr-auto">
+                            <thead class="border-b ">
+                                <tr class="">
+                                    <th class="tabledata">Id</th>
+                                    <th class="tabledata">Username</th>
+                                    <th class="tabledata">Firstname</th>
+                                    <th class="tabledata">Lastname</th>
+                                    <th class="tabledata">Email</th>
+                                      <th class="tabledata">Role</th>
+                                        <th class="tabledata">Action</th>
+                                    <th class="tabledata">Action</th>
+                                    <th class="tabledata">Action</th>
+                                    <th class="tabledata">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,11 +32,11 @@
         $user_role = $row['user_role']; 
                           
          
-        echo "<tr>";
-        echo "<td>$user_id</td>";
-        echo "<td>$username</td>";
-        echo "<td>$user_firstname</td>";
-        echo "<td>$user_lastname</td>";
+        echo "<tr class =''>";
+        echo "<td class='tabledata'>$user_id</td>";
+        echo "<td class='tabledata'>$username</td>";
+        echo "<td class='capitalize tabledata'>$user_firstname</td>";
+        echo "<td class='capitalize tabledata'>$user_lastname</td>";
       
 //        $query = "SELECT * FROM categories WHERE comment_id = {$post_category_id}";
 //        
@@ -49,8 +49,8 @@
 //        }
         
         
-        echo "<td>$user_email</td>";
-        echo "<td>$user_role</td>";
+        echo "<td class='text-blue-400 tabledata'>$user_email</td>";
+        echo "<td class='text-green-400 capitalize tabledata'>$user_role</td>";
 
         
 //        $query = "SELECT * FROM posts WHERE post_id = $comment_post_id";
@@ -70,10 +70,10 @@
         
        
       
-         echo "<td><a href='users.php?change_to_admin={$user_id}'>Make admin</a></td>";
-        echo "<td><a href='users.php?change_to_sub={$user_id}'>Make sub</a></td>";
-        echo "<td><a href='users.php?source=edit_user&edit_user={$user_id}'>Edit </a></td>";
-        echo "<td><a href='users.php?delete={$user_id}'>Delete</a></td>";
+         echo "<td class='text-red-400 tabledata'><a href='users.php?change_to_admin={$user_id}'>Make admin</a></td>";
+        echo "<td class='text-yellow-400 tabledata' text-white><a href='users.php?change_to_sub={$user_id}'>Make sub</a></td>";
+        echo "<td class='text-indigo-600 tabledata' text-white><a href='users.php?source=edit_user&edit_user={$user_id}'>Edit </a></td>";
+        echo "<td class='text-red-600 tabledata'><a href='users.php?delete={$user_id}'>Delete</a></td>";
         echo "</tr>";
             
             

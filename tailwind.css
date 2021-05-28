@@ -26,6 +26,10 @@
         @apply  w-full h-auto px-8 py-4 mx-auto my-8 mb-0 text-lg font-bold text-center text-gray-800 bg-white border shadow-lg sm:px-0 sm:text-xl sm:w-48 md:w-40 lg:w-44 xl:w-full sm:h-44 border-gray-50 rounded-3xl;
     }
 
+    .tabledata {
+        @apply md:px-3 md:py-6 sm:py-4 lg:px-4 lg:py-8 sm:px-2 lg:text-base md:text-xs ;
+    }
+
 }
 
 @layer utilities {
@@ -42,6 +46,24 @@
            width: 768px;
        }
     }
+
+    .extrasmall {
+        font-size: 10px;
+        padding:8px 8px;
+        }
+
+    @media screen and (max-width:360px) {
+        .extrasmall {
+        font-size: 6px;
+        padding:8px 4px;
+        }
+    }
+
+    
+
+
+
+
 
     
 }
