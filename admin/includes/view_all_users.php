@@ -1,5 +1,5 @@
-     <table class="table table-bordered table-hover">
-                            <thead>
+     <table class="table-auto ">
+                            <thead class="bg-purple-300 ">
                                 <tr>
                                     <th>Id</th>
                                     <th>Username</th>
@@ -7,8 +7,10 @@
                                     <th>Lastname</th>
                                     <th>Email</th>
                                       <th>Role</th>
-
-                                    
+                                        <th>Action</th>
+                                    <th>Action</th>
+                                    <th>Action</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
