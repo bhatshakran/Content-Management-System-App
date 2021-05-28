@@ -1,5 +1,5 @@
  <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
- <div class="h-screen ">
+ <div class="h-auto md:h-screen ">
                 <ul class="flex-row text-xl text-gray-700 ">
                     <li class="px-2 py-4 mx-3 border-b ">
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
@@ -38,7 +38,7 @@
                      <li class="px-2 py-4 mx-3 border-b">
                         <a href="profile.php"><i class="fa fa-fw fa-dashboard"></i> Profile</a>
                     </li>
-                     <li class="px-2 py-4 mx-3 border-b">
+                     <li class="px-2 py-4 mx-3 md:border-b">
                                 <a href="/cms/index.php">Go Back</a>
                             </li>
                 </ul>

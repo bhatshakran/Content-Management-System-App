@@ -27,7 +27,7 @@
                         <!-- panel one -->
                         <div id="posts-count" class="panel">
                         <div class="w-full mx-auto text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto w-14 h-14" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto w-14 h-14 " viewBox="0 0 20 20" fill="currentColor">
                             <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
                             </svg>
                          </div>
@@ -39,7 +39,7 @@
                          $post_count = mysqli_num_rows($select_all_posts);
                         
                         
-                        echo "<div class='font-thin' >Total posts</div>
+                        echo "<div class='font-thin ' >Total posts</div>
                         <div>$post_count </div>
                         
                         
@@ -235,13 +235,13 @@
  var options = {
     chartArea: {
       // leave room for y-axis labels
-      width: '84%',
+      width: '95%',
       
     },
     legend: {
       position: 'top'
     },
-    width: 500,
+    width:600
 
     // maxHeight:400,
     };
@@ -254,8 +254,8 @@
                                 chart.draw(data, google.charts.Bar.convertOptions(options));
                             }
                             </script>
-                           <div class="flex justify-center ">
-                            <div id="columnchart_material" class="w-full mt-4"  style="background:none"></div>    
+                           <div class="hidden sm:block ">
+                            <div id="columnchart_material" class="mt-4 "  style="background:transparent"></div>    
                             </div>
 
                             
