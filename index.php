@@ -10,7 +10,7 @@
     <!-- Page Content -->
 
 
-        <div class="grid w-full gap-10 lg:grid-cols-2">
+        <div class="grid w-full gap-10 md:grid-cols-2">
 
             <!-- Blog Entries Column -->
             
