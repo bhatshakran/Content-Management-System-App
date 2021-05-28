@@ -53,16 +53,16 @@ function find_all_categories () {
         $cat_id = $row['id'];
         echo "<tr></tr>";
         echo "
-                                    <td>{$cat_id}</td>
+                                    <td class='tabledata'>{$cat_id}</td>
                                     ";
         echo "
-                                    <td>{$cat_title}</td>
+                                    <td class='tabledata'>{$cat_title}</td>
                                     ";
         echo "
-                                    <td><a href='categories.php?delete={$cat_id}'>Delete</a></td>
+                                    <td class='text-indigo-600 tabledata'><a href='categories.php?delete={$cat_id}'>Delete</a></td>
                                     ";
         echo "
-                                    <td><a href='categories.php?edit={$cat_id}'>Edit</a></td>
+                                    <td class='text-red-600 tabledata'><a href='categories.php?edit={$cat_id}'>Edit</a></td>
                                     ";
         echo "<tr></tr>";
     }

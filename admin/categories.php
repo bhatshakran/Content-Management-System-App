@@ -3,23 +3,17 @@
     
 
 
-    <div id="wrapper">
+    <div id="container mx-auto text-center w-full">
 
         <!-- Navigation -->
         <?php include "includes/admin_navigation.php";
         ?>
 
-        <div id="page-wrapper">
+  
 
-            <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                           Welcome to Admin
-                            <small>Author</small>
-                        </h1>
+                
                         
                         
                         
@@ -33,11 +27,11 @@
                            
 <!--                           CREATE CATEGORY FORM-->
                            
-                            <form action="categories.php" method="post">
+                            <form action="categories.php" method="post" class="mx-4 mt-8">
                                 <div class="form-group">
                                    
                                    <label for="cat_title">
-                                       Add Category
+                                     <h4> Add Category</h4> 
                                    </label>
                                     <input type="text"
                                     name="cat_title" class="form-control">
@@ -45,7 +39,7 @@
                                  <div class="form-group">
                                     <input type="submit"
                                     name="submit"
-                                    value="Add Category" class="btn btn-primary">
+                                    value="Add Category" class="px-2 py-2 text-white bg-blue-400 rounded-lg cursor-pointer">
                                 </div>
                             </form><!--                           CREATE CATEGORY FORM-->
                             
@@ -67,12 +61,14 @@
 <!--                            UPDATE CATEGORY FORM-->
                         </div>
                         
-                        <div class="col-xs-6">
-                             <table class="table table-bordered table-hover">
-                                <thead>
+                
+                             <table class="w-full mx-auto mt-20 mb-8 text-center extrasmall md:table-auto glass">
+                                <thead class="border-b ">
                                     <tr>
-                                        <th>Id</th>
-                                        <th>Category Title</th>
+                                        <th class="tabledata">Id</th>
+                                        <th class="tabledata">Category Title</th>
+                                        <th class="tabledata">Action #1</th>
+                                        <th class="tabledata">Action #2</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -87,21 +83,11 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                
                        
                     </div>
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- /#page-wrapper -->
+         
 
    <?php include "includes/admin_footer.php";
    ?>
 
-</body>
-
-</html>
