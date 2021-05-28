@@ -1,17 +1,17 @@
-     <table class="table table-bordered table-hover">
-                            <thead>
+     <table class="mt-20 mb-8 extrasmall md:table-auto glass md:mr-auto">
+                            <thead class="border-b ">
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
-                                    <th>Image</th>
-                                    <th>Tags</th>
-                                    <th>Comments</th>
-                                    <th>Date</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th class="tabledata">Id</th>
+                                    <th class="tabledata">Author</th>
+                                    <th class="tabledata">Title</th>
+                                    <th class="tabledata">Category</th>
+                                    <th class="tabledata">Status</th>
+                                    <th class="tabledata">Image</th>
+                                    <th class="tabledata">Tags</th>
+                                    <th class="tabledata">Comments</th>
+                                    <th class="tabledata">Date</th>
+                                    <th class="tabledata">Edit</th>
+                                    <th class="tabledata">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -32,9 +32,9 @@
         $post_comment_count = $row['post_comment_count'];                 
         $post_date = $row['post_date']; 
         echo "<tr>";
-        echo "<td>$post_id</td>";
-        echo "<td>$post_author</td>";
-        echo "<td>$post_title</td>";
+        echo "<td class='tabledata'>$post_id</td>";
+        echo "<td class='tabledata'>$post_author</td>";
+        echo "<td class='tabledata'>$post_title</td>";
       
         $query = "SELECT * FROM categories WHERE id = {$post_category_id}";
         
@@ -43,17 +43,17 @@
         while($row = mysqli_fetch_assoc($select_categories_id)) {
             $cat_id = $row['id'];
             $cat_title = $row['cat_title'];
-            echo "<td> {$cat_title} </td>";
+            echo "<td class='capitalize tabledata'> {$cat_title} </td>";
         }
         
         
-        echo "<td>$post_status</td>";
-        echo "<td><img src ='../images/$post_image' width='100' alt='image'></img></td>";
-        echo "<td>$post_tags</td>";
-        echo "<td>$post_comment_count</td>";
-        echo "<td>$post_date</td>";
-         echo "<td><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
-        echo "<td><a href='posts.php?delete=$post_id'>Delete</a></td>";
+        echo "<td class='capitalize tabledata'>$post_status</td>";
+        echo "<td class='tabledata'><img src ='../images/$post_image' width='100' alt='image'></img></td>";
+        echo "<td class='tabledata'>$post_tags</td>";
+        echo "<td class='tabledata'>$post_comment_count</td>";
+        echo "<td class='text-green-400 tabledata'>$post_date</td>";
+         echo "<td class='text-indigo-600 tabledata' text-white'><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
+        echo "<td class='text-red-600 tabledata'><a href='posts.php?delete=$post_id'>Delete</a></td>";
         echo "</tr>";
             
             

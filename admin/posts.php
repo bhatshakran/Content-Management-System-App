@@ -4,7 +4,7 @@
 
 
     
-
+<div class="container mx-auto text-center">
         <!-- Navigation -->
         <?php include "includes/admin_navigation.php";
         ?>
@@ -41,7 +41,7 @@ if(isset($_GET['source'])) {
 ?>
                         
                         
-                   
+                        </div>                  
                  
         <!-- /#page-wrapper -->
 
