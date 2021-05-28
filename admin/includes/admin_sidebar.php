@@ -6,34 +6,40 @@
                          Dashboard
                         </a>
                     </li>
-                    <li class="px-2 py-4 mx-3 border-b">
-                        <a href="javascript
-                        :;" data-toggle="collapse" data-target="#posts_dropdown"><i class="fa fa-fw fa-arrows-v"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="posts_dropdown" class="collapse">
-                            <!-- <li>
+                    <li class="px-2 py-4 mx-3 border-b cursor-pointer collapse">
+                        <div>
+                        <i class="fa fa-fw fa-arrows-v"></i> 
+                        Posts
+                         <i class="fa fa-fw fa-caret-down">
+                         </i>
+                         </div>
+                        <ul id="posts_dropdown" class="hidden dropLinks">
+                    
+                            <li class="ml-6 text-sm">
                                 <a href="posts.php">View All Post </a>
                             </li>
-                            <li>
+                            <li class="ml-6 text-sm">
                                 <a href="posts.php?source=add_post">Add Post</a>
-                            </li> -->
+                            </li>
+                            
                         </ul>
                     </li>
-                    <li class="px-2 py-4 mx-3 border-b">
+                    <li class="px-2 py-4 mx-3 border-b ">
                         <a href="categories.php"><i class="fa fa-fw fa-wrench"></i> Categories</a>
                     </li>
                    
                     <li  class="px-2 py-4 mx-3 border-b" >
                         <a href="comments.php"><i class="fa fa-fw fa-file"></i> Comments</a>
                     </li>
-                     <li class="px-2 py-4 mx-3 border-b">
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <!-- <li>
+                     <li class="px-2 py-4 mx-3 border-b cursor-pointer collapse">
+                     <div><i class="fa fa-fw fa-arrows-v"></i> Users <i class="fa fa-fw fa-caret-down"></i></a></div>
+                        <ul id="demo" class="hidden dropLinks">
+                            <li class="ml-6 text-sm ">
                                 <a href="users.php">View All user</a>
                             </li>
-                            <li>
+                            <li class="ml-6 text-sm">
                                 <a href="users.php?source=add_user">Create User</a>
-                            </li> -->
+                            </li>
                            
                         </ul>
                     </li>
@@ -45,3 +51,36 @@
                             </li>
                 </ul>
             </div>
+
+
+            <script>
+            
+      
+            const dropBtn = document.querySelectorAll('.collapse');
+     
+            let toggle = false;
+            dropBtn.forEach((btn, index) => {
+                btn.addEventListener('click', function () {
+            
+                    const nodelis = this.childNodes;
+                    const nodeArr = Array.from(nodelis);
+                
+                    const links = nodeArr[3];
+                   if(!toggle) {
+                    links.style.display = 'block';
+                    toggle = true
+                  
+                   }else if(toggle) {
+                    links.style.display = 'none';
+                    toggle = false;
+                   }
+                    
+                    
+                 
+                
+                    
+               
+
+            })})
+            
+            </script>

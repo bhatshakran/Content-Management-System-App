@@ -34,16 +34,7 @@
         // echo "<td class='tabledata'>$comment_author</td>";
         echo "<td class='tabledata'>$comment_content</td>";
       
-//        $query = "SELECT * FROM c class="tabledata"ategories WHERE comment_id = {$post_category_id}";
-//        
-//        $select_categories_id = mysqli_query($connection, $query);
-//        
-//        while($row = mysqli_fetch_assoc($select_categories_id)) {
-//            $cat_id = $row['id'];
-//            $cat_title = $row['cat_title'];
-//            echo "<td> {$cat_title} </td>";
-//        }
-        
+
         
         echo "<td class='tabledata'>$comment_email</td>";
         echo "<td class='capitalize tabledata'>$comment_status</td>";
