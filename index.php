@@ -3,12 +3,12 @@
 
     <?php include "./includes/db.php"; ?>
     <?php  include "./includes/header.php"; ?>
-
+    <div class="container mx-auto ">
     <!-- Navigation -->
    <?php include "includes/navigation.php"; ?>
 
     <!-- Page Content -->
-    <div class="container mx-auto ">
+
 
         <div class="grid w-full gap-10 lg:grid-cols-2">
 
@@ -36,10 +36,10 @@
                        
 
                 <!--  Post -->
-                <div class="px-10 py-4 mt-4 border-2 border-gray-100 rounded">
+                <div class="px-10 py-4 mt-4 panel-lg">
 
                         <!-- post title with icon -->
-                <div class="flex items-center mb-4 text-4xl font-normal text-blue-600 hover:text-blue-800">
+                <div class="flex items-center justify-center w-full mb-4 text-4xl font-normal text-blue-600 hover:text-blue-800">
                
                     <a  href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title?></a>
                     <div id="icon">
@@ -59,7 +59,7 @@
                <!-- image -->
                 <img class="w-24 h-24 mt-2 mb-3" src="images/<?php echo $post_image;?> " alt="image">
                <!-- content -->
-                <p class="text-lg font-light "><?php echo $post_content?></p>
+                <p class="text-sm font-light tracking-wider text-justify"><?php echo $post_content?></p>
                 <!-- Read more -->
                 <a class="text-blue-400 hover:text-blue-800" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
