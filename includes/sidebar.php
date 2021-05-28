@@ -3,7 +3,7 @@
                <div class="py-4 m-2 px ">
                 
               
-                <div class="pb-4 border-2 border-gray-100 rounded">
+                <div class="pb-4 panel-lg">
                 <!-- Blog Search Well -->
                 <div class="w-full px-6">
                     <h2 class="mt-4">Blog Search</h2>
@@ -38,7 +38,7 @@
                    </div>
 
                 <!-- Blog Categories Well -->
-                <div class="w-full px-6 pt-6 mt-4 border-t border-gray-300">
+                <div class="w-full px-6 pt-6 mt-4 ">
                     <h3 class="mb-3">Blog Categories</h3>
                     <div class="row">
                         <div class="col-lg-12">
