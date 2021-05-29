@@ -1,11 +1,28 @@
 
 <?php
-if(isset($_POST['checkBoxArray'])) {
-    
-    foreach($_POST['checkBoxArray'] as $checkBoxValue) {
+if(isset($_POST['checkbox_array'])) {
+ 
+    foreach($_POST['checkbox_array'] as $postValueId) { 
+     
+        // Get the value of the select dropdown 
+       $bulk_options = $_POST['bulk_options'];
 
-        echo "working";
-        echo $checkBoxValue;
+    //    switch case
+        switch($bulk_options) {
+            // If we selected published 
+            case 'publish':
+
+                // Create a query to update the selected posts
+                $query  = "UPDATE posts SET post_status = '{$bulk_options}' WHERE 
+                post_id = {$postValueId} ";
+
+                $update_to_published_status = mysqli_query($connection, $query);
+                confirm($update_to_published_status);
+                break;
+
+        }
+
+
 
 
     }
@@ -27,10 +44,11 @@ if(isset($_POST['checkBoxArray'])) {
 
 <div class="flex px-3 mt-12 glass">
     <div class="w-1/2 ">
-    <select name="" id="" class='form-control'>
+    <select name="bulk_options" id="" class='form-control'>
         <option value="">Select Options</option>
-        <option value="">Draft</option>
-        <option value="">Publish</option>
+        <option value="draft">Draft</option>
+        <option value="publish">Publish</option>
+        <option value="delete">Delete</option>
     </select>
     </div>
 
@@ -76,8 +94,10 @@ if(isset($_POST['checkBoxArray'])) {
         $post_comment_count = $row['post_comment_count'];                 
         $post_date = $row['post_date']; 
         echo "<tr>";
-        echo "<td class='tabledata'> <input type='checkbox'
-         name = 'checkBoxArray[]' id='checkBoxes' value = '<?php echo {$post_id}; ?>'></td>";
+        echo "
+        <td class='tabledata'> 
+        <input type='checkbox' name = 'checkbox_array[]' id='checkBoxes' value = '$post_id'>
+        </td>";
         echo "<td class='tabledata'>$post_author</td>";
         echo "<td class='tabledata'>$post_title</td>";
        
