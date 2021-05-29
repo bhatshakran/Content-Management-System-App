@@ -1,16 +1,41 @@
-    <form action="" method='post'>
+
+<?php
+if(isset($_POST['checkBoxArray'])) {
+    
+    foreach($_POST['checkBoxArray'] as $checkBoxValue) {
+
+        echo "working";
+        echo $checkBoxValue;
+
+
+    }
+
+
+}
+
+
+
+?>
+
+
+
+
+
+
+
+<form action="" method='post'>
 
 <div class="flex px-3 mt-12 glass">
     <div class="w-1/2 ">
     <select name="" id="" class='form-control'>
-        <option value="">Select Option</option>
+        <option value="">Select Options</option>
         <option value="">Draft</option>
         <option value="">Publish</option>
     </select>
     </div>
 
     <div class="w-1/2 py-4 ">
-        <button class="px-2 py-2 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-700">Apply</button>
+        <button class="px-2 py-2 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-700" type='submit'>Apply</button>
         <button class="px-2 py-2 ml-3 text-sm text-white bg-green-500 rounded-lg hover:bg-green-700">Add New</button>
     </div>
     </div>
@@ -52,9 +77,10 @@
         $post_date = $row['post_date']; 
         echo "<tr>";
         echo "<td class='tabledata'> <input type='checkbox'
-         name='checkBoxArray[]' id='checkBoxes' value='<?php echo $post_id; ?>'></td>";
+         name = 'checkBoxArray[]' id='checkBoxes' value = '<?php echo {$post_id}; ?>'></td>";
         echo "<td class='tabledata'>$post_author</td>";
         echo "<td class='tabledata'>$post_title</td>";
+       
       
         $query = "SELECT * FROM categories WHERE id = {$post_category_id}";
         
