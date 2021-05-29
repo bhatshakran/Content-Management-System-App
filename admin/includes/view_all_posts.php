@@ -1,4 +1,21 @@
-     <table class="mt-20 mb-8 extrasmall md:table-auto glass md:mr-auto">
+    <form action="" method='post'>
+
+<div class="flex px-3 mt-12 glass">
+    <div class="w-1/2 ">
+    <select name="" id="" class='form-control'>
+        <option value="">Select Option</option>
+        <option value="">Draft</option>
+        <option value="">Publish</option>
+    </select>
+    </div>
+
+    <div class="w-1/2 py-4 ">
+        <button class="px-2 py-2 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-700">Apply</button>
+        <button class="px-2 py-2 ml-3 text-sm text-white bg-green-500 rounded-lg hover:bg-green-700">Add New</button>
+    </div>
+    </div>
+
+    <table class="mt-10 mb-8 extrasmall md:table-auto glass md:mr-auto">
                             <thead class="border-b ">
                                 <tr>
                                     <th class="tabledata">Id</th>
@@ -83,3 +100,4 @@ if(isset($_GET['delete'])) {
                                 
                             </tbody>
                         </table>
+                    </form>
