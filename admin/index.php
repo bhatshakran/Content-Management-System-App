@@ -1,6 +1,7 @@
 <?php include "includes/admin_header.php"; 
 ?>
 
+
 <div class="overflow-hidden bg-gray-100 md:max-h-screen">
 
         <!-- Navigation -->
@@ -142,7 +143,7 @@
                     </svg>
                     </span>
                     </div>
-                    <p class="noselect">hello</p>
+                 
                         </div>
 
 
