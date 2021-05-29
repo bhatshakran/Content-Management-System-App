@@ -2,6 +2,7 @@
     
 
     <?php include "./includes/db.php"; ?>
+
     <?php  include "./includes/header.php"; ?>
     <div class="container mx-auto ">
     <!-- Navigation -->

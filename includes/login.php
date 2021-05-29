@@ -46,7 +46,7 @@ if ( isset( $_POST['login'] ) ) {
         $_SESSION['role'] = $db_user_role;
 //        echo $db_user_role;
 
-        header( "Location: admin/index.php" );
+        header( "Location: ../admin/" );
 
     } else {
 
