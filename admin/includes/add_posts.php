@@ -103,8 +103,8 @@ if(isset($_POST['create_post'])) {
     <input type="text" class="form-control" name="post_status">
     </div>
     <div class="form-group">
-    <label for="post_content">Post Content</label>
-        <textarea  class="form-control" name="post_content" cols="30" rows="10"></textarea>
+    <!-- <label for="post_content" id="summernote">Post Content</label> -->
+        <textarea  id="summernote" class="form-control" name="post_content" cols="30" rows="10"></textarea>
     </div>
     <div class="form_group">
     <input type="submit" value="Publish Post" name="create_post" class="btn btn-primary">
@@ -112,3 +112,20 @@ if(isset($_POST['create_post'])) {
     </div>
     
 </form>
+
+<script>
+      $('#summernote').summernote({
+        placeholder: 'Enter Content',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    </script>

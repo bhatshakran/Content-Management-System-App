@@ -151,6 +151,21 @@ confirm($update_post);
     <label for="">Edit Author</label>
     <input type="text" value="<?php echo $post_author; ?>" class="form-control" name="author">
     </div>
+
+
+    <div class="form-group">
+    <select name="post_status" id="" class="capitalize">
+    <option value="<?php echo $post_status ?>" ><?php  echo $post_status;?></option>
+    <?php
+        if($post_status === 'published') {
+            echo "<option value='draft'>Draft</option>" ;
+        }else {
+            echo "<option value='published'>Publish</option>" ;
+        }
+
+    ?>
+    </select>
+    </div>
     
     <div class="form-group">
     <label for="post_tags">Edit Tags</label>
@@ -166,15 +181,10 @@ confirm($update_post);
       </div>
     <div class="form-group">
       
-    <div class="form-group">
-    <label for="post_status">Edit Status</label>
-    <input type="text" value="<?php echo $post_status; ?>" class="form-control" name="post_status">
-    </div>
     
     <div class="form-group">
     <label for="post_content">Edit Content</label>
-        <textarea  class="form-control" name="post_content" cols="30" rows="10">
-               <?php echo $post_content; ?>
+        <textarea  class="form-control" name="post_content" cols="30" rows="10"><?php echo $post_content; ?>
         </textarea>
      
     </div>

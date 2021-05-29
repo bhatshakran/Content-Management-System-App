@@ -54,19 +54,17 @@ if(!isset($_SESSION['role'])) {header("Location: /cms/index.php");}
 
     <title>CMS Admin </title>
 
-    <!-- Bootstrap Core CSS -->
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
-    <!-- Custom CSS -->
-    <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
+
     <link rel="stylesheet" href="../dist/css/styles.css" />
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   
-
-   
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link rel ="stylesheet" href="css/summernote-lite.css" >
+   <script src="js/summernote-lite.min.js"></script>
 
 </head>
 
