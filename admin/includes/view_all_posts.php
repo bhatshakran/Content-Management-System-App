@@ -15,16 +15,18 @@
     </div>
     </div>
 
-    <table class="mt-10 mb-8 extrasmall md:table-auto glass md:mr-auto">
+    <table class="mx-auto mt-10 mb-8 extrasmall md:table-auto glass md:mr-auto">
                             <thead class="border-b ">
                                 <tr>
-                                    <th class="tabledata">Id</th>
+                                    <th class="tabledata">
+                                        <input type="checkbox" name="" id="selectAllBoxes">
+                                    </th>
                                     <th class="tabledata">Author</th>
                                     <th class="tabledata">Title</th>
                                     <th class="tabledata">Category</th>
                                     <th class="tabledata">Status</th>
                                     <th class="tabledata">Image</th>
-                                    <th class="tabledata">Tags</th>
+                                   
                                     <th class="tabledata">Comments</th>
                                     <th class="tabledata">Date</th>
                                     <th class="tabledata">Edit</th>
@@ -49,7 +51,8 @@
         $post_comment_count = $row['post_comment_count'];                 
         $post_date = $row['post_date']; 
         echo "<tr>";
-        echo "<td class='tabledata'>$post_id</td>";
+        echo "<td class='tabledata'> <input type='checkbox'
+         name='checkBoxArray[]' id='checkBoxes' value='<?php echo $post_id; ?>'></td>";
         echo "<td class='tabledata'>$post_author</td>";
         echo "<td class='tabledata'>$post_title</td>";
       
@@ -66,7 +69,6 @@
         
         echo "<td class='capitalize tabledata'>$post_status</td>";
         echo "<td class='tabledata'><img src ='../images/$post_image' width='100' alt='image'></img></td>";
-        echo "<td class='tabledata'>$post_tags</td>";
         echo "<td class='tabledata'>$post_comment_count</td>";
         echo "<td class='text-green-400 tabledata'>$post_date</td>";
          echo "<td class='text-indigo-600 tabledata' text-white'><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
