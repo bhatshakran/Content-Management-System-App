@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between " >
+<nav class="flex items-center justify-between noselect" >
             <!-- Brand and toggle get grouped for better mobile display -->
  <div id="home" class="flex items-center ml-6 text-blue-600 md:ml-4">
    
@@ -20,26 +20,10 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
                 </span>
-                <!-- <ul class="dropdown">
-                <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                      
-                       
-                        <li class="divider"></li>
-                        <li>
-                            <a href="../includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                </ul> -->
+                
               </li>
                
-                <!-- <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        
-                    </ul>
-                </li> -->
+            
             </ul>
             </div>
             <!-- /.navbar-collapse -->

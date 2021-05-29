@@ -2,7 +2,7 @@
 
 
        
-    <nav class="py-6 bg-white ">
+    <nav class="py-6 bg-white noselect">
 
 
     <div class="container flex items-center justify-between md:justify-around">
