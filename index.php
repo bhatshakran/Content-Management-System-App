@@ -57,8 +57,10 @@
                 <!-- date -->
                 <p class="text-xs font-thin text-gray-500"><span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
                <!-- image -->
+               <a href="">
                 <img class="w-24 h-24 mt-2 mb-3" src="images/<?php echo $post_image;?> " alt="image">
-               <!-- content -->
+                </a>
+                <!-- content -->
                 <p class="text-sm font-light tracking-wider text-justify"><?php echo $post_content?></p>
                 <!-- Read more -->
                 <a class="text-blue-400 hover:text-blue-800" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>

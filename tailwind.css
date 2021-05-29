@@ -7,7 +7,7 @@
 
 @layer base {
     .nav-links{
-        @apply mr-6 capitalize transition delay-75 border-b-2 hover:border-blue-500;
+        @apply mr-6 capitalize transition delay-75 border-b-2 md:mr-3 hover:border-blue-500;
     }
     .form-control{
         @apply w-full px-2 py-2 mt-4 mb-4 border border-gray-200 rounded focus:outline-none focus:border-gray-400;

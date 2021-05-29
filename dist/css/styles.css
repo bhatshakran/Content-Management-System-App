@@ -568,6 +568,12 @@ video {
   transition-delay: 75ms;
 }
 
+@media (min-width: 768px) {
+  .nav-links {
+    margin-right: 0.75rem;
+  }
+}
+
 .form-control{
   --tw-border-opacity: 1;
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
