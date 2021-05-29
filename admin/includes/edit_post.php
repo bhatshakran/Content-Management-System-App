@@ -85,6 +85,11 @@ $query .= "WHERE post_id = $the_post_id ";
 $update_post = mysqli_query($connection,$query);
 
 confirm($update_post);
+
+echo  "<p class='w-full px-2 py-3 mt-4 text-left text-white bg-green-500 '> 
+Post Updated. <a href='../post.php?p_id=$the_post_id' class='text-blue-800'>View Post</a>
+or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
+</p>";
     
 //    header("Location: ./posts.php");
 }
