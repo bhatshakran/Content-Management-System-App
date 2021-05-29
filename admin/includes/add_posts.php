@@ -45,8 +45,8 @@ if(isset($_POST['create_post'])) {
 
   
   
-  <form action="" method="post" enctype="multipart/form-data">
-   
+  <form action="" method="post" class="px-3 py-4 mt-8 text-left glass" enctype="multipart/form-data">
+   <h3 class="mb-3 ">Add a Post</h3>
     <div class="form-group">
     <label for="title">Post Title</label>
     <input type="text" class="form-control" name="title">
@@ -55,8 +55,8 @@ if(isset($_POST['create_post'])) {
     
     <div class="form-group">
     
-    
-    <select name="post_category" id="">
+    <label for="">Category</label>
+    <select name="post_category" id="" class="form-control">
         
         
         <?php
@@ -97,16 +97,20 @@ if(isset($_POST['create_post'])) {
     </div>
     <div class="form-group">
     <label for="post_image">Post Image</label>
-    <input type="file" name="image">
+    <input type="file" name="image" class="form-control">
     <div class="form-group">
-    <label for="post_status">Post Status</label>
-    <input type="text" class="form-control" name="post_status">
+    <select name="post_status" id="" class="form-control">
+      <option value="draft">Post Status</option>
+      <option value="draft">Draft</option>
+      <option value="publish">Publish</option>
+    </select>
+  
     </div>
     <div class="form-group">
     <!-- <label for="post_content" id="summernote">Post Content</label> -->
         <textarea  id="summernote" class="form-control" name="post_content" cols="30" rows="10"></textarea>
     </div>
-    <div class="form_group">
+    <div class="form-group">
     <input type="submit" value="Publish Post" name="create_post" class="btn btn-primary">
     </div>
     </div>

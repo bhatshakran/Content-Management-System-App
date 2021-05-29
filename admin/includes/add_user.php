@@ -53,8 +53,8 @@ if(isset($_POST['create_user'])) {
 
   
   
-  <form action="" method="post" enctype="multipart/form-data">
-   
+  <form action="" method="post" class="px-3 py-4 mt-8 text-left glass" enctype="multipart/form-data">
+  <h3 class="mb-3 ">Add a User</h3>
    <div class="form-group">
     <label for="user_firstname">Firstname</label>
     <input type="text" class="form-control" name="user_firstname">
@@ -67,7 +67,7 @@ if(isset($_POST['create_user'])) {
     <div class="form-group">
     
     
-    <select name="user_role" id="">
+    <select name="user_role" id="" class='form-control'>
         <option value="subscriber">Select Options</option>
         <option value="admin">Admin</option>
         <option value="subscriber">Subscriber</option>
