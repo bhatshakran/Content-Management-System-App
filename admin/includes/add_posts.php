@@ -34,6 +34,13 @@ if(isset($_POST['create_post'])) {
     $create_post_query = mysqli_query($connection, $query);
     
     confirm($create_post_query);
+// get id of last made post
+    $the_post_id = mysqli_insert_id($connection);
+
+    echo "<p class='py-4 mt-8 text-white bg-green-500 '>
+    Post created. Cheers!!
+    <a class='ml-3 text-purple-200' href='../post.php?p_id={$the_post_id}'>View Post</a>
+    </p>";
     
 }
 
