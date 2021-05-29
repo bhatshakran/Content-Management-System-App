@@ -30,7 +30,7 @@
     }
 
     .tabledata {
-        @apply md:px-3 md:py-6 sm:py-4 lg:px-4 lg:py-8 sm:px-2 lg:text-base md:text-xs ;
+        @apply md:px-3 md:py-6 sm:py-4 lg:px-4 lg:py-8 sm:px-2 lg:text-base ;
     }
 
     .form-group{

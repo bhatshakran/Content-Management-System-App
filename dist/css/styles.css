@@ -706,8 +706,6 @@ h4{
 
 @media (min-width: 768px) {
   .tabledata {
-    font-size: 0.75rem;
-    line-height: 1rem;
     padding-left: 0.75rem;
     padding-right: 0.75rem;
     padding-top: 1.5rem;

@@ -1,5 +1,5 @@
  <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
- <div class="h-auto md:h-screen noselect">
+ <div class="hidden h-auto md:block md:h-screen noselect " id='adminLinks'>
                 <ul class="flex-row text-xl text-gray-700 ">
                     <li class="px-2 py-4 mx-3 border-b ">
                         <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> 
@@ -68,34 +68,4 @@
             </div>
 
 
-            <script>
             
-      
-            const dropBtn = document.querySelectorAll('.collapse');
-     
-            let toggle = false;
-            dropBtn.forEach((btn, index) => {
-                btn.addEventListener('click', function () {
-            
-                    const nodelis = this.childNodes;
-                    const nodeArr = Array.from(nodelis);
-                
-                    const links = nodeArr[3];
-                   if(!toggle) {
-                    links.style.display = 'block';
-                    toggle = true
-                  
-                   }else if(toggle) {
-                    links.style.display = 'none';
-                    toggle = false;
-                   }
-                    
-                    
-                 
-                
-                    
-               
-
-            })})
-            
-            </script>
