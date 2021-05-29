@@ -162,7 +162,7 @@ or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
     <select name="post_status" id="" class="capitalize">
     <option value="<?php echo $post_status ?>" ><?php  echo $post_status;?></option>
     <?php
-        if($post_status === 'published') {
+        if($post_status === 'publish') {
             echo "<option value='draft'>Draft</option>" ;
         }else {
             echo "<option value='published'>Publish</option>" ;

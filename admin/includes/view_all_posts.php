@@ -5,7 +5,7 @@ if(isset($_POST['checkbox_array'])) {
     foreach($_POST['checkbox_array'] as $postValueId) { 
      
         // Get the value of the select dropdown 
-       $bulk_options = $_POST['bulk_options'];
+   $bulk_options = $_POST['bulk_options'];
 
     //    switch case
         switch($bulk_options) {
@@ -19,6 +19,15 @@ if(isset($_POST['checkbox_array'])) {
                 $update_to_published_status = mysqli_query($connection, $query);
                 confirm($update_to_published_status);
                 break;
+        case 'draft':
+
+            // Create a query to update the selected posts
+            $query  = "UPDATE posts SET post_status = '{$bulk_options}' WHERE 
+            post_id = {$postValueId} ";
+
+            $update_to_draft_status = mysqli_query($connection, $query);
+            confirm($update_to_draft_status);
+            break;
 
         }
 
