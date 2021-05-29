@@ -1,9 +1,8 @@
 
-
 <?php include "../includes/db.php"?>
 <?php include "functions.php"; ?>
 <?php ob_start(); ?>
-<?php session_start();?>
+
 
 
 
@@ -16,7 +15,7 @@
 
 
 
-if(!isset($_SESSION['role'])) {header("Location: /cms/index.php");}
+if(!isset($_SESSION['role'])) {header("Location: ../index.php");}
 
 ?>
 
