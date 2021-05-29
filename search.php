@@ -10,7 +10,7 @@
     <!-- Page Content -->
     <div class="container mx-auto ">
 
-        <div class="grid w-full gap-10 lg:grid-cols-2">
+        <div class="grid w-full gap-10 md:grid-cols-2">
 
             <!-- Blog Entries Column -->
             
@@ -60,10 +60,10 @@
                        
 
                 <!--  Post -->
-                <div class="px-10 py-4 mt-4 border-2 border-gray-100 rounded">
+                <div class="px-10 py-4 mt-4 panel-lg">
 
                         <!-- post title with icon -->
-                <div class="flex items-center mb-4 text-4xl font-normal text-blue-600 hover:text-blue-800">
+                <div class="flex items-center justify-center w-full mb-4 text-4xl font-normal text-blue-600 hover:text-blue-800">
                
                     <a  href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title?></a>
                     <div id="icon">
