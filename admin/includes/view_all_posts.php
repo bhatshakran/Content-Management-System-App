@@ -62,7 +62,7 @@ if(isset($_POST['checkbox_array'])) {
                             <thead class="border-b ">
                                 <tr>
                                     <th class="tabledata">
-                                        <input type="checkbox" name="" id="selectAllBoxes">
+                                    <input type="checkbox" name="" id="selectAllBoxes">
                                     </th>
                                     <th class="tabledata">Author</th>
                                     <th class="tabledata">Title</th>
@@ -149,3 +149,7 @@ if(isset($_GET['delete'])) {
                             </tbody>
                         </table>
                     </form>
+
+
+
+      
