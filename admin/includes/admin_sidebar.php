@@ -62,7 +62,7 @@
                         <a href="profile.php"><i class="fa fa-fw fa-dashboard"></i> Profile</a>
                     </li>
                      <li class="px-2 py-4 mx-3 md:border-b">
-                                <a href="/cms/index.php">Go Back</a>
+                                <a href="../index.php">Go Back</a>
                             </li>
                 </ul>
             </div>
