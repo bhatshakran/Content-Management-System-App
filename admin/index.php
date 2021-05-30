@@ -15,8 +15,7 @@
                
                     <div class="flex-row w-full h-full gap-6 overflow-hidden md:flex">
                     <div class="w-full mt-4 bg-white border shadow-lg rounded-3xl border-gray-50 md:1/3 lg:w-3/12">
-                    <?php include "includes/admin_sidebar.php";
-        ?>
+                    <?php include "includes/admin_sidebar.php";?>
 
                     </div>
                
