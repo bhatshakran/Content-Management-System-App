@@ -1,23 +1,21 @@
-
-<?php include "../includes/db.php"?>
-<?php include "functions.php"; ?>
-
-<?php ob_start(); ?>
-<?php session_start();?>
-
-
-
-
-
-
 <?php
+if(!headers_sent()){
+    session_start();
+}
+
+ob_start(); 
+
+include "../includes/db.php";
+
+
+include "functions.php"; 
 
 if(!isset($_SESSION['username'])) {
     header("Location: ../index.php");
 }
 
-
 ?>
+
 
 
 

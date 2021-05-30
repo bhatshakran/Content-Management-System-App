@@ -93,7 +93,10 @@ if(isset($_GET['change_to_sub'])) {
     
     $make_subscriber_query = mysqli_query($connection, $query);
     
-    header("Location: users.php");
+    if(!headers_sent()){
+        header("Location: users.php");
+    }
+   
 }      
                                 
                                 
@@ -110,7 +113,9 @@ if(isset($_GET['change_to_admin'])) {
     
     $make_admin_query = mysqli_query($connection, $query);
     
-    header("Location: users.php");
+    if(!headers_sent()){
+        header("Location: users.php");
+    }
 }  
                                 
                                 
@@ -134,7 +139,9 @@ if(isset($_GET['delete'])) {
     
     $delete_query = mysqli_query($connection, $query);
     
-    header("Location: users.php");
+    if(!headers_sent()){
+        header("Location: users.php");
+    }
 }                                
                                 
 ?>                                                    
