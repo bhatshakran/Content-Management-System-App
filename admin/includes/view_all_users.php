@@ -1,7 +1,7 @@
-     <table class="mt-20 extrasmall md:table-auto glass md:mr-auto">
+     <table class="mt-20 extrasmall glass ">
                             <thead class="border-b ">
                                 <tr class="">
-                                    <th class="tabledata">Id</th>
+                                    
                                     <th class="tabledata">Username</th>
                                     <th class="tabledata">Firstname</th>
                                     <th class="tabledata">Lastname</th>
@@ -33,38 +33,19 @@
                           
          
         echo "<tr class =''>";
-        echo "<td class='tabledata'>$user_id</td>";
+       
         echo "<td class='tabledata'>$username</td>";
         echo "<td class='capitalize tabledata'>$user_firstname</td>";
         echo "<td class='capitalize tabledata'>$user_lastname</td>";
       
-//        $query = "SELECT * FROM categories WHERE comment_id = {$post_category_id}";
-//        
-//        $select_categories_id = mysqli_query($connection, $query);
-//        
-//        while($row = mysqli_fetch_assoc($select_categories_id)) {
-//            $cat_id = $row['id'];
-//            $cat_title = $row['cat_title'];
-//            echo "<td> {$cat_title} </td>";
-//        }
+
         
         
         echo "<td class='text-blue-400 tabledata'>$user_email</td>";
         echo "<td class='text-green-400 capitalize tabledata'>$user_role</td>";
 
         
-//        $query = "SELECT * FROM posts WHERE post_id = $comment_post_id";
-//        
-//        $select_post_id_query = mysqli_query($connection, $query);
-//        
-//        while($row = mysqli_fetch_assoc($select_post_id_query)) {
-//
-//            $post_id = $row['post_id'];
-//            $post_title = $row['post_title'];
-//            
-//             echo "<td><a href='../post.php?p_id=$post_id'>{$post_title}</a></td>";
-//        
-//        }
+
         
         
         

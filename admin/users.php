@@ -7,7 +7,7 @@
   </div>
       
 
-            <div class="container w-full text-center sm:mx-auto">
+            <div class="container w-full mx-auto text-center">
 
             
                         

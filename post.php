@@ -3,12 +3,12 @@
 
     <?php include "./includes/db.php"; ?>
     <?php  include "./includes/header.php"; ?>
-
+    <div class="container mx-auto my-4 lg:w-1/2">
     <!-- Navigation -->
    <?php include "includes/navigation.php"; ?>
 
     <!-- Page Content -->
-    <div class="container mx-auto my-4 lg:w-1/2">
+ 
 
         <div class="grid px-6 ">
 
