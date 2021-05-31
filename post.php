@@ -44,17 +44,19 @@
                         
 
                
-                <h2>
-                    <a href="#"><?php echo $post_title?></a>
+                <h2 class='py-6 mt-8 text-white bg-gray-700 font-raleway'>
+                    <?php echo $post_title?>
                 </h2>
-                <p class="w-full mx-auto text-center">
-                    by <a href="index.php"><?php echo $post_author?></a>
+                <p class="w-full mx-auto my-8 text-left">
+                    by <a href="index.php" class='text-purple-500'><?php echo $post_author?></a>
                 </p>
-                <p class="text-center"> <span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
+                <p class="text-left text-yellow-600" > <span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
                
                 <img class="w-auto my-4 " src="images/<?php echo $post_image;?> " alt="image">
                
-                <p class="text-justify mx"><?php echo $post_content?></p>
+                <div class="px-6 py-6 text-justify glass">
+                <?php echo $post_content?>
+                </div>
           
                  <?php   }   ?>
                   

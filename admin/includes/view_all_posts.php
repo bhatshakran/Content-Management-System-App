@@ -31,11 +31,39 @@ if(isset($_POST['checkbox_array'])) {
 
             case 'delete':
 
-                $query  = "DELETE FROM posts WHERE post_id = {$postValueId} ";
+            $query  = "DELETE FROM posts WHERE post_id = {$postValueId} ";
+
+            $update_to_delete_status = mysqli_query($connection, $query);
+            confirm($update_to_delete_status);
+            break;
+
+            case 'clone':
+
+            $query = "SELECT * FROM posts WHERE post_id = {$postValueId}";
+            $select_all_posts_query = mysqli_query($connection, $query);
+                
+                while($row = mysqli_fetch_assoc($select_all_posts_query)) {
+                    
+                    $post_title = $row['post_title'];
+                    $post_category_id = $row['post_category_id'];
+                    $post_tags = $row['post_tags'];
+                    $post_status = $row['post_status'];
+                    $post_author = $row['post_author'];
+                    $post_content = $row['post_content'];
+                    $post_image = $row['post_image'];
+                    $post_date = $row['post_date'];
+                                    
+            }
+
+
+            $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_status)";
     
-                $update_to_delete_status = mysqli_query($connection, $query);
-                confirm($update_to_delete_status);
-                break;
+            $query .= "VALUES({$post_category_id}, '{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}','{$post_status}' )";
+
+            $create_post_query = mysqli_query($connection, $query);
+    
+            confirm($create_post_query);
+            break;
         }
 
 
@@ -65,6 +93,7 @@ if(isset($_POST['checkbox_array'])) {
         <option value="draft">Draft</option>
         <option value="publish">Publish</option>
         <option value="delete">Delete</option>
+        <option value="clone">Clone</option>
     </select>
     </div>
 
@@ -95,7 +124,7 @@ if(isset($_POST['checkbox_array'])) {
                             <tbody>
                                
 <?php 
-    $query = "SELECT * FROM posts";
+    $query = "SELECT * FROM posts ORDER BY post_id DESC";
     $select_posts = mysqli_query( $connection, $query );
 
     while( $row = mysqli_fetch_assoc( $select_posts ) ) {

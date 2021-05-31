@@ -5,7 +5,12 @@ module.exports = {
     debugScreens: {
       position: ["top", "right"],
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        pacifico: ["Pacifico"],
+        raleway: ["Raleway"],
+      },
+    },
   },
   variants: {
     extend: {},

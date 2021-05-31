@@ -551,6 +551,16 @@ video {
   height: auto;
 }
 
+@font-face { font-family: Pacifico;
+
+  src: url(/dist/fonts/Pacifico.ttf) format("​truetype​");
+}
+
+@font-face { font-family: Raleway;
+
+  src: url(/dist/fonts/Raleway-Regular.ttf) format("​truetype​");
+}
+
 .nav-links:hover {
   --tw-border-opacity: 1;
   border-color: rgba(59, 130, 246, var(--tw-border-opacity));
@@ -11481,6 +11491,14 @@ h4{
 
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.font-pacifico {
+  font-family: Pacifico;
+}
+
+.font-raleway {
+  font-family: Raleway;
 }
 
 .font-thin {
@@ -42804,6 +42822,14 @@ h4{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .sm\:font-pacifico {
+    font-family: Pacifico;
+  }
+
+  .sm\:font-raleway {
+    font-family: Raleway;
+  }
+
   .sm\:font-thin {
     font-weight: 100;
   }
@@ -73913,6 +73939,14 @@ h4{
 
   .md\:font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .md\:font-pacifico {
+    font-family: Pacifico;
+  }
+
+  .md\:font-raleway {
+    font-family: Raleway;
   }
 
   .md\:font-thin {
@@ -105026,6 +105060,14 @@ h4{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .lg\:font-pacifico {
+    font-family: Pacifico;
+  }
+
+  .lg\:font-raleway {
+    font-family: Raleway;
+  }
+
   .lg\:font-thin {
     font-weight: 100;
   }
@@ -136137,6 +136179,14 @@ h4{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .xl\:font-pacifico {
+    font-family: Pacifico;
+  }
+
+  .xl\:font-raleway {
+    font-family: Raleway;
+  }
+
   .xl\:font-thin {
     font-weight: 100;
   }
@@ -167246,6 +167296,14 @@ h4{
 
   .\32xl\:font-mono {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .\32xl\:font-pacifico {
+    font-family: Pacifico;
+  }
+
+  .\32xl\:font-raleway {
+    font-family: Raleway;
   }
 
   .\32xl\:font-thin {
