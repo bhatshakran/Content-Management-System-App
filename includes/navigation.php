@@ -58,6 +58,10 @@
                         </div>
                         <a class='py-4 text-gray-500 md:py md:mr-2 ' href="admin/index.php">Admin</a>
                     </li>
+
+                    <li class='py-4 md:py nav-links '>
+                    <a class='py-4 text-gray-500 md:py md:mr-2 ' href="registration.php">Registration</a>
+                    </li>
                     <!-- <li class='flex items-center justify-center text-gray-500 nav-links'>
                     <a href="./includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                     </li> -->
