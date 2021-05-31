@@ -111,7 +111,8 @@
 
     
         </div>
-        <ul class= 'flex items-center justify-center py-3 my-10 text-center pager panel-lg'>
+        <!-- Pagination -->
+        <ul class= 'pager'>
 
 <?php
 for($i = 1; $i <= $count; $i++ ){

@@ -47,6 +47,9 @@
     .myBtn{
         @apply px-2 py-2 text-white bg-blue-500 border border-white hover:bg-blue-700;
     }
+    .pager{
+        @apply flex items-center justify-center py-3 my-10 text-center panel-lg;
+    }
 
 }
 
