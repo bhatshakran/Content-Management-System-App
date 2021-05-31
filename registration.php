@@ -23,16 +23,7 @@ if(!empty($username) && !empty($email) && !empty($password) ){
     $password = mysqli_real_escape_string($connection, $password);
 
 
-    $query = "SELECT randSalt FROM users";
-    $select_randsalt_query = mysqli_query($connection, $query);
-
-    if(!$select_randsalt_query) {
-
-        die("QUERY FAILED" . mysqli_error($connection));
-    }
-
-
-  
+    
 
      $enc_password = password_hash($password, PASSWORD_BCRYPT);
 

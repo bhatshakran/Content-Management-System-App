@@ -25,6 +25,7 @@ if(isset($_GET['edit_user'])) {
         $user_image = $row['user_image'];                             
         $user_role = $row['user_role']; 
                           
+        
     
     }
     
@@ -69,7 +70,7 @@ if(isset($_POST['edit_user'])) {
 //        $post_image_temp = $_FILES['image']['tmp_name']; 
     
         $user_password = $_POST['user_password'];
-    
+        $enc_pass = password_hash($user_password, PASSWORD_BCRYPT);
     
      
 
@@ -87,7 +88,7 @@ $query .="user_lastname = '{$user_lastname}', ";
 $query .= "user_role = '{$user_role}', ";
 $query .= "username = '{$username}', ";
 $query .= "user_email = '{$user_email}', ";
-$query .= "user_password = '{$user_password}' ";
+$query .= "user_password = '{$enc_pass}' ";
 
     
 $query .= "WHERE user_id = {$the_user_id} ";
@@ -158,7 +159,7 @@ $update_user = mysqli_query($connection,$query);
     <div class="form-group">
     <label for="user_password">Password</label>
         <input type="password" class="form-control" 
-        value="<?php echo $user_password ?>" name="user_password">
+        value="" name="user_password">
     </div>
    
     <div class="form_group">
