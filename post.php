@@ -23,20 +23,22 @@
                 
                 if(isset($_GET['p_id'])) {
                     $the_post_id = $_GET['p_id'];
+
+                    $query = "SELECT * FROM posts WHERE post_id = $the_post_id";
+                    $select_all_posts_query = mysqli_query($connection, $query);
+                        
+                        while($row = mysqli_fetch_assoc($select_all_posts_query)) {
+                            
+                            $post_title = $row['post_title'];
+                            $post_author = $row['post_author'];
+                            $post_content = $row['post_content'];
+                            $post_image = $row['post_image'];
+                            $post_date = $row['post_date'];
                                          
                  }
                 
                 
-                $query = "SELECT * FROM posts WHERE post_id = $the_post_id";
-                $select_all_posts_query = mysqli_query($connection, $query);
-                    
-                    while($row = mysqli_fetch_assoc($select_all_posts_query)) {
-                        
-                        $post_title = $row['post_title'];
-                        $post_author = $row['post_author'];
-                        $post_content = $row['post_content'];
-                        $post_image = $row['post_image'];
-                        $post_date = $row['post_date'];
+             
                  
                       ?>
                         
@@ -68,42 +70,48 @@
                   <?php 
                 
                 if(isset($_POST['create_comment'])) {
-                    $the_post_id = $_GET['p_id'];
+                    // $the_post_id = $_GET['p_id'];
                     
                     $comment_author = $_POST['comment_author'];
                     $comment_email = $_POST['comment_email'];
                     $comment_content = $_POST['comment_content'];
-                    
-                    
-                    $query = "INSERT INTO comments (comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
-                    
-                    
-                    
-                    $query .= " VALUES($the_post_id, '{$comment_author}', '{$comment_email}', 
-                    '{$comment_content}', 
-                    'unapproved', now())";
+                    if(!empty($comment_author) && !empty($comment_author) && !empty($comment_content)){
+                        
+                        $query = "INSERT INTO comments (comment_post_id, comment_author, comment_email, comment_content, comment_status, comment_date)";
                     
                     
                     
-                    
-                    $create_comment_query = mysqli_query($connection, $query);
-                    
-                    
-                    if(!$create_comment_query) {
-                        die("QUERY FAILED" . mysqli_error($connection));
+                        $query .= " VALUES($the_post_id, '{$comment_author}', '{$comment_email}', 
+                        '{$comment_content}', 
+                        'unapproved', now())";
+                        
+                        
+                        
+                        
+                        $create_comment_query = mysqli_query($connection, $query);
+                        
+                        
+                        if(!$create_comment_query) {
+                            die("QUERY FAILED" . mysqli_error($connection));
+                        }
+                        
+                        
+                        $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $the_post_id ";
+                        
+                        
+                        $update_comment_count = mysqli_query($connection , $query);
+                    }else {
+                        echo "<script>alert('Fields cannot be empty')</script>";
+                    }
                     }
                     
                     
-                    $query = "UPDATE posts SET post_comment_count = post_comment_count + 1 WHERE post_id = $the_post_id ";
-                    
-                    
-                    $update_comment_count = mysqli_query($connection , $query);
-                }
+                 
                 
                 ?>
                   
                   
-                   <div class="w-full px-2 py-6 my-4 border-t-2">
+                   <div class="w-full px-2 py-6 my-4 glass">
                     <h4>Leave a Comment:</h4>
                     <form action="" method="post" role="form">
                        <div class="form-group">
@@ -120,7 +128,7 @@
                              <label for="comment">Comment</label>
                             <textarea name="comment_content" class="form-control" rows="3"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" name="create_comment">Submit</button>
+                        <button type="submit" class="btn-primary" name="create_comment">Submit</button>
                     </form>
                 </div>
 

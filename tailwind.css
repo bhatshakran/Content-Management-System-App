@@ -36,6 +36,9 @@
     .form-group{
         @apply mt-3 text-gray-800;
     }
+    .btn-primary{
+        @apply px-2 py-2 text-white bg-blue-500 border border-white hover:bg-blue-700;
+    }
 
 }
 

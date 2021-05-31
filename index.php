@@ -32,20 +32,21 @@
                         $post_content = $row['post_content'];
                         $post_image = $row['post_image'];
                         $post_date = $row['post_date'];
+                        $limited_text = substr($post_content, 0, 100);
                     
                       ?>
                        
 
                 <!--  Post -->
-                <div class="px-10 py-4 mt-4 panel-lg">
+                <div class= "w-full h-auto px-2 py-4 mx-auto mt-4 sm:px-10 sm:w-2/3 md:w-11/12 glass">
 
                         <!-- post title with icon -->
-                <div class="flex items-center justify-center w-full mb-4 text-4xl font-normal text-blue-600 hover:text-blue-800">
+                <div class="flex items-center w-full mb-4 text-2xl font-normal text-blue-600 sm:text-4xl hover:text-blue-800">
                
                     <a  href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title?></a>
                     <div id="icon">
                     <!-- post icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
                         </svg>
                     </div>
@@ -59,10 +60,10 @@
                 <p class="text-xs font-thin text-gray-500"><span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
                <!-- image -->
                <a href="post.php?p_id=<?php echo $post_id; ?>">
-                <img class="w-24 h-24 mt-2 mb-3" src="images/<?php echo $post_image;?> " alt="image">
+                <img class="w-full h-auto mt-2 mb-3 sm:w-1/2 sm:h-1/3" src="images/<?php echo $post_image;?> " alt="image">
                 </a>
                 <!-- content -->
-                <p class="text-sm font-light tracking-wider text-justify"><?php echo $post_content?></p>
+                <p class="text-sm font-light tracking-wider text-justify"><?php echo $limited_text?></p>
                 <!-- Read more -->
                 <a class="text-blue-400 hover:text-blue-800" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
