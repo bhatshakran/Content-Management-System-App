@@ -8,7 +8,44 @@
 
 <?php
 if(isset($_POST['submit'])){
-    echo "Its working";
+
+
+
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $username = mysqli_real_escape_string($connection, $username);
+    $email = mysqli_real_escape_string($connection, $email);
+    $password = mysqli_real_escape_string($connection, $password);
+
+
+    $query = "SELECT randSalt FROM users";
+    $select_randsalt_query = mysqli_query($connection, $query);
+
+    if(!$select_randsalt_query) {
+
+        die("QUERY FAILED" . mysqli_error($connection));
+    }
+
+
+    $row =  mysqli_fetch_array($select_randsalt_query);
+    $salt = $row['randSalt'];
+
+
+    $query = "INSERT INTO users (username, user_email, user_password, user_role)";
+
+    $query .= "VALUES('{$username}', '{$email}', '{$password}' , 'subscriber')";
+
+
+    $register_user_query = mysqli_query($connection, $query);
+    if(!$register_user_query) {
+
+        die("QUERY FAILED" . mysqli_error($connection));
+    }
+
+
+
 }
 
 
