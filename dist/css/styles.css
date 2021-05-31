@@ -553,12 +553,13 @@ video {
 
 @font-face { font-family: Pacifico;
 
-  src: url(/dist/fonts/Pacifico.ttf) format("​truetype​");
+  src: url(/cms/dist/fonts/Pacifico.ttf) format("​truetype​");
 }
 
-@font-face { font-family: Raleway;
+@font-face {
+  font-family: Raleway;
 
-  src: url(/dist/fonts/Raleway-Regular.ttf) format("​truetype​");
+  src: url(/cms/dist/fonts/Raleway-Regular.ttf) format("truetype");
 }
 
 .nav-links:hover {

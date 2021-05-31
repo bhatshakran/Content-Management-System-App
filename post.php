@@ -43,18 +43,18 @@
                       ?>
                         
 
-               
+               <div class="mx-3">
                 <h2 class='py-6 mt-8 text-white bg-gray-700 font-raleway'>
                     <?php echo $post_title?>
                 </h2>
                 <p class="w-full mx-auto my-8 text-left">
                     by <a href="index.php" class='text-purple-500'><?php echo $post_author?></a>
                 </p>
-                <p class="text-left text-yellow-600" > <span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
+                <p class="text-left text-yellow-600 " > <span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
                
                 <img class="w-auto my-4 " src="images/<?php echo $post_image;?> " alt="image">
                
-                <div class="px-6 py-6 text-justify glass">
+                <div class="px-6 py-6 text-justify glass font-pacifico">
                 <?php echo $post_content?>
                 </div>
           
@@ -187,7 +187,7 @@
                 ?>
                
       
- <hr/>
+               </div>
             </div>   
             
                 
@@ -199,7 +199,7 @@
       
         <!-- /.row -->
 
-        <hr>
+  
 
       
 

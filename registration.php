@@ -61,7 +61,7 @@ if(!empty($username) && !empty($email) && !empty($password) ){
 
 <section id="login">
 <div class="px-4 py-8 glass">
-<h3 >Register</h3>
+<h3 class="font-raleway">Register</h3>
 <form method="post" role="form" action="registration.php" method="post" autcomplete="off">
 <h6 class="px-3 mt-4 text-white bg-green-500"><?php echo $message ?></h6> 
 <div class="form-group">
