@@ -15,6 +15,9 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+
+if(!empty($username) && !empty($email) && !empty($password) ){
+
     $username = mysqli_real_escape_string($connection, $username);
     $email = mysqli_real_escape_string($connection, $email);
     $password = mysqli_real_escape_string($connection, $password);
@@ -44,9 +47,20 @@ if(isset($_POST['submit'])){
         die("QUERY FAILED" . mysqli_error($connection));
     }
 
+    $message = "Your registration has been submitted!";
 
-
+}else {
+    $message = "Fields cannot be empty";
 }
+
+
+}else{
+    $message ="";
+}
+   
+
+
+
 
 
 
@@ -56,9 +70,9 @@ if(isset($_POST['submit'])){
 
 <section id="login">
 <div class="px-4 py-8 glass">
-<h3>Register</h3>
+<h3 >Register</h3>
 <form method="post" role="form" action="registration.php" method="post" autcomplete="off">
-
+<h6 class="px-3 mt-4 text-white bg-green-500"><?php echo $message ?></h6> 
 <div class="form-group">
 <label for="username">Username</label>
 <input type="text" name="username" class="form-control" placeholder="Enter Username">
