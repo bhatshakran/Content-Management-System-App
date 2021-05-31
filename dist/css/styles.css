@@ -551,15 +551,28 @@ video {
   height: auto;
 }
 
-@font-face { font-family: Pacifico;
+@font-face {
+  font-family: LeagueSpartan-Bold;
 
-  src: url(/cms/dist/fonts/Pacifico.ttf) format("​truetype​");
+  src: url(/cms/dist/fonts/LeagueSpartan-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: Pacifico-Regular;
+
+  src: url(/cms/dist/fonts/Pacifico.ttf) format("truetype");
 }
 
 @font-face {
   font-family: Raleway;
 
   src: url(/cms/dist/fonts/Raleway-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Sofia-Regular;
+
+  src: url(/cms/dist/fonts/Sofia-Regular.otf) format("opentype");
 }
 
 .nav-links:hover {
@@ -11518,7 +11531,15 @@ h4{
 }
 
 .font-pacifico {
-  font-family: Pacifico;
+  font-family: Pacifico-Regular;
+}
+
+.font-league {
+  font-family: LeagueSpartan-Bold;
+}
+
+.font-sofia {
+  font-family: Sofia-Regular;
 }
 
 .font-raleway {
@@ -42847,7 +42868,15 @@ h4{
   }
 
   .sm\:font-pacifico {
-    font-family: Pacifico;
+    font-family: Pacifico-Regular;
+  }
+
+  .sm\:font-league {
+    font-family: LeagueSpartan-Bold;
+  }
+
+  .sm\:font-sofia {
+    font-family: Sofia-Regular;
   }
 
   .sm\:font-raleway {
@@ -73966,7 +73995,15 @@ h4{
   }
 
   .md\:font-pacifico {
-    font-family: Pacifico;
+    font-family: Pacifico-Regular;
+  }
+
+  .md\:font-league {
+    font-family: LeagueSpartan-Bold;
+  }
+
+  .md\:font-sofia {
+    font-family: Sofia-Regular;
   }
 
   .md\:font-raleway {
@@ -105085,7 +105122,15 @@ h4{
   }
 
   .lg\:font-pacifico {
-    font-family: Pacifico;
+    font-family: Pacifico-Regular;
+  }
+
+  .lg\:font-league {
+    font-family: LeagueSpartan-Bold;
+  }
+
+  .lg\:font-sofia {
+    font-family: Sofia-Regular;
   }
 
   .lg\:font-raleway {
@@ -136204,7 +136249,15 @@ h4{
   }
 
   .xl\:font-pacifico {
-    font-family: Pacifico;
+    font-family: Pacifico-Regular;
+  }
+
+  .xl\:font-league {
+    font-family: LeagueSpartan-Bold;
+  }
+
+  .xl\:font-sofia {
+    font-family: Sofia-Regular;
   }
 
   .xl\:font-raleway {
@@ -167323,7 +167376,15 @@ h4{
   }
 
   .\32xl\:font-pacifico {
-    font-family: Pacifico;
+    font-family: Pacifico-Regular;
+  }
+
+  .\32xl\:font-league {
+    font-family: LeagueSpartan-Bold;
+  }
+
+  .\32xl\:font-sofia {
+    font-family: Sofia-Regular;
   }
 
   .\32xl\:font-raleway {

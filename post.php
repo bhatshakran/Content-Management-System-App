@@ -43,21 +43,28 @@
                       ?>
                         
 
-               <div class="mx-3">
-                <h2 class='py-6 mt-8 text-white bg-gray-700 font-raleway'>
+               <div class="mx-3 border-t border-gray-200">
+               <div class="text-left post">
+             
+                <h2 class= 'px-3 py-6 mt-16 text-left font-league'>
                     <?php echo $post_title?>
                 </h2>
-                <p class="w-full mx-auto my-8 text-left">
-                    by <a href="index.php" class='text-purple-500'><?php echo $post_author?></a>
+                <p class="flex w-full gap-2 mx-3 mt-3 mb-8 items-left">
+                    By <a href="index.php" class='text-green-700'><?php echo $post_author?></a>
+                    <span class="flex items-center text-gray-700" > 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <small><?php echo $post_date?></small> </span>
                 </p>
-                <p class="text-left text-yellow-600 " > <span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
+                
                
-                <img class="w-auto my-4 " src="images/<?php echo $post_image;?> " alt="image">
+                <img class="w-auto mx-3 my-4" src="images/<?php echo $post_image;?> " alt="image">
                
-                <div class="px-6 py-6 text-justify glass font-pacifico">
+                <div class=  "px-3 py-6 text-justify ">
                 <?php echo $post_content?>
                 </div>
-          
+                </div>
                  <?php   }   ?>
                   
                   
@@ -113,7 +120,7 @@
                 ?>
                   
                   
-                   <div class="w-full px-2 py-6 my-4 glass">
+                   <div class="w-full px-6 py-6 my-4 mt-12 glass">
                     <h4>Leave a Comment:</h4>
                     <form action="" method="post" role="form">
                        <div class="form-group">
@@ -130,7 +137,7 @@
                              <label for="comment">Comment</label>
                             <textarea name="comment_content" class="form-control" rows="3"></textarea>
                         </div>
-                        <button type="submit" class="btn-primary" name="create_comment">Submit</button>
+                        <button type="submit" class="myBtn" name="create_comment">Submit</button>
                     </form>
                 </div>
 

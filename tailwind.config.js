@@ -4,14 +4,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        pacifico: ["Pacifico"],
+        pacifico: ["Pacifico-Regular"],
+        league: ["LeagueSpartan-Bold"],
+        sofia: ["Sofia-Regular"],
         raleway: ["Raleway"],
       },
     },
     debugScreens: {
       position: ["top", "right"],
-    }
-   
+    },
   },
   variants: {
     extend: {},
