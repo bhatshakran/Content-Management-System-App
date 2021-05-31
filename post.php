@@ -10,13 +10,13 @@
     <!-- Page Content -->
  
 
-        <div class="grid px-6 ">
+  
 
             <!-- Blog Entries Column -->
             
             
             
-            <div class="col-md-8">
+       
                 
                 
                 <?php 
@@ -187,9 +187,7 @@
       
  <hr/>
             </div>   
-                
-                
-                
+            
                 
                 
 

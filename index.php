@@ -54,7 +54,7 @@
                 </div>
                 <!-- author -->
                 <p class="mb-1 text-gray-500 text-md">
-                    by <a href="index.php"><?php echo $post_author?></a>
+                    by <a class='text-blue-400 hover:text-blue-800' href="author_posts.php?author=<?php echo $post_author?>&&p_id=<?php echo $post_id?>"><?php echo $post_author?></a>
                 </p>
                 <!-- date -->
                 <p class="text-xs font-thin text-gray-500"><span class="glyphicon glyphicon-time"></span> <?php echo $post_date?></p>
