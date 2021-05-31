@@ -86,7 +86,7 @@ by <a href="index.php"><?php echo $post_author?></a>
 <img class="w-full h-auto mt-2 mb-3 sm:w-1/2 sm:h-1/3" src="images/<?php echo $post_image;?> " alt="image">
 </a>
 <!-- content -->
-<p class="text-sm font-light tracking-wider text-justify"><?php echo $limited_text?></p>
+<p class="font-sans text-sm font-light text-justify"><?php echo $limited_text?></p>
 <!-- Read more -->
 <a class="text-blue-400 hover:text-blue-800" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 

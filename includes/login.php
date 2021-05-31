@@ -2,6 +2,8 @@
 session_start();
 include "db.php";
 
+
+
 if ( isset( $_POST['login'] ) ) {
 
     $username = $_POST['username'];
@@ -25,10 +27,11 @@ if ( isset( $_POST['login'] ) ) {
         $db_username = $row['username'];
         $db_user_firstname = $row['user_firstname'];
         $db_user_lastname = $row['user_lastname'];
-        $db_user_password = $row['user_password'];
+      echo  $db_user_password = $row['user_password'];
         $db_user_role = $row['user_role'];
 
     }
+    $password = password_verify($cleaned_password, $db_user_password );
 
     if ( $username !== $db_username && $password !== $db_user_password ) {
 

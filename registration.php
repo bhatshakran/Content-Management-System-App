@@ -32,13 +32,13 @@ if(!empty($username) && !empty($email) && !empty($password) ){
     }
 
 
-    $row =  mysqli_fetch_array($select_randsalt_query);
-    $salt = $row['randSalt'];
+  
 
+     $enc_password = password_hash($password, PASSWORD_BCRYPT);
 
     $query = "INSERT INTO users (username, user_email, user_password, user_role)";
 
-    $query .= "VALUES('{$username}', '{$email}', '{$password}' , 'subscriber')";
+    $query .= "VALUES('{$username}', '{$email}', '{$enc_password}' , 'subscriber')";
 
 
     $register_user_query = mysqli_query($connection, $query);
