@@ -134,7 +134,7 @@ if(isset($_POST['checkbox_array'])) {
         echo "<td class='tabledata'>$post_comment_count</td>";
         echo "<td class='text-green-400 tabledata'>$post_date</td>";
          echo "<td class='text-indigo-600 tabledata' text-white'><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
-        echo "<td class='text-red-600 tabledata'><a href='posts.php?delete=$post_id'>Delete</a></td>";
+        echo "<td class='text-red-600 tabledata'><a onClick=\"javascript:return confirm('Are you sure you want to delete');\" href='posts.php?delete=$post_id' >Delete</a></td>";
         echo "</tr>";
             
             

@@ -32098,13 +32098,23 @@ h4{
   }
 }
 
+.smallScreenW{
+  width: 100%
+}
+
+@media screen and (min-width:450px) {
+  .smallScreenW{
+    width: 70%;
+  }
+}
+
 .noselect{
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently
-            supported by Chrome, Edge, Opera and Firefox */
+        supported by Chrome, Edge, Opera and Firefox */
 }
 
 @media (min-width: 640px) {
