@@ -21,8 +21,34 @@
                 
                 
                 <?php 
+                $post_per_page = 2;
+                if(isset($_GET['page'])) {
+                    $page = $_GET['page'];
+             
                 
-                $query = "SELECT * FROM posts";
+                }else {
+                    $page ="";
+                }
+
+                if($page == "" || $page == 1) {
+                    $current_page = 0;
+                }else {
+                    $current_page = ($page * $post_per_page) - $post_per_page;
+                
+                }
+
+
+                $post_count_query = "SELECT * FROM posts";
+                $find_count =  mysqli_query($connection, $post_count_query);
+                $count = mysqli_num_rows($find_count);
+
+                $count = ceil($count / 2);
+
+
+
+
+                
+                $query = "SELECT * FROM posts LIMIT $current_page, $post_per_page";
                 $select_all_posts_query = mysqli_query($connection, $query);
                     
                     while($row = mysqli_fetch_assoc($select_all_posts_query)) {
@@ -85,6 +111,26 @@
 
     
         </div>
-        </div>
+        <ul class= 'flex items-center justify-center py-3 my-10 text-center pager panel-lg'>
+
+<?php
+for($i = 1; $i <= $count; $i++ ){
+
+    if($i == $page) {
+        echo "<li class='px-2 mx-10 text-center text-white bg-black border rounded cursor-pointer '>
+    <a href='index.php?page={$i}'>{$i}</a>
+    </li>";
+    }else {
+        echo "<li class='px-2 mx-10 text-center bg-white border rounded cursor-pointer '>
+        <a href='index.php?page={$i}'>{$i}</a>
+        </li>";
+    }
    
+}
+
+
+?>
+</ul>
+        </div>
+                       
   <?php include "./includes/footer.php"; ?>

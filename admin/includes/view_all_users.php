@@ -2,14 +2,14 @@
                             <thead class="border-b ">
                                 <tr class="">
                                     
-                                    <th class="tabledata">Username</th>
-                                    <th class="tabledata">Firstname</th>
-                                    <th class="tabledata">Lastname</th>
-                                    <th class="tabledata">Email</th>
-                                      <th class="tabledata">Role</th>
-                                        <th class="tabledata">Action</th>
-                                    <th class="tabledata">Action</th>
-                                    <th class="tabledata">Action</th>
+                                    <th class="border-r tabledata">Username</th>
+                                    <th class="border-r tabledata">Firstname</th>
+                                    <th class="border-r tabledata">Lastname</th>
+                                    <th class="border-r tabledata">Email</th>
+                                      <th class="border-r tabledata">Role</th>
+                                        <th class="border-r tabledata">Action</th>
+                                    <th class="border-r tabledata">Action</th>
+                                    <th class="border-r tabledata">Action</th>
                                     <th class="tabledata">Action</th>
                                 </tr>
                             </thead>
@@ -34,15 +34,15 @@
          
         echo "<tr class =''>";
        
-        echo "<td class='tabledata'>$username</td>";
-        echo "<td class='capitalize tabledata'>$user_firstname</td>";
-        echo "<td class='capitalize tabledata'>$user_lastname</td>";
+        echo "<td class='border-r tabledata'>$username</td>";
+        echo "<td class='capitalize border-r tabledata'>$user_firstname</td>";
+        echo "<td class='capitalize border-r tabledata'>$user_lastname</td>";
       
 
         
         
-        echo "<td class='text-blue-400 tabledata'>$user_email</td>";
-        echo "<td class='text-green-400 capitalize tabledata'>$user_role</td>";
+        echo "<td class='text-blue-400 border-r tabledata'>$user_email</td>";
+        echo "<td class='text-green-400 capitalize border-r tabledata'>$user_role</td>";
 
         
 
@@ -51,9 +51,9 @@
         
        
       
-         echo "<td class='text-red-400 tabledata'><a href='users.php?change_to_admin={$user_id}'>Make admin</a></td>";
-        echo "<td class='text-yellow-400 tabledata' text-white><a href='users.php?change_to_sub={$user_id}'>Make sub</a></td>";
-        echo "<td class='text-indigo-600 tabledata' text-white><a href='users.php?source=edit_user&edit_user={$user_id}'>Edit </a></td>";
+         echo "<td class='text-red-400 border-r tabledata'><a href='users.php?change_to_admin={$user_id}'>Make admin</a></td>";
+        echo "<td class='text-yellow-400 border-r tabledata' text-white><a href='users.php?change_to_sub={$user_id}'>Make sub</a></td>";
+        echo "<td class='text-indigo-600 border-r tabledata' text-white><a href='users.php?source=edit_user&edit_user={$user_id}'>Edit </a></td>";
         echo "<td class='text-red-600 tabledata'><a href='users.php?delete={$user_id}'>Delete</a></td>";
         echo "</tr>";
             

@@ -106,19 +106,19 @@ if(isset($_POST['checkbox_array'])) {
     <table class="mx-auto mt-10 mb-8 extrasmall sm:text-sm md:table-auto glass md:mr-auto">
                             <thead class="border-b ">
                                 <tr>
-                                    <th class="tabledata">
+                                    <th class="border-r tabledata">
                                     <input type="checkbox" name="" id="selectAllBoxes">
                                     </th>
-                                    <th class="tabledata">Author</th>
-                                    <th class="tabledata">Title</th>
-                                    <th class="tabledata">Category</th>
-                                    <th class="tabledata">Status</th>
-                                    <th class="tabledata">Image</th>
+                                    <th class="border-r tabledata">Author</th>
+                                    <th class="border-r tabledata">Title</th>
+                                    <th class="border-r tabledata">Category</th>
+                                    <th class="border-r tabledata">Status</th>
+                                    <th class="border-r tabledata">Image</th>
                                    
-                                    <th class="tabledata">Comments</th>
-                                    <th class="tabledata">Date</th>
-                                    <th class="tabledata">Edit</th>
-                                    <th class="tabledata">Delete</th>
+                                    <th class="border-r tabledata">Comments</th>
+                                    <th class="border-r tabledata">Date</th>
+                                    <th class="border-r tabledata">Edit</th>
+                                    <th class="border-r tabledata">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -140,11 +140,11 @@ if(isset($_POST['checkbox_array'])) {
         $post_date = $row['post_date']; 
         echo "<tr>";
         echo "
-        <td class='tabledata'> 
+        <td class='border-b border-r tabledata'> 
         <input type='checkbox' name = 'checkbox_array[]' id='checkBoxes' value = '$post_id'>
         </td>";
-        echo "<td class='tabledata'>$post_author</td>";
-        echo "<td class='tabledata'><a href='../post.php?p_id=$post_id' class='text-gray-600 hover:text-black hover:underline'>$post_title</a></td>";
+        echo "<td class='border-b border-r tabledata'>$post_author</td>";
+        echo "<td class='border-b border-r tabledata'><a href='../post.php?p_id=$post_id' class='text-gray-600 hover:text-black hover:underline'>$post_title</a></td>";
        
       
         $query = "SELECT * FROM categories WHERE id = {$post_category_id}";
@@ -154,16 +154,16 @@ if(isset($_POST['checkbox_array'])) {
         while($row = mysqli_fetch_assoc($select_categories_id)) {
             $cat_id = $row['id'];
             $cat_title = $row['cat_title'];
-            echo "<td class='capitalize tabledata'> {$cat_title} </td>";
+            echo "<td class='capitalize border-b border-r tabledata'> {$cat_title} </td>";
         }
         
         
-        echo "<td class='capitalize tabledata'>$post_status</td>";
-        echo "<td class='tabledata'><img src ='../images/$post_image' width='100' alt='image'></img></td>";
-        echo "<td class='tabledata'>$post_comment_count</td>";
-        echo "<td class='text-green-400 tabledata'>$post_date</td>";
-         echo "<td class='text-indigo-600 tabledata' text-white'><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
-        echo "<td class='text-red-600 tabledata'><a onClick=\"javascript:return confirm('Are you sure you want to delete');\" href='posts.php?delete=$post_id' >Delete</a></td>";
+        echo "<td class='capitalize border-b border-r tabledata'>$post_status</td>";
+        echo "<td class='border-b border-r tabledata'><img src ='../images/$post_image' width='100' alt='image'></img></td>";
+        echo "<td class='border-b border-r tabledata'>$post_comment_count</td>";
+        echo "<td class='text-green-400 border-b border-r tabledata'>$post_date</td>";
+         echo "<td class='text-indigo-600 border-b border-r tabledata' text-white'><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
+        echo "<td class='text-red-600 border-b tabledata'><a onClick=\"javascript:return confirm('Are you sure you want to delete');\" href='posts.php?delete=$post_id' >Delete</a></td>";
         echo "</tr>";
             
             
