@@ -195,7 +195,7 @@ or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
     </div>
     
     <div class="form_group">
-    <input type="submit" value="Update Post" name="update_post" class="btn btn-primary">
+    <input type="submit" value="Update Post" name="update_post" class="btn-primary">
     </div>
     </div>
     

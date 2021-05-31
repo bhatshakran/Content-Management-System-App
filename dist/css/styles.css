@@ -730,17 +730,17 @@ h4{
   color: rgba(31, 41, 55, var(--tw-text-opacity));
 }
 
-.btn-primary{
+.myBtn{
   --tw-bg-opacity: 1;
   background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
 }
 
-.btn-primary:hover {
+.myBtn:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
 }
 
-.btn-primary {
+.myBtn {
   --tw-border-opacity: 1;
   border-color: rgba(255, 255, 255, var(--tw-border-opacity));
   border-width: 1px;
