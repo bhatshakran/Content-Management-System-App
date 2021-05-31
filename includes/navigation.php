@@ -36,14 +36,14 @@
 
     <?php
                     
-                    $query = "SELECT * FROM categories";
+                    $query = "SELECT * FROM categories LIMIT 0, 3";
                     $select_all_categories_query = mysqli_query($connection, $query);
                     
                     while($row = mysqli_fetch_assoc($select_all_categories_query)) {
                         
                         $cat_title = $row['cat_title'];
                         
-                        echo "<li class='py-4 md:py nav-links '><a class='text-gray-500 ' href='#'>{$cat_title}</a></li>";
+                        echo "<li class='py-4 md:py nav-links '><a class='text-gray-500 marker ' href='#'>{$cat_title}</a></li>";
                     }
                     
                     
@@ -51,20 +51,18 @@
                     
                 ?>
                  <li class='flex items-center justify-center text-gray-500 nav-links'>
-                 <div>
+                 <a class='py-4 text-gray-500 marker md:py md:mr-2 ' href="admin/index.php">Admin</a>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
                         </svg>
-                        </div>
-                        <a class='py-4 text-gray-500 md:py md:mr-2 ' href="admin/index.php">Admin</a>
+                      
+                        
                     </li>
 
-                    <li class='py-4 md:py nav-links '>
+                    <li class='py-4 md:py marker nav-links '>
                     <a class='py-4 text-gray-500 md:py md:mr-2 ' href="registration.php">Registration</a>
                     </li>
-                    <!-- <li class='flex items-center justify-center text-gray-500 nav-links'>
-                    <a href="./includes/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                    </li> -->
+                  
 
 
                     
