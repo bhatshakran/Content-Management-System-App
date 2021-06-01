@@ -53,21 +53,22 @@ if(isset($_POST['create_user'])) {
 
   
   
-  <form action="" method="post" class="px-3 py-4 mt-8 text-left glass" enctype="multipart/form-data">
-  <h3 class="mb-3 ">Add a User</h3>
+  <form action="" method="post" class="px-3 py-4 mt-8 text-left " enctype="multipart/form-data">
+  <h3 class="mb-3 font-league">Add a User</h3>
    <div class="form-group">
-    <label for="user_firstname">Firstname</label>
+    <label for="user_firstname" class="font-league">Firstname</label>
     <input type="text" class="form-control" name="user_firstname">
     </div>
     <div class="form-group">
-    <label for="user_lastname">Lastname</label>
+    <label for="user_lastname" class="font-league">Lastname</label>
     <input type="text" class="form-control" name="user_lastname">
     </div>
     
     <div class="form-group">
     
-    
+    <label for="user_role" class="font-league">Role</label>
     <select name="user_role" id="" class='form-control'>
+  
         <option value="subscriber">Select Options</option>
         <option value="admin">Admin</option>
         <option value="subscriber">Subscriber</option>
@@ -82,20 +83,20 @@ if(isset($_POST['create_user'])) {
    
     
     <div class="form-group">
-    <label for="username">Username</label>
+    <label for="username" class="font-league">Username</label>
     <input type="text" name="username" class="form-control">
       </div>
     <div class="form-group">
-    <label for="user_email">Email</label>
+    <label for="user_email" class="font-league">Email</label>
     <input type="email" class="form-control" name="user_email">
     </div>
     <div class="form-group">
-    <label for="user_password">Password</label>
+    <label for="user_password" class="font-league">Password</label>
         <input type="password" class="form-control" name="user_password">
     </div>
    
     <div class="form_group">
-    <input type="submit" value="Create User" name="create_user" class="btn btn-primary">
+    <input type="submit" value="Create User" name="create_user" class="myBtn">
     </div>
     
     

@@ -106,8 +106,9 @@ if(isset($_POST['create_post'])) {
     <label for="post_image" class="font-league">Post Image</label>
     <input type="file" name="image" class="form-control">
     <div class="form-group">
-    <select name="post_status"  class="form-control">
     <label class="font-league" for="" >Status</label>
+    <select name="post_status"  class="form-control">
+   
       <option value="draft">Post Status</option>
       <option value="draft">Draft</option>
       <option value="publish">Publish</option>

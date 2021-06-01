@@ -108,25 +108,20 @@ $update_user = mysqli_query($connection,$query);
 
   
   
-  <form action="" method="post" enctype="multipart/form-data">
-   
+  <form action="" method="post" enctype="multipart/form-data" class="px-4 py-6 text-left">
+   <h3 class="font-league">Edit User</h3>
    <div class="form-group">
-    <label for="user_firstname">Firstname</label>
+    <label for="user_firstname" class="font-league">Firstname</label>
     <input type="text" class="form-control" value="<?php echo $user_firstname ?>" name="user_firstname">
     </div>
     <div class="form-group">
-    <label for="user_lastname">Lastname</label>
+    <label for="user_lastname" class="font-league">Lastname</label>
     <input type="text" class="form-control" value="<?php echo $user_lastname ?>" name="user_lastname">
     </div>
     
-    <div class="form-group">
-    
-    
-   
-    
-    
-    
-    <select name="user_role" id="" value="<?php echo $user_role ?>">
+    <div class="form-group">   
+    <label for="user_role" class="font-league">Role</label>
+    <select class="form-control" name="user_role" id="" value="<?php echo $user_role ?>">
         <option value="<?php echo $user_role?>"><?php echo $user_role ?></option>
          <?php
     
@@ -149,21 +144,21 @@ $update_user = mysqli_query($connection,$query);
    
     
     <div class="form-group">
-    <label for="username">Username</label>
+    <label for="username" class="font-league">Username</label>
     <input type="text" name="username" value="<?php echo $username ?>" class="form-control">
       </div>
     <div class="form-group">
-    <label for="user_email">Email</label>
+    <label for="user_email" class="font-league">Email</label>
     <input type="email" class="form-control" value="<?php echo $user_email ?>" name="user_email">
     </div>
     <div class="form-group">
-    <label for="user_password">Password</label>
+    <label for="user_password" class="font-league">Password</label>
         <input type="password" class="form-control" 
         value="" name="user_password">
     </div>
    
     <div class="form_group">
-    <input type="submit" value="Edit User" name="edit_user" class="btn btn-primary">
+    <input type="submit" value="Edit User" name="edit_user" class="myBtn">
     </div>
     
     

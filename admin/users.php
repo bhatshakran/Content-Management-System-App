@@ -1,16 +1,18 @@
 <?php include "includes/admin_header.php"; 
 ?>
-
+<div class="w-full mx-auto text-center 2xl:container">
 <?php include "includes/admin_navigation.php"; ?>
+ <!-- apply flex to sidebar and result container -->
+ <div class="flex-row w-full h-full gap-6 py-4 overflow-hidden md:flex">
 <div class="w-full mt-4 bg-white border shadow-lg rounded-3xl border-gray-50 md:1/3 lg:w-3/12">
 <?php include "includes/admin_sidebar.php";?>
   </div>
       
 
-            <div class="container w-full mx-auto text-center">
+
 
             
-                        
+  <div id="result_container" class="mx-2  glass md:mr-4 md:w-4/5">                    
 <?php
                         
                         
@@ -39,8 +41,8 @@ if(isset($_GET['source'])) {
             
 ?>
                         
-                        
-                   
+         </div>               
+          </div>         
                        
                     </div>
                 

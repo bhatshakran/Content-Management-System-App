@@ -1,11 +1,11 @@
-     <table class="mt-20 extrasmall glass ">
+     <table class="w-full mt-20 extrasmall glass ">
                             <thead class="border-b ">
                                 <tr class="">
                                     
                                     <th class="border-r tabledata">Username</th>
                                     <th class="border-r tabledata">Firstname</th>
                                     <th class="border-r tabledata">Lastname</th>
-                                    <th class="border-r tabledata">Email</th>
+                                    <!-- <th class="border-r tabledata">Email</th> -->
                                       <th class="border-r tabledata">Role</th>
                                         <th class="border-r tabledata">Action</th>
                                     <th class="border-r tabledata">Action</th>
@@ -41,7 +41,7 @@
 
         
         
-        echo "<td class='text-blue-400 border-r tabledata'>$user_email</td>";
+        // echo "<td class='text-blue-400 border-r tabledata'>$user_email</td>";
         echo "<td class='text-green-400 capitalize border-r tabledata'>$user_role</td>";
 
         
