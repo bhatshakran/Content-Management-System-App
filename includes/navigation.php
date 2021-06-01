@@ -24,7 +24,7 @@
     
    
     </div> 
-    <div id="menu" class="mr-4 cursor-pointer menuToggle md:hidden">
+    <div id="menu" class="mr-4 cursor-pointer menuToggle md:hidden nav-links">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
   </svg>
@@ -59,7 +59,7 @@
                         
                     </li>
 
-                    <li class='py-4  md:py marker nav-links'>
+                    <li class='py-4 md:py marker nav-links'>
                  
                     <a class='py-4 text-gray-500 w-max md:py md:mr-2 ' href="registration.php">Registration</a>
              

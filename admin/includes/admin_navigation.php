@@ -12,7 +12,7 @@
    <div>
             <!-- Top Menu Items -->
             <ul class="cursor-pointer ">      
-              <li class="flex items-center">
+              <li class="flex items-center nav-links">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
               </svg>
@@ -30,7 +30,7 @@
             
             </ul>
             </div>
-            <div id="menu" class="mr-4 cursor-pointer adminMenuToggle md:hidden">
+            <div id="menu" class="mr-4 cursor-pointer adminMenuToggle md:hidden nav-links">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
             </svg>
