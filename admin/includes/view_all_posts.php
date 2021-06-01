@@ -86,8 +86,8 @@ if(isset($_POST['checkbox_array'])) {
 
 <form action="" method='post' class="px-4 py-6">
 <h3 class="border-b border-gray-600 font-league">All Posts</h3>
-<div class="flex items-center gap-3 px-3 mt-12 ">
-    <div class="w-1/2 ">
+<div class="items-center block gap-3 px-3 mt-12 sm:flex">
+    <div class="w-full sm:w-1/2 ">
     <select name="bulk_options" id="" class='form-control'>
         <option value="">Select Options</option>
         <option value="draft">Draft</option>
@@ -97,7 +97,7 @@ if(isset($_POST['checkbox_array'])) {
     </select>
     </div>
 
-    <div class="w-1/2 py-4 ">
+    <div class="w-full py-4 sm:w-1/2 ">
         <button class="px-2 py-3 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-700" type='submit'>Apply</button>
         <a  href="posts.php?source=add_post" class="px-2 py-3 ml-3 text-sm text-white bg-green-500 rounded-lg hover:bg-green-700">Add New</a>
     </div>
