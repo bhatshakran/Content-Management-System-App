@@ -54,7 +54,7 @@ if(isset($_POST['create_user'])) {
   
   
   <form action="" method="post" class="px-3 py-4 mt-8 text-left " enctype="multipart/form-data">
-  <h3 class="mb-3 font-league">Add a User</h3>
+  <h3 class="mb-3 border-b border-gray-600 font-league">Add a User</h3>
    <div class="form-group">
     <label for="user_firstname" class="font-league">Firstname</label>
     <input type="text" class="form-control" name="user_firstname">

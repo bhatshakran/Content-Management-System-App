@@ -1,3 +1,5 @@
+    <div class="px-3 py-6">
+    <h3 class="text-left border-b border-gray-600 font-league">All Users</h3>
      <table class="w-full mt-20 extrasmall glass ">
                             <thead class="border-b ">
                                 <tr class="">
@@ -132,3 +134,4 @@ if(isset($_GET['delete'])) {
                                 
                             </tbody>
                         </table>
+                        </div>

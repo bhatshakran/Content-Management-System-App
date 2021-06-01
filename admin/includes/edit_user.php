@@ -109,7 +109,7 @@ $update_user = mysqli_query($connection,$query);
   
   
   <form action="" method="post" enctype="multipart/form-data" class="px-4 py-6 text-left">
-   <h3 class="font-league">Edit User</h3>
+   <h3 class="border-b border-gray-600 font-league">Edit User</h3>
    <div class="form-group">
     <label for="user_firstname" class="font-league">Firstname</label>
     <input type="text" class="form-control" value="<?php echo $user_firstname ?>" name="user_firstname">
