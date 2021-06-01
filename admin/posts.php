@@ -4,7 +4,7 @@
 
 
     
-<div class="mx-auto ">
+<div class="mx-auto 2xl:container">
         <!-- Navigation -->
  <?php include "includes/admin_navigation.php";
  ?>
