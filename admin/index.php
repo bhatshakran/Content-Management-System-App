@@ -20,7 +20,7 @@
                     </div>
                
                <!-- results container -->
-                    <div id="result_container" class="w-full mt-4 glass md:w-2/3 lg:w-9/12">
+                    <div id="result_container" class="w-full pb-6 mt-4 glass md:w-2/3 lg:w-9/12">
                   
                     <!-- stats start -->
                         <div id="statistics" class="grid w-full grid-cols-2 gap-4 px-2 h-2/3 sm:grid-cols-3 lg:grid-cols-4 sm:h-3/5 lg:h-1/3" >
@@ -187,6 +187,7 @@
                             ?>
 
                             <!-- bars javascript -->
+                            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                             <script type="text/javascript">
                             google.charts.load('current', {'packages':['bar']});
                             google.charts.setOnLoadCallback(drawChart);
