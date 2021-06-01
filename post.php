@@ -3,7 +3,7 @@
 
     <?php include "./includes/db.php"; ?>
     <?php  include "./includes/header.php"; ?>
-    <div class="mx-auto my-4 lg:container lg:w-1/2">
+    <div class="mx-auto my-4 lg:container lg:w-3/4 ">
     <!-- Navigation -->
    <?php include "includes/navigation.php"; ?>
 

@@ -27,7 +27,7 @@ if ( isset( $_POST['login'] ) ) {
         $db_username = $row['username'];
         $db_user_firstname = $row['user_firstname'];
         $db_user_lastname = $row['user_lastname'];
-      echo  $db_user_password = $row['user_password'];
+        $db_user_password = $row['user_password'];
         $db_user_role = $row['user_role'];
 
     }
@@ -48,8 +48,7 @@ if ( isset( $_POST['login'] ) ) {
         header( "Location: ../admin" );
 
     } else {
-
-        header( "Location: ../index.php" );
+ header( "Location: ../index.php" );
     }
 
 }
