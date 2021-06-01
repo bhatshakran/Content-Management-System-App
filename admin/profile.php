@@ -67,27 +67,25 @@ $query .= "WHERE user_id = $the_user_id ";
     
 
 
-    <div id="wrapper">
+    <div id="wrapper w-full mx-auto  2xl:container">
 
         <!-- Navigation -->
         <?php include "includes/admin_navigation.php";
         ?>
+        <!-- apply flex to sidebar and result container -->
+        <div class="flex-row w-full h-full gap-6 py-4 overflow-hidden md:flex">
+        <div class="bg-white border shadow-lg md:w-2/5 rounded-3xl border-gray-50 lg:w-1/4">
+        <?php include "includes/admin_sidebar.php";?>
+        </div>
 
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                    <h1 class="page-header">
-                           Welcome to Admin
-                            <small>Author</small>
-                        </h1>
-                        
-                              <form action="" method="post" class="form">
+       
+                    
+                         
+                            <div id="result_container" class="mx-2 glass md:mr-4 md:w-4/5">    
+                              <form action="" method="post" class="px-4 py-6 form">
+                              <h3 class='font-league'>Profile</h3>
                                   <div class="form-group">
-                                     <label for="username">
+                                     <label for="username" class='font-league'>
                                          Username
                                      </label>
                                       <input type="text" class="form-control"
@@ -96,7 +94,7 @@ $query .= "WHERE user_id = $the_user_id ";
                                   </div>
                                   
                                   <div class="form-group">
-                                     <label for="username">
+                                     <label for="username" class='font-league'>
                                          Firstname
                                      </label>
                                       <input type="text" class="form-control"
@@ -105,7 +103,7 @@ $query .= "WHERE user_id = $the_user_id ";
                                   </div>
                                   
                                   <div class="form-group">
-                                     <label for="username">
+                                     <label for="username" class='font-league'>
                                          Lastname
                                      </label>
                                       <input type="text" class="form-control"
@@ -114,7 +112,7 @@ $query .= "WHERE user_id = $the_user_id ";
                                   </div>
                                   
                                   <div class="form-group">
-                                     <label for="username">
+                                     <label for="username" class='font-league'>
                                          Email
                                      </label>
                                       <input type="email" class="form-control"
@@ -124,30 +122,28 @@ $query .= "WHERE user_id = $the_user_id ";
                                       
                                       
                                       <div class="form-group">
-                                     <label for="username">
+                                     <label for="username" class='font-league'>
                                          Password
                                      </label>
                                       <input type="password" class="form-control"
                                       name="user_password"
-                                      value="<?php echo $user_password?>">
+                                      value="" placeholder='Change Password'>
                                   </div>
                                   </div>
                                   
                                   <div class="form-group">
-                                      <button class="btn btn-primary" type="submit" name='update_user'>Update User</button>
+                                      <button class="myBtn" type="submit" name='update_user'>Update User</button>
                                   </div>
                                   
                               </form>
+                              </div>
                        
                     </div>
                 </div>
                 <!-- /.row -->
 
-            </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- /#page-wrapper -->
+         
+   
 
    <?php include "includes/admin_footer.php";
    ?>
