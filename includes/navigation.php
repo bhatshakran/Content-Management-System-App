@@ -50,7 +50,7 @@
                     
                     
                 ?>
-                 <li class='flex items-center justify-center text-gray-500 nav-links'>
+                 <li class='flex items-center justify-center text-gray-500 nav-links '>
                  <a class='py-4 text-gray-500 marker md:py md:mr-2 ' href="admin/index.php">Admin</a>
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 " fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
@@ -59,8 +59,10 @@
                         
                     </li>
 
-                    <li class='py-4 md:py marker nav-links '>
-                    <a class='py-4 text-gray-500 md:py md:mr-2 ' href="registration.php">Registration</a>
+                    <li class='py-4  md:py marker nav-links'>
+                 
+                    <a class='py-4 text-gray-500 w-max md:py md:mr-2 ' href="registration.php">Registration</a>
+             
                     </li>
                   
 

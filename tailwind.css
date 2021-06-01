@@ -23,9 +23,10 @@
         font-family: Sofia-Regular;
         src: url(/cms/dist/fonts/Sofia-Regular.otf) format("opentype");
     }
-    .nav-links{
-        @apply px-3 mr-6 capitalize rounded md:mr-3 hover:bg-blue-500 hover:text-white;
-    }
+    /* a{
+        @apply text-white;
+    } */
+    
     .form-control{
         @apply w-full px-2 py-2 mt-4 mb-4 border border-gray-200 rounded focus:outline-none focus:border-gray-400;
     }
@@ -63,6 +64,13 @@
 }
 
 @layer utilities {
+
+    .nav-links{
+        @apply px-3 capitalize rounded cursor-pointer md:mr-3 hover:bg-blue-500 hover:text-white;
+    }
+    .nav-links:hover a {
+        color:white;
+    }
     .glass {
         background: rgba(255,255,255, 0.80 );
         box-shadow: 0 8px 32px 0 #ececec;
