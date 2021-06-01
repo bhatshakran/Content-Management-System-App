@@ -86,7 +86,7 @@ if(isset($_POST['checkbox_array'])) {
 
 <form action="" method='post'>
 
-<div class="flex px-3 mt-12 glass">
+<div class="flex items-center gap-3 px-3 mt-12 ">
     <div class="w-1/2 ">
     <select name="bulk_options" id="" class='form-control'>
         <option value="">Select Options</option>
@@ -98,8 +98,8 @@ if(isset($_POST['checkbox_array'])) {
     </div>
 
     <div class="w-1/2 py-4 ">
-        <button class="px-2 py-2 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-700" type='submit'>Apply</button>
-        <a  href="posts.php?source=add_post" class="px-2 py-2 ml-3 text-sm text-white bg-green-500 rounded-lg hover:bg-green-700">Add New</a>
+        <button class="px-2 py-3 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-700" type='submit'>Apply</button>
+        <a  href="posts.php?source=add_post" class="px-2 py-3 ml-3 text-sm text-white bg-green-500 rounded-lg hover:bg-green-700">Add New</a>
     </div>
     </div>
 
@@ -114,8 +114,6 @@ if(isset($_POST['checkbox_array'])) {
                                     <th class="border-r tabledata">Category</th>
                                     <th class="border-r tabledata">Status</th>
                                     <th class="border-r tabledata">Image</th>
-                                   
-                                    <th class="border-r tabledata">Comments</th>
                                     <th class="border-r tabledata">Date</th>
                                     <th class="border-r tabledata">Edit</th>
                                     <th class="border-r tabledata">Delete</th>
@@ -160,7 +158,6 @@ if(isset($_POST['checkbox_array'])) {
         
         echo "<td class='capitalize border-b border-r tabledata'>$post_status</td>";
         echo "<td class='border-b border-r tabledata'><img src ='../images/$post_image' width='100' alt='image'></img></td>";
-        echo "<td class='border-b border-r tabledata'>$post_comment_count</td>";
         echo "<td class='text-green-400 border-b border-r tabledata'>$post_date</td>";
          echo "<td class='text-indigo-600 border-b border-r tabledata' text-white'><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
         echo "<td class='text-red-600 border-b tabledata'><a onClick=\"javascript:return confirm('Are you sure you want to delete');\" href='posts.php?delete=$post_id' >Delete</a></td>";

@@ -1,4 +1,4 @@
-<div id="result_container" class="mx-2 glass md:mr-4 md:w-4/5">
+
 
 <?php
 
@@ -203,4 +203,4 @@ or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
     </div>
     
 </form>
-</div>  
+ 

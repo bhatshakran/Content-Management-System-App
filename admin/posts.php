@@ -4,7 +4,7 @@
 
 
     
-<div class="container mx-auto">
+<div class="mx-auto ">
         <!-- Navigation -->
  <?php include "includes/admin_navigation.php";
  ?>
@@ -17,7 +17,7 @@
 
      
 
-
+<div id="result_container" class="mx-2 glass md:mr-4 md:w-4/5">
 <?php
                         
                         
@@ -46,7 +46,7 @@ if(isset($_GET['source'])) {
             
 ?>
   </div>                        
-                 
+      </div>           
                         </div>                  
                  
         <!-- /#page-wrapper -->
