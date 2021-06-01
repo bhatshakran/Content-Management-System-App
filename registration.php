@@ -61,19 +61,19 @@ if(!empty($username) && !empty($email) && !empty($password) ){
 
 <section id="login">
 <div class="px-4 py-8 glass">
-<h3 class="font-raleway">Register</h3>
+<h3 class="font-league">Register</h3>
 <form method="post" role="form" action="registration.php" method="post" autcomplete="off">
 <h6 class="px-3 mt-4 text-white bg-green-500"><?php echo $message ?></h6> 
 <div class="form-group">
-<label for="username">Username</label>
+<label for="username" class="font-league">Username</label>
 <input type="text" name="username" class="form-control" placeholder="Enter Username">
 </div>
 <div class="form-group">
-<label for="email">Email</label>
+<label for="email" class="font-league">Email</label>
 <input type="email" name="email" class="form-control" placeholder="Enter Email">
 </div>
 <div class="form-group">
-<label for="password">Password</label>
+<label for="password" class="font-league">Password</label>
 <input type="password" name="password" class="form-control" placeholder="Enter Password">
 </div>
 <input type="submit" value="Register" name="submit" class="myBtn">
