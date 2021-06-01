@@ -5,22 +5,24 @@
               
                 <div class="pb-4 ">
                 <!-- Blog Search Well -->
-                <div class="w-full px-6 glass">
-                    <h2 class="mt-4">Blog Search</h2>
+                <div class="w-full px-6 glass ">
+                    <h3 class="mt-4 text-left font-pacifico">
+                    Blog Search
+                    </h3>
                     <form class="w-full " action = "search.php"  method="post">
-                    <div class="input-group">
+                    <div class="flex items-center gap-3 input-group">
                         <input name="search" type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button name="submit"   class="btn btn-default" type="submit">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
+                        <span class='text-blue-600 cursor-pointer'>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    </span>
                     </div>
                     </form>
                 </div>
                 <!--Login form-->
                     <div class="w-full px-6 py-8 mt-4 glass">
-                    <h3>Login</h3>
+                    <h3 class="font-pacifico">Login</h3>
                     <form action = "includes/login.php"  method="post">
                     <div class="form-group">
                         <input name="username" type="text" class="form-control" placeholder="Enter username" />
@@ -39,7 +41,7 @@
 
                 <!-- Blog Categories Well -->
                 <div class="w-full px-6 py-6 mt-4 glass">
-                    <h3 class="mb-3">Blog Categories</h3>
+                    <h3 class="mb-3 font-pacifico">Blog Categories</h3>
                     <div class="row">
                         <div class="col-lg-12">
                             <ul class="items-center xl:flex-auto">
