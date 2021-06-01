@@ -19,17 +19,10 @@
    navlink.forEach(item => {
        item.addEventListener('mouseover', function () {
         let refLink = this.children;
-        // console.log(refLink)
-        for(let element of refLink ) {
-            console.log(element.classList)
-            console.log('next')
-           if(element.classList.filter(class => return class = 'marker' )){
-               console.log('yes')
-            //    element.style.color = 'white'
-           }
-        }
+
+       
     
-        //    refLink.style.color ='white';
+      
            
        })
    })

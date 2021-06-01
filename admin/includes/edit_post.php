@@ -1,3 +1,5 @@
+<div id="result_container" class="mx-2 glass md:mr-4 md:w-4/5">
+
 <?php
 
 
@@ -111,17 +113,17 @@ or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
   
   
   
-  <form action="" method="post" enctype="multipart/form-data">
-   
+  <form action="" method="post" enctype="multipart/form-data" class='px-4 py-8 mt-10 text-left '>
+   <h3 class="border-b border-gray-500 font-league">Edit Post</h3>
     <div class="form-group">
-    <label for="title">Post Title</label>
+    <label for="title" class="font-league">Post Title</label>
     <input type="text" value="<?php echo $post_title; ?>" class="form-control" name="title">
     </div>
     
     <div class="form-group">
     
-    
-    <select name="post_category" id="">
+    <label for="" class="font-league">Select Category</label>
+    <select name="post_category" id="" class='form-control'>
         
         
         <?php
@@ -136,7 +138,7 @@ or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
                 $cat_title = $row['cat_title'];
                 $cat_id = $row['id'];
 
-                echo "<option value='{$cat_id}'>{$cat_title}</option>" ;
+                echo "<option value='{$cat_id}' >{$cat_title}</option>" ;
                  }
         
         ?>
@@ -153,19 +155,20 @@ or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
     </div>
     
     <div class="form-group">
-    <label for="">Edit Author</label>
+    <label for="" class="font-league">Edit Author</label>
     <input type="text" value="<?php echo $post_author; ?>" class="form-control" name="author">
     </div>
 
 
     <div class="form-group">
-    <select name="post_status" id="" class="capitalize">
+    <label for="" class="font-league">Status</label>
+    <select class="form-control" name="post_status" id=""  >
     <option value="<?php echo $post_status ?>" ><?php  echo $post_status;?></option>
     <?php
         if($post_status === 'publish') {
-            echo "<option value='draft'>Draft</option>" ;
+            echo "<option value='draft' >Draft</option>" ;
         }else {
-            echo "<option value='published'>Publish</option>" ;
+            echo "<option value='published' >Publish</option>" ;
         }
 
     ?>
@@ -173,7 +176,7 @@ or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
     </div>
     
     <div class="form-group">
-    <label for="post_tags">Edit Tags</label>
+    <label for="post_tags" class="font-league">Edit Tags</label>
     <input type="text" value="<?php echo $post_tags; ?>" class="form-control" name="post_tags">
     </div>
     
@@ -181,22 +184,23 @@ or <a href='posts.php' class='text-blue-800'>Edit More Posts</a>
     <img width = "100" src="../images/<?php echo $post_image; ?>" alt="image" >
        
 <!--        </br>-->
-     <label for="post_image">Change Image</label>
+     <label for="post_image" class="font-league">Change Image</label>
     <input type="file" name="image">
       </div>
     <div class="form-group">
       
     
     <div class="form-group">
-    <label for="post_content">Edit Content</label>
-        <textarea  class="form-control" name="post_content" cols="30" rows="10"><?php echo $post_content; ?>
+    <label for="post_content" class="font-league">Edit Content</label>
+        <textarea id="summernote" class="form-control" name="post_content" cols="30" rows="10"><?php echo $post_content; ?>
         </textarea>
      
     </div>
     
     <div class="form_group">
-    <input type="submit" value="Update Post" name="update_post" class="btn-primary">
+    <input type="submit" value="Update Post" name="update_post" class="mt-4 myBtn">
     </div>
     </div>
     
 </form>
+</div>  

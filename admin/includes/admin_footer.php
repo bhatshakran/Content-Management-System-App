@@ -1,6 +1,6 @@
  </div>
             <script>
-            let adminToggle = false;
+        
             const selector = document.querySelector('#selectAllBoxes');
             const selectAllList = document.querySelectorAll('#checkBoxes');
             const selectAllArr = Array.from(selectAllList);
@@ -17,13 +17,15 @@
                 })
                 
             });
+            </script>
+            <script>
 
-</script>
-<script>
+// admin toggle function
+    let adminToggle = false;
             const adminDropBtn = document.querySelector('.adminMenuToggle')
           
-                const adminLinks = document.querySelector('#adminLinks')
-
+                const adminLinks = document.querySelector('#adminLinks');
+                console.log(adminLinks)
                 adminDropBtn.addEventListener('click', function () {
             
                 console.log('hello')
@@ -51,14 +53,13 @@
                 })
 
        
-   
+                </script>
 
 
 
-</script>
 <script>
             
-      
+    //   toggle menu function
             const dropBtn = document.querySelectorAll('.collapse');
                 
             let toggle = false;
@@ -69,6 +70,7 @@
                     const nodeArr = Array.from(nodelis);
                 
                     const links = nodeArr[3];
+                    
                    if(!toggle) {
                     links.style.display = 'block';
                     toggle = true
@@ -85,10 +87,30 @@
                
 
             })})
-            
-            </script>
+         
+
+</script>
+
+           <!-- summernote editor -->
+           <script> 
+           
+      $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    </script>
 
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> -->
+   
     </body>
 </html>
