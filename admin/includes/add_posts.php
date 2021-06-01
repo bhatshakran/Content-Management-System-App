@@ -52,17 +52,17 @@ if(isset($_POST['create_post'])) {
 
   
   
-  <form action="" method="post" class="px-3 py-4 mt-8 text-left glass" enctype="multipart/form-data">
-   <h3 class="mb-3 ">Add a Post</h3>
+  <form action="" method="post" class="px-3 py-4 mt-8 text-left " enctype="multipart/form-data">
+   <h3 class="mb-3 border-b border-gray-600 font-league">Add a Post</h3>
     <div class="form-group">
-    <label for="title">Post Title</label>
+    <label for="title" class="font-league">Post Title</label>
     <input type="text" class="form-control" name="title">
     </div>
     
     
     <div class="form-group">
     
-    <label for="">Category</label>
+    <label for="" class="font-league">Category</label>
     <select name="post_category" id="" class="form-control">
         
         
@@ -95,18 +95,19 @@ if(isset($_POST['create_post'])) {
     </div>
    
     <div class="form-group">
-    <label for="">Post Author</label>
+    <label for="" class="font-league">Post Author</label>
     <input type="text" class="form-control" name="author">
     </div>
     <div class="form-group">
-    <label for="post_tags">Post Tags</label>
+    <label for="post_tags" class="font-league">Post Tags</label>
     <input type="text" class="form-control" name="post_tags">
     </div>
     <div class="form-group">
-    <label for="post_image">Post Image</label>
+    <label for="post_image" class="font-league">Post Image</label>
     <input type="file" name="image" class="form-control">
     <div class="form-group">
-    <select name="post_status" id="" class="form-control">
+    <select name="post_status"  class="form-control">
+    <label class="font-league" for="" >Status</label>
       <option value="draft">Post Status</option>
       <option value="draft">Draft</option>
       <option value="publish">Publish</option>
@@ -114,11 +115,11 @@ if(isset($_POST['create_post'])) {
   
     </div>
     <div class="form-group">
-    <!-- <label for="post_content" id="summernote">Post Content</label> -->
+    <label for="post_content" class="font-league">Post Content</label>
         <textarea  id="summernote" class="form-control" name="post_content" cols="30" rows="10"></textarea>
     </div>
     <div class="form-group">
-    <input type="submit" value="Publish Post" name="create_post" class="btn btn-primary">
+    <input type="submit" value="Publish Post" name="create_post" class="myBtn">
     </div>
     </div>
     
