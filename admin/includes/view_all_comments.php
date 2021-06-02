@@ -1,4 +1,5 @@
-     <table class="mt-20 mb-8 extrasmall md:table-auto glass md:mr-auto">
+     <table class="w-full mt-20 mb-8 text-center extrasmall md:table-auto glass md:mr-auto">
+     <h3 class="mx-4 my-6 border-b border-gray-600 font-league">All Comments</h3>
     <?php if($_SESSION['role'] == 'admin') {?>
 
                             <thead class="border-b">
@@ -52,12 +53,12 @@ if($_SESSION['role'] == 'admin') {
         echo "<tr>";
         // echo "<td class='tabledata'>$comment_id</td>";
         // echo "<td class='tabledata'>$comment_author</td>";
-        echo "<td class='tabledata'>$comment_content</td>";
+        echo "<td class='border-b border-r tabledata'>$comment_content</td>";
       
 
         
-        echo "<td class='tabledata'>$comment_email</td>";
-        echo "<td class='capitalize tabledata'>$comment_status</td>";
+        echo "<td class='border-b border-r tabledata'>$comment_email</td>";
+        echo "<td class='capitalize border-b border-r tabledata'>$comment_status</td>";
         
         $query = "SELECT * FROM posts WHERE post_id = $comment_post_id";
         
@@ -68,7 +69,7 @@ if($_SESSION['role'] == 'admin') {
             $post_id = $row['post_id'];
             $post_title = $row['post_title'];
             
-             echo "<td class='tabledata'><a href='../post.php?p_id=$post_id'>{$post_title}</a></td>";
+             echo "<td class='border-b border-r tabledata'><a href='../post.php?p_id=$post_id'>{$post_title}</a></td>";
         
         }
         
@@ -76,8 +77,8 @@ if($_SESSION['role'] == 'admin') {
         
        
         // echo "<td class='tabledata'>$comment_date</td>";
-         echo "<td class='text-green-400 tabledata'><a href='comments.php?approve=$comment_id'>Approve</a></td>";
-        echo "<td class='text-indigo-600 tabledata'><a href='comments.php?unapprove=$comment_id'>Unapprove</a></td>";
+         echo "<td class='text-green-400 border-b border-r tabledata'><a href='comments.php?approve=$comment_id'>Approve</a></td>";
+        echo "<td class='text-indigo-600 border-b border-r tabledata'><a href='comments.php?unapprove=$comment_id'>Unapprove</a></td>";
         echo "<td class='text-red-600 tabledata'><a href='comments.php?delete=$comment_id'>Delete</a></td>";
         echo "</tr>";
             
@@ -105,12 +106,12 @@ if($_SESSION['role'] == 'admin') {
         echo "<tr>";
         // echo "<td class='tabledata'>$comment_id</td>";
         // echo "<td class='tabledata'>$comment_author</td>";
-        echo "<td class='tabledata'>$comment_content</td>";
+        echo "<td class='border-b border-r tabledata'>$comment_content</td>";
       
 
         
-        echo "<td class='tabledata'>$comment_email</td>";
-        echo "<td class='capitalize tabledata'>$comment_status</td>";
+        echo "<td class='border-b border-r tabledata'>$comment_email</td>";
+        echo "<td class='capitalize border-b border-r tabledata'>$comment_status</td>";
         
         $query = "SELECT * FROM posts WHERE post_id = $comment_post_id";
         
@@ -121,7 +122,7 @@ if($_SESSION['role'] == 'admin') {
             $post_id = $row['post_id'];
             $post_title = $row['post_title'];
             
-             echo "<td class='tabledata'><a href='../post.php?p_id=$post_id'>{$post_title}</a></td>";
+             echo "<td class='border-b border-r tabledata'><a href='../post.php?p_id=$post_id'>{$post_title}</a></td>";
              echo "<td class='text-red-600 tabledata'><a href='comments.php?delete=$comment_id'>Delete</a></td>";
         
         }
