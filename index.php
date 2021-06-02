@@ -77,9 +77,9 @@
                 <div class= "h-auto px-2 pt-4 pb-5 mx-auto mt-4 smallScreenW sm:px-10 sm:w-2/3 md:w-full glass xl:w-9/12">
 
                         <!-- post title with icon -->
-                <div class="flex items-center w-full mb-4 text-2xl font-normal text-blue-600 lg:text-4xl hover:text-blue-800">
+                <div class="flex items-center w-full mb-4 text-2xl text-blue-600 font-ralewaySB lg:text-3xl hover:text-blue-800 ">
                
-                    <a  href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title?></a>
+                    <a  href="post.php?p_id=<?php echo $post_id; ?> " ><?php echo $post_title?></a>
                     <div id="icon">
                     <!-- post icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -99,7 +99,7 @@
                 <img class="w-full mt-2 mb-3 max-h-80 sm:w-1/2 sm:h-1/3" src="images/<?php echo $post_image;?> " alt="image">
                 </a>
                 <!-- content -->
-                <p class="font-sans text-sm font-light text-justify"><?php echo $string?></p>
+                <p class="text-sm text-justify font-raleway"><?php echo $string?></p>
                 <!-- Read more -->
                 
 

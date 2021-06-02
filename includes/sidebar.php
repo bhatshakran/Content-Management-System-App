@@ -6,7 +6,7 @@
                 <div class="pb-4 ">
                 <!-- Blog Search Well -->
                 <div class="w-full px-6 glass ">
-                    <h3 class="mt-4 text-left font-pacifico">
+                    <h3 class="mt-4 text-left text-blue-600 font-ralewaySB">
                     Blog Search
                     </h3>
                     <form class="w-full " action = "search.php"  method="post">
@@ -22,7 +22,7 @@
                 </div>
                 <!--Login form-->
                     <div class="w-full px-6 py-8 mt-4 glass">
-                    <h3 class="font-pacifico">Login</h3>
+                    <h3 class="text-blue-600 font-ralewaySB">Login</h3>
                     <form action = "includes/login.php"  method="post">
                     <div class="form-group">
                         <input name="username" type="text" class="form-control" placeholder="Enter username" />
@@ -41,7 +41,7 @@
 
                 <!-- Blog Categories Well -->
                 <div class="w-full px-6 py-6 mt-4 glass">
-                    <h3 class="mb-3 font-pacifico">Blog Categories</h3>
+                    <h3 class="mb-3 text-blue-600 font-ralewaySB">Blog Categories</h3>
                     <div class="row">
                         <div class="col-lg-12">
                             <ul class="items-center xl:flex-auto">

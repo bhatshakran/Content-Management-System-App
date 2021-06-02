@@ -11,18 +11,19 @@
         src: url(/cms/dist/fonts/LeagueSpartan-Bold.otf) format("opentype");
     }
     @font-face {
-        font-family: Pacifico-Regular;
-        src: url(/cms/dist/fonts/Pacifico.ttf) format("truetype");
+        font-family: Raleway-SemiBold;
+        src: url(/cms/dist/fonts/Raleway-SemiBold.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: Raleway-ExtraBold;
+        src: url(/cms/dist/fonts/Raleway-ExtraBold.ttf) format("truetype");
     }
     
     @font-face {
         font-family: Raleway;
         src: url(/cms/dist/fonts/Raleway-Regular.ttf) format("truetype");
     }
-    @font-face {
-        font-family: Sofia-Regular;
-        src: url(/cms/dist/fonts/Sofia-Regular.otf) format("opentype");
-    }
+   
     /* a{
         @apply text-white;
     } */

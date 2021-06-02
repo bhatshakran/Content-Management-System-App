@@ -8,6 +8,8 @@ module.exports = {
         league: ["LeagueSpartan-Bold"],
         sofia: ["Sofia-Regular"],
         raleway: ["Raleway"],
+        ralewayXB: ["Raleway-ExtraBold"],
+        ralewaySB: ["Raleway-SemiBold"],
       },
     },
     debugScreens: {
