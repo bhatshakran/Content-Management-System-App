@@ -3,7 +3,7 @@
 
     <?php include "./includes/db.php"; ?>
     <?php  include "./includes/header.php"; ?>
-    <div class="mx-auto my-4 lg:container lg:w-3/4 ">
+    <div class="container mx-auto my-4 lg:w-3/4">
     <!-- Navigation -->
    <?php include "includes/navigation.php"; ?>
 
@@ -59,7 +59,7 @@
                 </p>
                 
                
-                <img class="w-2/3 mx-3 my-4" src="images/<?php echo $post_image;?> " alt="image">
+                <img class="w-11/12 mx-3 my-4 sm:w-2/3" src="images/<?php echo $post_image;?> " alt="image">
                
                 <div class=  "px-3 py-6 text-justify ">
                 <?php echo $post_content?>

@@ -11,7 +11,7 @@
     <!-- Page Content -->
 
 
-        <div class="grid w-full gap-10 md:grid-cols-2">
+        <div class="grid w-full lg:gap-10 md:grid-cols-2">
 
             <!-- Blog Entries Column -->
             
@@ -48,7 +48,7 @@
 
 
                 
-                $query = "SELECT * FROM posts LIMIT $current_page, $post_per_page";
+                $query = "SELECT * FROM posts ORDER BY post_id DESC LIMIT $current_page, $post_per_page ";
                 $select_all_posts_query = mysqli_query($connection, $query);
                     
                     while($row = mysqli_fetch_assoc($select_all_posts_query)) {
@@ -59,10 +59,10 @@
                         $post_image = $row['post_image'];
                         $post_date = $row['post_date'];
                         $string = strip_tags($post_content);
-                        if (strlen($string) > 500) {
+                        if (strlen($string) > 200) {
 
                             // truncate string
-                            $stringCut = substr($string, 0, 500);
+                            $stringCut = substr($string, 0, 200);
                             $endPoint = strrpos($stringCut, ' ');
 
                             //if the string doesn't contain any space then it will cut without word basis.
@@ -77,7 +77,7 @@
                 <div class= "h-auto px-2 pt-4 pb-5 mx-auto mt-4 smallScreenW sm:px-10 sm:w-2/3 md:w-full glass xl:w-9/12">
 
                         <!-- post title with icon -->
-                <div class="flex items-center w-full mb-4 text-2xl font-normal text-blue-600 sm:text-4xl hover:text-blue-800">
+                <div class="flex items-center w-full mb-4 text-2xl font-normal text-blue-600 lg:text-4xl hover:text-blue-800">
                
                     <a  href="post.php?p_id=<?php echo $post_id; ?> "><?php echo $post_title?></a>
                     <div id="icon">
