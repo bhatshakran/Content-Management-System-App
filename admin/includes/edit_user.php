@@ -72,8 +72,8 @@ if(isset($_POST['edit_user'])) {
   
     
       
-        $query = "SELECT user_password FROM users WHERE user_id = $the_user_id";
-        $get_user_query = mysqli_query($connection, $query);
+        $query_password = "SELECT user_password FROM users WHERE user_id = $the_user_id";
+        $get_user_query = mysqli_query($connection, $query_password);
         confirm($get_user_query);
     
         $row = mysqli_fetch_array($get_user_query);
@@ -179,8 +179,9 @@ $update_user = mysqli_query($connection,$query);
     </div>
     <div class="form-group">
     <label for="" class="font-league">Password</label>
-        <input type="password" class="form-control" 
-        value="" name="user_password" placeholder='If not changed you can login with your previous password'>
+        <input type="password" class="form-control"
+        autocomplete="off" 
+         name="user_password" placeholder='If not changed you can login with your previous password'>
     </div>
    
     <div class="form_group">

@@ -52,6 +52,7 @@ if(isset($_POST['update_post'])) {
         $post_tags = $_POST['post_tags'];                             
 
         $post_content = $_POST['post_content']; 
+        $content =  mysqli_real_escape_string( $connection, $post_content );
 
          move_uploaded_file($post_image_temp, "../images/$post_image");
     
@@ -78,7 +79,7 @@ $query .= "post_date = now(), ";
 $query .= "post_author = '{$post_author}', ";
 $query .= "post_status = '{$post_status}', ";
 $query .= "post_tags = '{$post_tags}', ";
-$query .= "post_content = '{$post_content}', ";
+$query .= "post_content = '{$content}', ";
 $query .= "post_image = '{$post_image}'  ";
 $query .= "WHERE post_id = $the_post_id ";
 
