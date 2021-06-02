@@ -14,7 +14,7 @@
                 <!-- Page Heading -->
                
                     <div class="flex-row w-full h-full gap-6 overflow-hidden md:flex">
-                    <div class="w-full mt-4 bg-white border shadow-lg rounded-3xl border-gray-50 md:1/3 lg:w-3/12">
+                    <div class="w-full mt-4 bg-white border shadow-lg rounded-3xl border-gray-50 md:w-1/3 lg:w-3/12">
                     <?php include "includes/admin_sidebar.php";?>
 
                     </div>
@@ -33,7 +33,7 @@
                          </div>
                         <?php
                        
-                                  
+                                //   posts filtering
                         if($_SESSION['role'] == 'admin') {
                         $query = "SELECT * FROM posts ";
                         $select_all_posts = mysqli_query($connection, $query);
@@ -122,8 +122,10 @@
                         </svg>
                          </div>
                          <?php
-                                                            
-                        $query = "SELECT * FROM categories ";
+
+                    //    no need for filtering categories
+                            $query = "SELECT * FROM categories ";
+                        
                         $select_all_categories = mysqli_query($connection, $query);
                         
                     $categories_count = mysqli_num_rows($select_all_categories);
@@ -150,17 +152,33 @@
                         </svg>
                          </div>
                          <?php
-                                                            
+                             
+                             if($_SESSION['role'] == 'admin') {
+                                $query = "SELECT * FROM comments";
+                                $select_all_comments = mysqli_query($connection, $query);
+                        
+                                $comment_count = mysqli_num_rows($select_all_comments);
+                                    
+                                
+                                echo "<div class='font-thin' >Total comments</div>
+                                <div>$comment_count </div>";
+                                
+                                
+                             }else if($_SESSION['role'] == 'subscriber') {
+                                $query = "SELECT * FROM comments WHERE comment_author ='".$_SESSION['username']."'";
+                                $select_all_comments = mysqli_query($connection, $query);
+                        
+                                $comment_count = mysqli_num_rows($select_all_comments);
+                                    
+                                
+                                echo "<div class='font-thin' >My comments</div>
+                                <div>$comment_count </div>";
+                               
+                             }
+                          
                         
                         
-                        $query = "SELECT * FROM comments ";
-                        $select_all_comments = mysqli_query($connection, $query);
-                        
-                    $comment_count = mysqli_num_rows($select_all_comments);
-                        
-                        
-                        echo "<div class='font-thin' >Total comments</div>
-                        <div>$comment_count </div>"
+                       
                     ?>
                     <div class="flex items-center justify-center text-sm font-normal text-center text-blue-600">
                    <a href='./comments.php'> View Details</a>
