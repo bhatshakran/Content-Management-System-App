@@ -6,28 +6,28 @@
                                 <tr>
                                     <!-- <th class="tabledata">Id</th> -->
                                     <!-- <th class="tabledata">Author</th> -->
-                                    <th class="tabledata">Comment</th>
-                                    <th class="tabledata">Email</th>
-                                    <th class="tabledata">Status</th>
-                                    <th class="tabledata">In response to</th>
+                                    <th class="border-r tabledata">Comment</th>
+                                    <th class="border-r tabledata">Email</th>
+                                    <th class="border-r tabledata">Status</th>
+                                    <th class="border-r tabledata">In response to</th>
                                       <!-- <th class="tabledata">Date</th> -->
-                                    <th class="tabledata">Approve</th>
-                                    <th class="tabledata">Unapprove</th>
-                                    <th class="tabledata">Delete</th>
+                                    <th class="border-r tabledata">Approve</th>
+                                    <th class="border-r tabledata">Unapprove</th>
+                                    <th class="border-r tabledata">Delete</th>
                                 </tr>
                             </thead>
-                            <tbody>
-   <?php  }else {?>
-        <thead class="border-b">
+                            <tbody> 
+   <?php  }else {?> 
+        <thead class="border-b"> 
                                 <tr>
                                     <!-- <th class="tabledata">Id</th> -->
                                     <!-- <th class="tabledata">Author</th> -->
-                                    <th class="tabledata">Comment</th>
-                                    <th class="tabledata">Email</th>
-                                    <th class="tabledata">Status</th>
-                                    <th class="tabledata">In response to</th>
+                                    <th class="border-r tabledata">Comment</th>
+                                    <th class="border-r tabledata">Email</th>
+                                    <th class="border-r tabledata">Status</th>
+                                    <th class="border-r tabledata">In response to</th>
                                       <!-- <th class="tabledata">Date</th> -->
-                                      <th class="tabledata">Delete</th>
+                                      <th class="border-r tabledata">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -79,7 +79,7 @@ if($_SESSION['role'] == 'admin') {
         // echo "<td class='tabledata'>$comment_date</td>";
          echo "<td class='text-green-400 border-b border-r tabledata'><a href='comments.php?approve=$comment_id'>Approve</a></td>";
         echo "<td class='text-indigo-600 border-b border-r tabledata'><a href='comments.php?unapprove=$comment_id'>Unapprove</a></td>";
-        echo "<td class='text-red-600 tabledata'><a href='comments.php?delete=$comment_id'>Delete</a></td>";
+        echo "<td class='text-red-600 border-b tabledata'><a href='comments.php?delete=$comment_id'>Delete</a></td>";
         echo "</tr>";
             
             
@@ -123,7 +123,7 @@ if($_SESSION['role'] == 'admin') {
             $post_title = $row['post_title'];
             
              echo "<td class='border-b border-r tabledata'><a href='../post.php?p_id=$post_id'>{$post_title}</a></td>";
-             echo "<td class='text-red-600 tabledata'><a href='comments.php?delete=$comment_id'>Delete</a></td>";
+             echo "<td class='text-red-600 border-b tabledata'><a href='comments.php?delete=$comment_id'>Delete</a></td>";
         
         }
     }
