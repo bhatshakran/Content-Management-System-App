@@ -1,17 +1,15 @@
 <?php
-if(!headers_sent()){
-    session_start();
-}
 
+session_start();
 ob_start(); 
 
 include "../includes/db.php";
-
-
 include "functions.php"; 
 
-if(!isset($_SESSION['username'])) {
+
+if(!isset($_SESSION['role'])) {
     header("Location: ../index.php");
+    
 }
 
 ?>
