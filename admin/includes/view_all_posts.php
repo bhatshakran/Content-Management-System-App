@@ -122,9 +122,13 @@ if(isset($_POST['checkbox_array'])) {
                             <tbody>
                                
 <?php 
-    $query = "SELECT * FROM posts ORDER BY post_id DESC";
-    $select_posts = mysqli_query( $connection, $query );
 
+ if($_SESSION['role'] == 'admin') {
+    $query = "SELECT * FROM posts ORDER BY post_id DESC";
+ } elseif($_SESSION['role'] == 'subscriber') {
+    $query = "SELECT * FROM posts WHERE post_author ='".$_SESSION['username']."' ORDER BY post_id DESC";
+ }
+ $select_posts = mysqli_query( $connection, $query );
     while( $row = mysqli_fetch_assoc( $select_posts ) ) {
         $post_id = $row['post_id'];
         

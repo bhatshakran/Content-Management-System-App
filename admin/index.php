@@ -32,18 +32,37 @@
                             </svg>
                          </div>
                         <?php
-                                                
+                       
+                                  
+                        if($_SESSION['role'] == 'admin') {
                         $query = "SELECT * FROM posts ";
                         $select_all_posts = mysqli_query($connection, $query);
                         
-                         $post_count = mysqli_num_rows($select_all_posts);
+                        $post_count = mysqli_num_rows($select_all_posts);
+                        echo "<div class='font-thin '>Total posts</div>
+                        <div>$post_count </div> ";
                         
                         
-                        echo "<div class='font-thin ' >Total posts</div>
-                        <div>$post_count </div>
+                        }
+                        elseif($_SESSION['role'] == 'subscriber') {
+                        $query = "SELECT * FROM posts WHERE post_author ='".$_SESSION['username']."' ";
+                        $my_posts_query = mysqli_query($connection, $query);
+                        
+                        confirm( $my_posts_query);
+                        $my_posts_count = mysqli_num_rows($my_posts_query);
+                       
+                        
+                        echo "<div class='font-thin ' >My posts</div>
+                        <div> $my_posts_count</div> ";
+                       
+                        
+                        }
+
+                        
+                       
                         
                         
-                        "
+                       
                     
                     ?>
                     <div class="flex items-center justify-center w-full text-sm font-normal text-blue-600">
@@ -65,11 +84,20 @@
                         </svg>
                          </div>
                          <?php
+                        
+                         if($_SESSION['role'] == 'admin') {
+                            $query = "SELECT * FROM users ";
+                            
+                            
+                         }else if($_SESSION['role'] == 'subscriber') {
+                            $query = "SELECT * FROM users WHERE user_id =  {$_SESSION['user_id']}";
+                           
+                         }
                                                             
-                        $query = "SELECT * FROM users ";
+                    
                         $select_all_users = mysqli_query($connection, $query);
                         
-                    $user_count = mysqli_num_rows($select_all_users);
+                         $user_count = mysqli_num_rows($select_all_users);
                         
                         
                         echo "<div class='font-thin' >Total users</div>
