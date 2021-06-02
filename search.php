@@ -56,7 +56,18 @@
                         $post_content = $row['post_content'];
                         $post_image = $row['post_image'];
                         $post_date = $row['post_date'];
-                        $limited_text = substr($post_content, 0, 100);
+                       
+                        $string = strip_tags($post_content);
+                        if (strlen($string) > 500) {
+
+                            // truncate string
+                            $stringCut = substr($string, 0, 500);
+                            $endPoint = strrpos($stringCut, ' ');
+
+                            //if the string doesn't contain any space then it will cut without word basis.
+                            $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                            $string .= "... <a class='text-blue-400 hover:text-blue-800' href='post.php?p_id=$post_id'>Read More </a>";
+                        }
                       ?>
                        
 
@@ -89,7 +100,7 @@ by <a href="index.php"><?php echo $post_author?></a>
 <!-- content -->
 <p class="font-sans text-sm font-light text-justify"><?php echo $limited_text?></p>
 <!-- Read more -->
-<a class="text-blue-400 hover:text-blue-800" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
 
 <!-- <hr>   -->
 </div>  

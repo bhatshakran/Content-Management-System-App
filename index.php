@@ -58,8 +58,17 @@
                         $post_content = $row['post_content'];
                         $post_image = $row['post_image'];
                         $post_date = $row['post_date'];
-                        $limited_text = substr($post_content, 0, 100);
-                        $text =  mysqli_real_escape_string( $connection, $limited_text );
+                        $string = strip_tags($post_content);
+                        if (strlen($string) > 500) {
+
+                            // truncate string
+                            $stringCut = substr($string, 0, 500);
+                            $endPoint = strrpos($stringCut, ' ');
+
+                            //if the string doesn't contain any space then it will cut without word basis.
+                            $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                            $string .= "... <a class='text-blue-400 hover:text-blue-800' href='post.php?p_id=$post_id'>Read More </a>";
+                        }
                     
                       ?>
                        
@@ -90,9 +99,9 @@
                 <img class="w-full mt-2 mb-3 max-h-80 sm:w-1/2 sm:h-1/3" src="images/<?php echo $post_image;?> " alt="image">
                 </a>
                 <!-- content -->
-                <p class="font-sans text-sm font-light text-justify"><?php echo $text?></p>
+                <p class="font-sans text-sm font-light text-justify"><?php echo $string?></p>
                 <!-- Read more -->
-                <a class="text-blue-400 hover:text-blue-800" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                
 
                 <!-- <hr>   -->
                 </div>  
