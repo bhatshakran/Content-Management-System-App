@@ -49,20 +49,14 @@
                         $my_posts_query = mysqli_query($connection, $query);
                         
                         confirm( $my_posts_query);
-                        $my_posts_count = mysqli_num_rows($my_posts_query);
+                        $post_count = mysqli_num_rows($my_posts_query);
                        
                         
                         echo "<div class='font-thin ' >My posts</div>
-                        <div> $my_posts_count</div> ";
+                        <div> $post_count</div> ";
                        
                         
-                        }
-
-                        
-                       
-                        
-                        
-                       
+                        }   
                     
                     ?>
                     <div class="flex items-center justify-center w-full text-sm font-normal text-blue-600">
@@ -74,47 +68,8 @@
                     
                     </div>
                         </div>
-                            <!-- panel two -->
-                       
-
-                        <div id="users-count" class="panel">
-                        <div class="w-full mx-auto text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-14 w-14" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-                        </svg>
-                         </div>
-                         <?php
-                        
-                         if($_SESSION['role'] == 'admin') {
-                            $query = "SELECT * FROM users ";
-                            
-                            
-                         }else if($_SESSION['role'] == 'subscriber') {
-                            $query = "SELECT * FROM users WHERE user_id =  {$_SESSION['user_id']}";
                            
-                         }
-                                                            
-                    
-                        $select_all_users = mysqli_query($connection, $query);
-                        
-                         $user_count = mysqli_num_rows($select_all_users);
-                        
-                        
-                        echo "<div class='font-thin' >Total users</div>
-                        <div>$user_count </div>"
-                    ?>
-                    <div class="flex items-center justify-center text-sm font-normal text-center text-blue-600">
-                   <a href='./users.php'> View Details</a>
-                   <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 " viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                    </span>
-                    </div>
-                        </div>
-
-
-                        <!-- panel three -->
+                         <!-- panel two -->
                         <div id="categories-count" class="panel">
                         <div class="w-full mx-auto text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-14 w-14" viewBox="0 0 20 20" fill="currentColor">
@@ -128,7 +83,7 @@
                         
                         $select_all_categories = mysqli_query($connection, $query);
                         
-                    $categories_count = mysqli_num_rows($select_all_categories);
+                         $categories_count = mysqli_num_rows($select_all_categories);
                         
                         
                         echo "<div class='font-thin' >Total categories</div>
@@ -144,7 +99,7 @@
                     </div>
                         </div>
 
-                        <!-- panel four -->
+                      <!-- panel three -->
                         <div id="comments-count" class="panel">
                         <div class="w-full mx-auto text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-14 w-14" viewBox="0 0 20 20" fill="currentColor">
@@ -190,6 +145,48 @@
                     </div>
                  
                         </div>
+  <!-- panel four -->
+                        <div>
+                        <?php
+                       
+                        
+                        if($_SESSION['role'] == 'admin') {
+                           $query = "SELECT * FROM users ";?>
+                               
+                           <div id="users-count" class="panel">
+                           <div class="w-full mx-auto text-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-14 w-14" viewBox="0 0 20 20" fill="currentColor">
+                           <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                           </svg>
+                            </div>
+<?php
+                       $select_all_users = mysqli_query($connection, $query);
+                       
+                       $user_count = mysqli_num_rows($select_all_users);
+                      
+                      
+                      echo "<div class='font-thin' >Total users</div>
+                      <div>$user_count </div>"
+                      ?>
+                       <div class="flex items-center justify-center text-sm font-normal text-center text-blue-600">
+                  <a href='./users.php'> View Details</a>
+                  <span>
+                   <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 " viewBox="0 0 20 20" fill="currentColor">
+                   <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                   </svg>
+                   </span>
+                   </div>
+                       </div>
+                           
+                    <?php   
+                        
+                             } elseif($_SESSION['role'] == 'subscriber') {
+                           echo "";                           
+                        }
+                                                           
+                   
+                   ?>
+                   </div>
 
 
                         
@@ -208,29 +205,46 @@
 
                         <!-- get different types of data from db -->
                         <?php
+                         
+                         if($_SESSION['role'] == 'admin') {
 
                             $query = "SELECT * FROM posts WHERE post_status = 'draft'  ";
+                         }elseif($_SESSION['role'] == 'subscriber'){
+                            $query = "SELECT * FROM posts WHERE post_status = 'draft' AND post_author ='".$_SESSION['username']."'";
+                         }
                             $select_all_draft_posts = mysqli_query($connection, $query);
 
                             $post_draft_count = mysqli_num_rows($select_all_draft_posts);   
                                                     
                                                     
-                                                    
+                            if($_SESSION['role'] == 'admin') {                      
                             $query = "SELECT * FROM comments WHERE comment_status = 'unapproved'  ";
+                            }elseif($_SESSION['role'] == 'subscriber'){
+                                $query = "SELECT * FROM comments WHERE comment_author ='".$_SESSION['username']."' AND comment_status = 'unapproved'";
+                            }
                             $select_all_unapproved_comments = mysqli_query($connection, $query);
-
+                            confirm($select_all_unapproved_comments);
                             $unapp_comments_count = mysqli_num_rows($select_all_unapproved_comments); 
                                                     
                                                     
                                                     
-                                                    
+                                                
                             $query = "SELECT * FROM users WHERE user_role = 'subscriber'  ";
+                        
                             $select_all_subscribers = mysqli_query($connection, $query);
 
                             $subscribers_count = mysqli_num_rows($select_all_subscribers); 
                                                         
-                                                        
+                          
+                            
+                            // Get total user count:
+                            $query = "SELECT * FROM users ";
+                            $select_all_users = mysqli_query($connection, $query);
+                       
+                            $user_count = mysqli_num_rows($select_all_users);
+                                     
                             ?>
+                            
 
                             <!-- bars javascript -->
                             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -244,29 +258,40 @@
                                     
                                     
                                 <?php
-                                    
-                                                    
+                                   
+                                   
+                                   if($_SESSION['role'] == 'admin') { 
+                                            
                                     $element_text =['Active Posts','Draft Posts', 'Categories', 'Users', 'Comments', 'Pending Comments', 'Subscribers '];
                                                 
-                                    $element_count =[$post_count, $post_draft_count, $categories_count, $user_count, $comment_count,  $unapp_comments_count, $subscribers_count];    
+                                    $element_count =[$post_count, $post_draft_count, $categories_count, $user_count, $comment_count,  $unapp_comments_count, $subscribers_count]; 
+                                    for($i = 0; $i < 7 ; $i++) {
+                                        
+                                        
+                                        echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
+                                        
+                                        
+                                        
+                                        
+                                    }   
+                                   }elseif($_SESSION['role'] == 'subscriber'){   
+                                  
+                                    $element_text =['Active Posts','Draft Posts', 'Categories', 'Comments', 'Pend Comments', 'Subscribers '];
                                                 
-                                                
-                                    for($i = 0; $i < 7; $i++) {
+                                    $element_count =[$post_count, $post_draft_count, $categories_count, $comment_count, $unapp_comments_count, $subscribers_count];  
+                                    for($i = 0; $i < 6 ; $i++) {
                                         
                                         
-                            echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
+                                        echo "['{$element_text[$i]}'" . "," . "{$element_count[$i]}],";
                                         
                                         
                                         
                                         
-                                    }
+                                    }  
+                                   } 
+                                   
                                                     
-                                                        
-                                                    
-                                                    
-                                                    
-                                                 
-                                                    
+                     
                                 ?>
                                     
                                     
