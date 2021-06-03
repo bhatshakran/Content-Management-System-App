@@ -20,7 +20,7 @@ if(isset($_POST['create_user'])) {
 //        $post_image_temp = $_FILES['image']['tmp_name']; 
     
         $user_password = $_POST['user_password'];
-    
+        $enc_password = password_hash($user_password, PASSWORD_BCRYPT);
     
      
 
@@ -32,7 +32,7 @@ if(isset($_POST['create_user'])) {
     
     $query = "INSERT INTO users(user_firstname, user_lastname, user_role, username, user_email, user_password) ";
     
-    $query .= "VALUES('{$user_firstname}', '{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$user_password}' )";
+    $query .= "VALUES('{$user_firstname}', '{$user_lastname}','{$user_role}','{$username}','{$user_email}','{$enc_password}' )";
     
     
     
