@@ -11,13 +11,13 @@
     <!-- Page Content -->
 
 
-        <div class="grid w-full lg:gap-10 md:grid-cols-2">
+        <div class="grid w-full lg:gap-10 md:grid-cols-2 md:gap-2">
 
             <!-- Blog Entries Column -->
             
             
             
-            <div class="grid grid-cols-1 gap-6 m-2 ">
+            <div class="grid grid-cols-1 gap-4 m-2 sm:w-full">
                 
                 
                 <?php 
@@ -74,7 +74,7 @@
                        
 
                 <!--  Post -->
-                <div class= "h-auto px-2 pt-4 pb-5 mx-auto mt-4 smallScreenW sm:px-10 sm:w-2/3 md:w-full glass xl:w-9/12">
+                <div class= "h-auto px-2 pt-4 pb-5 mx-auto mt-4 md:pb-7 smallScreenW sm:px-10 sm:w-4/5 md:w-full glass xl:w-9/12">
 
                         <!-- post title with icon -->
                 <div class="flex items-center w-full mb-4 text-2xl text-blue-600 font-ralewaySB lg:text-3xl hover:text-blue-800 ">
