@@ -2,7 +2,7 @@
 
 
 
-
+// Check whether there where any errors with your query or not
 function confirm($result) {
     global $connection;
     
@@ -11,6 +11,13 @@ function confirm($result) {
     }
     
  
+}
+
+// Utility Redirect function
+
+function redirect($location) {
+
+    return header("Location:" .$location);
 }
 
 function create_category () {
@@ -81,6 +88,88 @@ function delete_category () {
 
 }
 
+
+// is admin function
+function is_admin($username= '') {
+    global $connection;
+
+    $query = "SELECT user_role FROM users WHERE username ='username'";
+    $result = mysqli_query($connection, $query);
+
+    $row = mysqli_fetch_array($result);
+
+    if($row['user_role'] == 'admin') {
+        return true;
+    }else {
+        return false;
+    }
+}
+
+// check whether the username exists in the databse or not
+function username_exists($username) {
+    global $connection;
+
+    $query = "SELECT username FROM users WHERE username = '$username'";
+    $result = mysqli_query($connection, $query);
+    confirm($result);
+    
+
+    if(mysqli_num_rows($result) == 0) {
+        return true;
+    }else {
+        return false;
+    }
+}
+
+
+// check whether the email exists in the databse or not
+function email_exists($email){
+    global $connection;
+
+    $query = "SELECT user_email FROM users WHERE user_email = '$email'";
+    $result = mysqli_query($connection, $query);
+    confirm($result);
+    
+
+    if(mysqli_num_rows($result) == 0) {
+        return true;
+    }else {
+        return false;
+    }
+
+}
+
+
+// register user function
+
+function register_user($username, $email, $password) {
+
+
+    global $connection;
+
+    if(!empty($username) && !empty($email) && !empty($password) ){
+
+        $username = mysqli_real_escape_string($connection, $username);
+        $email = mysqli_real_escape_string($connection, $email);
+        $password = mysqli_real_escape_string($connection, $password);
+    
+    
+        
+    
+         $enc_password = password_hash($password, PASSWORD_BCRYPT);
+    
+        $query = "INSERT INTO users (username, user_email, user_password, user_role)";
+    
+        $query .= "VALUES('{$username}', '{$email}', '{$enc_password}' , 'subscriber')";
+    
+    
+        $register_user_query = mysqli_query($connection, $query);
+       
+        confirm($register_user_query);
+    
+    }
+       
+}
 
 
 

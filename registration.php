@@ -1,5 +1,5 @@
 
-    <?php include "./includes/db.php"; ?>
+ <?php include "./includes/db.php"; ?>
 
 <?php  include "./includes/header.php"; ?>
 
@@ -11,44 +11,22 @@ if(isset($_POST['submit'])){
 
 
 
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
 
 
-if(!empty($username) && !empty($email) && !empty($password) ){
-
-    $username = mysqli_real_escape_string($connection, $username);
-    $email = mysqli_real_escape_string($connection, $email);
-    $password = mysqli_real_escape_string($connection, $password);
-
-
-    
-
-     $enc_password = password_hash($password, PASSWORD_BCRYPT);
-
-    $query = "INSERT INTO users (username, user_email, user_password, user_role)";
-
-    $query .= "VALUES('{$username}', '{$email}', '{$enc_password}' , 'subscriber')";
+    $error = [
+        'username'=> '',
+        'email'=>'',
+        'password'=>''
+    ];
 
 
-    $register_user_query = mysqli_query($connection, $query);
-    if(!$register_user_query) {
 
-        die("QUERY FAILED" . mysqli_error($connection));
+    if(strlen($username) < 4) {
+        $error['username'] ='Username needs to be longer than 4 characters!'
     }
-
-    $message = "Your registration has been submitted!";
-
-}else {
-    $message = "Fields cannot be empty";
-}
-
-
-}else{
-    $message ="";
-}
-   
 
 
 
