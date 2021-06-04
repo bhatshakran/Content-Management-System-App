@@ -20,6 +20,12 @@ function redirect($location) {
     return header("Location:" .$location);
 }
 
+
+// sanitize text inputs inorder to avoid sql injections
+function sanitize($conn,$string) {
+    return mysqli_real_escape_string($conn,$string);
+}
+
 function create_category () {
 
     global $connection;
@@ -109,15 +115,13 @@ function is_admin($username= '') {
 function username_exists($username) {
     global $connection;
 
-    $query = "SELECT username FROM users WHERE username = '$username'";
+    $query = "SELECT username FROM users WHERE username='{$username}'";
     $result = mysqli_query($connection, $query);
     confirm($result);
-    
-
     if(mysqli_num_rows($result) == 0) {
-        return true;
-    }else {
         return false;
+    }elseif(mysqli_num_rows($result) !== 0) {
+        return true;
     }
 }
 
@@ -126,15 +130,15 @@ function username_exists($username) {
 function email_exists($email){
     global $connection;
 
-    $query = "SELECT user_email FROM users WHERE user_email = '$email'";
+    $query = "SELECT user_email FROM users WHERE user_email='$email'";
     $result = mysqli_query($connection, $query);
     confirm($result);
     
 
     if(mysqli_num_rows($result) == 0) {
-        return true;
-    }else {
         return false;
+    }else {
+        return true;
     }
 
 }
@@ -149,14 +153,14 @@ function register_user($username, $email, $password) {
 
     if(!empty($username) && !empty($email) && !empty($password) ){
 
-        $username = mysqli_real_escape_string($connection, $username);
-        $email = mysqli_real_escape_string($connection, $email);
-        $password = mysqli_real_escape_string($connection, $password);
+        $username = sanitize($connection, $username);
+        $email = sanitize($connection, $email);
+        $password = sanitize($connection, $password);
     
     
         
     
-         $enc_password = password_hash($password, PASSWORD_BCRYPT);
+        $enc_password = password_hash($password, PASSWORD_BCRYPT);
     
         $query = "INSERT INTO users (username, user_email, user_password, user_role)";
     
@@ -169,6 +173,56 @@ function register_user($username, $email, $password) {
     
     }
        
+}
+
+
+// login user function
+function login_user($username, $email) {
+
+    global $connection;
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $cleaned_username = trim(sanitize( $connection, $username ));
+    $cleaned_password = trim(sanitize( $connection, $password ));
+
+    $query = "SELECT  * FROM users WHERE username = '{$cleaned_username}' ";
+
+    $select_user_query = mysqli_query( $connection, $query );
+
+    confirm($select_user_query);
+
+    while( $row = mysqli_fetch_array( $select_user_query ) ) {
+
+        $db_user_id = $row['user_id'];
+        $db_username = $row['username'];
+        $db_user_firstname = $row['user_firstname'];
+        $db_user_lastname = $row['user_lastname'];
+        $db_user_password = $row['user_password'];
+        $db_user_role = $row['user_role'];
+
+    }
+    $password = password_verify($cleaned_password, $db_user_password );
+
+    if ( $username !== $db_username && $password !== $db_user_password ) {
+
+        header( "Location: ../index.php" );
+
+    } else if ( $username === $db_username && $password == $db_user_password ) {
+
+        $_SESSION['username'] = $db_username;
+        $_SESSION['user_id'] = $db_user_id;
+        $_SESSION['firstname'] = $db_user_firstname;
+        $_SESSION['lastname'] = $db_user_lastname;
+        $_SESSION['role'] = $db_user_role;
+//        echo $db_user_role;
+
+        header( "Location: ../admin/index.php" );
+
+    } else {
+ header( "Location: ../index.php" );
+    }
 }
 
 
