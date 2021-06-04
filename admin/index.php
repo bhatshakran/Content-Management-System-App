@@ -59,8 +59,8 @@
                         }   
                     
                     ?>
-                    <div class="flex items-center justify-center w-full text-sm font-normal text-blue-600">
-                   <a href='./posts.php' > View Details</a>
+                    <div class="flex items-center justify-center text-sm font-normal text-center text-blue-600">
+                   <a href='./posts.php' class=''> View Details</a>
             
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 " viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -146,14 +146,14 @@
                  
                         </div>
   <!-- panel four -->
-                        <div id="users-count" class='panel'>
-                        <?php
                        
+                        <?php
+                      
                         
                         if($_SESSION['role'] == 'admin') {
                            $query = "SELECT * FROM users ";?>
                                
-                         
+                             <div id="users-count" class='panel'>
                            <div class="w-full mx-auto text-center">
                            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-14 w-14" viewBox="0 0 20 20" fill="currentColor">
                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
@@ -177,7 +177,7 @@
                    </span>
                    </div>
                       
-                           
+                   </div>     
                     <?php   
                         
                              } elseif($_SESSION['role'] == 'subscriber') {
@@ -186,7 +186,7 @@
                                                            
                    
                    ?>
-                   </div>
+                  
 
 
                         
