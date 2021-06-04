@@ -8,7 +8,7 @@
 <?php include "includes/navigation.php" ?>
 
 <?php
-if(isset($_POST['submit'])){
+if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 
@@ -57,13 +57,16 @@ if(isset($_POST['submit'])){
 
 
         if(empty($value)) {
-
-
-            // register_user($username, $email, $password);
-            // login_user($username, $password);
+        unset($error[$key]);
         }
 
 
+    }
+
+    if(empty($error)) {
+        register_user($username, $email, $password);
+
+        
     }
 
 
@@ -95,7 +98,7 @@ if(isset($_POST['submit'])){
 <input type="password" name="password" class="form-control" placeholder="Enter Password">
 <p><?php echo isset($error['password']) ? $error['password'] : '' ?></p>
 </div>
-<input type="submit" value="Register" name="submit" class="myBtn">
+<input type="submit" value="Register" name="register" class="myBtn">
 
 </form>
 

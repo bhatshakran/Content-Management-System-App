@@ -149,13 +149,13 @@ function email_exists($email){
 function register_user($username, $email, $password) {
 
 
-    global $connection;
+        global $connection;
 
-    if(!empty($username) && !empty($email) && !empty($password) ){
 
-        $username = sanitize($connection, $username);
-        $email = sanitize($connection, $email);
-        $password = sanitize($connection, $password);
+
+        $username = trim(sanitize($connection, $username));
+        $email = trim(sanitize($connection, $email));
+        $password = trim(sanitize($connection, $password));
     
     
         
@@ -170,14 +170,14 @@ function register_user($username, $email, $password) {
         $register_user_query = mysqli_query($connection, $query);
        
         confirm($register_user_query);
+          echo " <p class='w-full p-4 mb-4 text-white bg-green-500'> Registration succesfull </p>";
     
-    }
        
 }
 
 
 // login user function
-function login_user($username, $email) {
+function login_user($username, $password) {
 
     global $connection;
 
@@ -205,9 +205,9 @@ function login_user($username, $email) {
     }
     $password = password_verify($cleaned_password, $db_user_password );
 
-    if ( $username !== $db_username && $password !== $db_user_password ) {
+    if ($username !== $db_username && $password !== $db_user_password ) {
 
-        header( "Location: ../index.php" );
+        redirect("../index.php");
 
     } else if ( $username === $db_username && $password == $db_user_password ) {
 
@@ -216,13 +216,10 @@ function login_user($username, $email) {
         $_SESSION['firstname'] = $db_user_firstname;
         $_SESSION['lastname'] = $db_user_lastname;
         $_SESSION['role'] = $db_user_role;
-//        echo $db_user_role;
+         
+        redirect("./admin/index.php");
 
-        header( "Location: ../admin/index.php" );
-
-    } else {
- header( "Location: ../index.php" );
-    }
+    } 
 }
 
 
