@@ -96,17 +96,18 @@ function delete_category () {
 
 
 // is admin function
-function is_admin($username= '') {
+function is_admin($username) {
     global $connection;
 
-    $query = "SELECT user_role FROM users WHERE username ='username'";
+    $query = "SELECT user_role FROM users WHERE username ='$username'";
     $result = mysqli_query($connection, $query);
-
+    confirm($result);
     $row = mysqli_fetch_array($result);
 
     if($row['user_role'] == 'admin') {
         return true;
     }else {
+        
         return false;
     }
 }
@@ -115,7 +116,7 @@ function is_admin($username= '') {
 function username_exists($username) {
     global $connection;
 
-    $query = "SELECT username FROM users WHERE username='{$username}'";
+    $query = "SELECT username FROM users WHERE username='$username'";
     $result = mysqli_query($connection, $query);
     confirm($result);
     if(mysqli_num_rows($result) == 0) {
