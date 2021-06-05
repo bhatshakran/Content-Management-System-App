@@ -45,7 +45,7 @@
                                  <div class="form-group">
                                     <input type="submit"
                                     name="submit"
-                                    value="Add Category" class="px-2 py-2 text-white bg-blue-400 rounded-lg cursor-pointer">
+                                    value="Add Category" class="cursor-pointer myBtn">
                                 </div>
                             </form><!--                           CREATE CATEGORY FORM-->
                             

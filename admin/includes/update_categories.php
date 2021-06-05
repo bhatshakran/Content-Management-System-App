@@ -1,10 +1,10 @@
 
        
-       <form action="" method="post">
+       <form action="" method="post" class="mx-4 mt-8 ">
                                 <div class="form-group">
                                    
                                    <label for="cat_title">
-                                       Edit Category
+                                     <h4> Edit Category</h4> 
                                    </label>
                                    
                                    <?php 
@@ -26,6 +26,7 @@
                                     ?>
                                     
                                    <input type="text"
+                                   class='form-control'
                                    value="<?php if(isset($cat_title)){
                                         echo $cat_title;
                                     } ?>"
@@ -67,6 +68,7 @@
                                 </div>
                                  <div class="form-group">
                                     <input type="submit"
+                                    class='cursor-pointer myBtn'
                                     name="update"
                                     value="Update Category" class="btn btn-primary">
                                 </div>
