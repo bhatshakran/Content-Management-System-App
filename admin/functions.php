@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Check whether there where any errors with your query or not
 function confirm($result) {
     global $connection;
