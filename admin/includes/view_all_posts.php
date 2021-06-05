@@ -164,7 +164,16 @@ if(isset($_POST['checkbox_array'])) {
         echo "<td class='border-b border-r tabledata'><img src ='../images/$post_image' width='100' alt='image'></img></td>";
         echo "<td class='text-green-400 border-b border-r tabledata'>$post_date</td>";
          echo "<td class='text-indigo-600 border-b border-r tabledata' text-white'><a href='posts.php?source=edit_post&p_id=$post_id'>Edit</a></td>";
-        echo "<td class='text-red-600 border-b tabledata'><a onClick=\"javascript:return confirm('Are you sure you want to delete');\" href='posts.php?delete=$post_id' >Delete</a></td>";
+
+         ?>
+         <form method="post">
+         <input type="text" name="post_id" class='hidden' value="<?php echo $post_id ?>">
+         <?php
+        echo "<td class='border-b'><input type='submit' class='cursor-pointer myBtn' value='Delete' name='delete'>
+        </td>";
+        ?>
+         </form>
+        <?php
         echo "</tr>";
             
             
@@ -175,9 +184,9 @@ if(isset($_POST['checkbox_array'])) {
           
 <?php
 
-if(isset($_GET['delete'])) {
+if(isset($_POST['delete'])) {
     
-    $the_post_id = $_GET['delete'];
+     $the_post_id = $_POST['post_id'];
     
     
     $query = "DELETE FROM posts WHERE post_id = {$the_post_id}";
