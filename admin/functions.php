@@ -39,12 +39,13 @@ function create_category () {
 
         } else {
 
-            $query =  "INSERT INTO categories(cat_title) ";
-            $query .= "VALUE('{$cat_title}') ";
+            $stmt = mysqli_prepare($connection, "INSERT INTO categories(cat_title) VALUES(?) ");
 
-            $create_category_query = mysqli_query( $connection, $query );
+            mysqli_stmt_bind_param($stmt, 's', $cat_title);
 
-            if ( !$create_category_query ) {
+            mysqli_stmt_execute($stmt);
+
+            if (!$stmt) {
 
                 die( "QUERY FAILED" . mysqli_error( $connection ) );
 
