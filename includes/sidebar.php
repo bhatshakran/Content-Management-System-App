@@ -51,7 +51,7 @@
                                 $query = "SELECT * FROM categories";
                                 $select_categories_sidebar = mysqli_query($connection, $query);
                                 
-                                
+                                confirm($select_categories_sidebar);
                                 
                                 while($row = mysqli_fetch_assoc($select_categories_sidebar)) {
                                     $cat_id = $row['id'];

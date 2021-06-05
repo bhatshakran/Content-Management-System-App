@@ -31,27 +31,63 @@
                 if(isset($_GET['category'])) {
                     
                     $post_category_id = $_GET['category'];
-                }
-               
+              
                 
                  if(is_admin($_SESSION['username'])){
-                    $query = "SELECT * FROM posts WHERE post_category_id = $post_category_id";
+
+                     $query1 = mysqli_prepare($connection, "SELECT post_id, post_title, post_author, 
+                     post_date, post_image, post_content FROM posts WHERE post_category_id = ? ");
+
                  }else if(!is_admin($_SESSION['username'])){
                 
-                    $query = "SELECT * FROM posts WHERE post_category_id = $post_category_id AND post_status='publish'";
+                    $query2 = mysqli_prepare($connection, "SELECT post_id, post_title, post_author,
+                     post_date, post_image, post_content FROM posts WHERE post_category_id = ? AND post_status = ? ");
+
+                     $published = 'publish';
                  }
 
-               
-                    $select_all_posts_query = mysqli_query($connection, $query);
+
+                 
+
+                 if(isset($query1)) {
+
+
+                    mysqli_stmt_bind_param($query1, "i", $post_category_id);
+
+                    mysqli_stmt_execute($query1);
+
+                    mysqli_stmt_bind_result($query1, $post_id, $post_title, $post_author, 
+                    $post_date, $post_image, $post_content);
+
+                     $stmt = $query1;
                     
-                    while($row = mysqli_fetch_assoc($select_all_posts_query)) {
-                        $post_id = $row['post_id'];
-                        $post_title = $row['post_title'];
-                        $post_author = $row['post_author'];
-                        $post_content = $row['post_content'];
-                        $post_image = $row['post_image'];
-                        $post_date = $row['post_date'];
-                        $limited_text = substr($post_content, 0, 100);
+
+                 }else {
+
+
+                    mysqli_stmt_bind_param($query2, "is", $post_category_id, $published);
+
+                    mysqli_stmt_execute($query2);
+
+                    mysqli_stmt_bind_result($query2, $post_id, $post_title, $post_author, 
+                    $post_date, $post_image, $post_content);
+                   
+                  
+                   $stmt = $query2;
+                
+                 
+                 }
+
+                 $limited_text = substr($post_content, 0, 200);
+              
+              
+                 mysqli_stmt_store_result($stmt);
+                 $count = mysqli_stmt_num_rows($stmt);
+
+                if(mysqli_stmt_num_rows($stmt) === 0) {
+                    echo "No Categories";
+                }  
+                while(mysqli_stmt_fetch($stmt)):
                     
                       ?>
                             <!--  Post -->
@@ -83,8 +119,11 @@
                             <a class="text-blue-400 hover:text-blue-800" href="post.php?p_id=<?php echo $post_id; ?>">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                             </div>   
                             </div>
-                 <?php   }
-                    
+                 <?php endwhile;
+                mysqli_stmt_close($stmt);
+ 
+                 
+                }  
                 ?>
 
                
