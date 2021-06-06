@@ -19,11 +19,20 @@ function redirect($location) {
 }
 
 
+// utility query function
+function yourQuery($query){
+    global $connection;
+    return mysqli_query($connection, $query);
+}
+
+
 // sanitize text inputs inorder to avoid sql injections
 function sanitize($conn,$string) {
     return mysqli_real_escape_string($conn,$string);
 }
 
+
+// create category function
 function create_category () {
 
     global $connection;
@@ -222,6 +231,38 @@ function login_user($username, $password) {
     } 
 }
 
+// is logged in function
+
+function isLoggedIn() {
+    if(isset($_SESSION['role'])){
+        return true;
+    }
+    return false;
+
+}
+
+
+// get logged in users id
+function loggedInUserId() {
+
+
+    if(isLoggedIn()){
+
+        $result = yourQuery("SELECT * FROM users WHERE username='". $_SESSION['username'] ."'");
+        $user = mysqli_fetch_array($result);
+        if(mysqli_num_rows($result) >= 1){
+            return $user['user_id'];
+        }
+    }
+
+    return false;
+
+
+}
+
+    
+
+    
 
 
 
