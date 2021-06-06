@@ -64,6 +64,11 @@
                 <div class=  "px-3 py-6 text-justify ">
                 <?php echo $post_content?>
                 </div>
+                <div class="w-full mx-3 ">
+           
+                 <img src="dist/images/heart_hollow.png" alt="" class='my-4 cursor-pointer w-7 heart_icon' >
+                
+                </div>
                 </div>
                  <?php   }   ?>
                   
@@ -198,14 +203,88 @@
             </div>   
             
                 
-                
+<?php
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    $request_body = file_get_contents('php://input');
+    $data = json_decode($request_body);
+    $value = get_object_vars($data);
+    
+    // GET post_id and user_id
+
+    $post_id = $value['post_id'];
+
+
+
+    // SELECT the post from the database 
+    $query = "SELECT * FROM posts WHERE post_id=$post_id";
+    $postResult = mysqli_query($connection, $query);
+    $post = mysqli_fetch_array($postResult);
+    $likes = $post['post_likes'];
+
+
+    // UPDATE post likes
+
+    mysqli_query($connection, "UPDATE posts SET post_likes=$likes+1 WHERE post_id=$post_id");
+    
+
+
+
+
+}
+
+
+?> 
 
              
 
             <!-- Blog Sidebar Widgets Column -->
       
         <!-- /.row -->
+                    <script>
 
+                    const heart_icon = document.querySelector('.heart_icon');
+
+                    heart_icon.addEventListener('mouseover', () => {
+                     heart_icon.src= "dist/images/heart_filled.png";
+                       
+
+                    })
+                    heart_icon.addEventListener('mouseout', () => {
+                        
+                        heart_icon.src= "dist/images/heart_hollow.png";
+                        
+                    })
+
+                    heart_icon.addEventListener('click', function(){
+
+                        // heart_icon.src= "dist/images/heart_filled.png";
+
+                        let post_id = <?php echo $the_post_id ;?>;
+                        let user_id = 25;
+                        let xhttp = new XMLHttpRequest();
+                        xhttp.open('POST', "post.php?p_id=<?php echo $the_post_id; ?>", true );
+                        xhttp.setRequestHeader('Content-type', 'application/json');
+                        xhttp.onreadystatechange = function () {
+
+                            if(this.readyState == 4 && this.status == 200) {
+                                var response = this.responseText;
+                            }
+                          
+                        };
+
+
+                        const data = {
+                            'liked': 1,
+                            'post_id': post_id,
+                            'user_id': user_id
+                        }
+                       
+
+                        xhttp.send(JSON.stringify(data));
+
+                    })
+                    
+                    </script>
   
 
       
