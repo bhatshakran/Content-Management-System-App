@@ -19,7 +19,10 @@
             
             
             <div class="grid grid-cols-1 gap-4 m-2 sm:w-full">
+                <?php 
+                 $user_id = $_SESSION['user_id'];
                 
+                ?>
                 
                 <?php 
                 $post_per_page = 2;
@@ -45,7 +48,7 @@
 
                 $count = ceil($count / 2);
 
-
+              
 
 
                 
@@ -80,7 +83,7 @@
                         <!-- post title with icon -->
                 <div class="flex items-center w-full mb-4 text-2xl text-blue-600 font-ralewaySB lg:text-3xl hover:text-blue-800 ">
                
-                    <a  href="post.php?p_id=<?php echo $post_id; ?> " ><?php echo $post_title?></a>
+                    <a  href="post.php?p_id=<?php echo $post_id; ?>&u_id=<?php echo $user_id; ?>" ><?php echo $post_title?></a>
                     <div id="icon">
                     <!-- post icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 ml-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">

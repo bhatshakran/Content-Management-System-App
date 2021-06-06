@@ -15,7 +15,12 @@
             <!-- Blog Entries Column -->
             
             
+            <?php 
+             
+             $user_id = $_GET['u_id'];
+             $post_id = $_GET['p_id'];
             
+            ?>
        
                 
                 
@@ -65,10 +70,20 @@
                 <?php echo $post_content?>
                 </div>
                 <div class="w-full mx-3 ">
-           
-                 <img src="dist/images/heart_hollow.png" alt="" class='my-4 cursor-pointer w-7 heart_icon' >
-                
-                 <button class="unlike">Unlike</button>
+                <?php
+                    $query = "SELECT * FROM likes WHERE post_id=$post_id AND user_id=$user_id ";
+                    $likedOrNotResult = mysqli_query($connection, $query);
+                    $fetchIt = mysqli_num_rows($likedOrNotResult);
+                    echo $fetchIt;
+                    if($fetchIt == 0 ){
+                        $image = 'dist/images/heart_hollow.png';
+                    }else{
+                        $image = 'dist/images/heart_filled.png';
+                    }
+
+                echo "<img src=$image alt='' class='my-4 cursor-pointer w-7 heart_icon' >";
+                ?>
+                 
                 </div>
                 </div>
                  <?php   }   ?>
@@ -116,7 +131,7 @@
                         
                         $update_comment_count = mysqli_query($connection , $query);
                     }else {
-                        echo "<script>alert('Fields cannot be empty')</script>";
+                        echo "<scrip>alert('Fields cannot be empty')</scrip>";
                     }
                     }
                     
@@ -221,12 +236,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 
-    // SELECT the post from the database 
-    $query = "SELECT * FROM posts WHERE post_id=$post_id";
-    $postResult = mysqli_query($connection, $query);
-    $post = mysqli_fetch_array($postResult);
-    $likes = $post['post_likes'];
+   
+    $query = "SELECT * FROM likes WHERE post_id=$post_id and user_id=$user_id";
+    $likedOrNotResult = mysqli_query($connection, $query);
+    $fetchIt = mysqli_num_rows($likedOrNotResult);
+    
 
+
+    if($fetchIt == 0){
+
+        // SELECT the post from the database
+        $query = "SELECT * FROM posts WHERE post_id=$post_id";
+        $postResult = mysqli_query($connection, $query);
+        $post = mysqli_fetch_array($postResult);
+        $likes = $post['post_likes']; 
 
     // UPDATE post likes
 
@@ -237,30 +260,56 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     mysqli_query($connection, "INSERT INTO likes(user_id, post_id) VALUES($user_id, $post_id)");
 
     exit();
-    }elseif(isset($value['unliked'])){
-       // GET post_id and user_id
 
-    $post_id = $value['post_id'];
-    $user_id = $value['user_id'];
-
-
-
-    // SELECT the post from the database 
-    $query = "SELECT * FROM posts WHERE post_id=$post_id";
-    $postResult = mysqli_query($connection, $query);
-    $post = mysqli_fetch_array($postResult);
-    $likes = $post['post_likes'];
-
-
-    // UPDATE post likes
+   } else{
+        // SELECT the post from the database
+        $query = "SELECT * FROM posts WHERE post_id=$post_id";
+        $postResult = mysqli_query($connection, $query);
+        $post = mysqli_fetch_array($postResult);
+        $likes = $post['post_likes']; 
+        // UPDATE post likes
+        echo $likes;
 
     mysqli_query($connection, "UPDATE posts SET post_likes=$likes-1 WHERE post_id=$post_id");
     
     // CREATE likes for the post in the likes column
 
     mysqli_query($connection, "DELETE FROM likes WHERE post_id=$post_id AND user_id=$user_id");
-    }
-    exit();
+   }
+}
+
+// else{
+//        // GET post_id and user_id
+
+//     $post_id = $value['post_id'];
+//     $user_id = $value['user_id'];
+
+//     $query = "SELECT * FROM likes WHERE post_id=$post_id and user_id=$user_id";
+//     $likedOrNotResult = mysqli_query($connection, $query);
+//     $fetchIt = mysqli_num_rows($likedOrNotResult);
+    
+
+
+//     if($fetchIt >= 1){
+
+
+
+//     // SELECT the post from the database 
+//     $query = "SELECT * FROM posts WHERE post_id=$post_id";
+//     $postResult = mysqli_query($connection, $query);
+//     $post = mysqli_fetch_array($postResult);
+//     $likes = $post['post_likes'];
+
+
+//     // UPDATE post likes
+
+//     mysqli_query($connection, "UPDATE posts SET post_likes=$likes-1 WHERE post_id=$post_id");
+    
+//     // CREATE likes for the post in the likes column
+
+//     mysqli_query($connection, "DELETE FROM likes WHERE post_id=$post_id AND user_id=$user_id");
+// }}
+//     exit();
 
 }
 
@@ -276,25 +325,46 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
                     const heart_icon = document.querySelector('.heart_icon');
 
-                    heart_icon.addEventListener('mouseover', () => {
-                     heart_icon.src= "dist/images/heart_filled.png";
-                       
 
-                    })
-                    heart_icon.addEventListener('mouseout', () => {
-                        
+                    // show filled heart function
+                    function showFilled(){
+                        heart_icon.src= "dist/images/heart_filled.png";
+                        if(liked){
+                            this.removeEventListener('mouseover', arguments.callee,false);
+                        }
+                    }
+
+                    // remove filled heart function and show hollow function
+
+                    function removeFilled(){
                         heart_icon.src= "dist/images/heart_hollow.png";
-                        
-                    })
+                        if(liked){
+                            this.removeEventListener('mouseover', arguments.callee,false);
+                        }
+                    }
+
+                    heart_icon.addEventListener('mouseover', showFilled);
+                    heart_icon.addEventListener('mouseout', removeFilled);
+
+                    // let liked = false;
+
+                    
 
                     heart_icon.addEventListener('click', function(){
 
-                        // heart_icon.src= "dist/images/heart_filled.png";
+                        // like the function 
+                        // if!liked
+                            heart_icon.removeEventListener('mouseover', showFilled);
+                            heart_icon.removeEventListener('mouseout', removeFilled);
+
+
+                            console.log('liking now')
+                        heart_icon.src= "dist/images/heart_filled.png";
 
                         let post_id = <?php echo $the_post_id ;?>;
-                        let user_id = 25;
+                        let user_id = <?php echo $user_id ?>;
                         let xhttp = new XMLHttpRequest();
-                        xhttp.open('POST', "post.php?p_id=<?php echo $the_post_id; ?>", true );
+                        xhttp.open('POST', "post.php?p_id=<?php echo $the_post_id; ?>&u_id=<?php echo $user_id; ?>", true );
                         xhttp.setRequestHeader('Content-type', 'application/json');
                         xhttp.onreadystatechange = function () {
 
@@ -313,36 +383,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                        
 
                         xhttp.send(JSON.stringify(data));
-
-                    })
-
-                    const unlike = document.querySelector('.unlike');
-                    unlike.addEventListener('click', function() {
-                        let post_id = <?php echo $the_post_id ;?>;
-                        let user_id = 25;
-                        let xhttp = new XMLHttpRequest();
-                        xhttp.open('POST', "post.php?p_id=<?php echo $the_post_id; ?>", true );
-                        xhttp.setRequestHeader('Content-type', 'application/json');
-                        xhttp.onreadystatechange = function () {
-
-                            if(this.readyState == 4 && this.status == 200) {
-                                var response = this.responseText;
-                            }
-                          
-                        };
-
-
-                        const data = {
-                            'unliked': 1,
-                            'post_id': post_id,
-                            'user_id': user_id
-                        }
                        
+                     
 
-                        xhttp.send(JSON.stringify(data));
-
-                    })
                     
+                    
+                    
+                    })
+
+
                     </script>
   
 
