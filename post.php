@@ -68,6 +68,7 @@
            
                  <img src="dist/images/heart_hollow.png" alt="" class='my-4 cursor-pointer w-7 heart_icon' >
                 
+                 <button class="unlike">Unlike</button>
                 </div>
                 </div>
                  <?php   }   ?>
@@ -208,6 +209,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $request_body = file_get_contents('php://input');
     $data = json_decode($request_body);
     $value = get_object_vars($data);
+    if(isset($value['liked'])){
+        
+    
+
     
     // GET post_id and user_id
 
@@ -232,8 +237,30 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     mysqli_query($connection, "INSERT INTO likes(user_id, post_id) VALUES($user_id, $post_id)");
 
     exit();
+    }elseif(isset($value['unliked'])){
+       // GET post_id and user_id
+
+    $post_id = $value['post_id'];
+    $user_id = $value['user_id'];
 
 
+
+    // SELECT the post from the database 
+    $query = "SELECT * FROM posts WHERE post_id=$post_id";
+    $postResult = mysqli_query($connection, $query);
+    $post = mysqli_fetch_array($postResult);
+    $likes = $post['post_likes'];
+
+
+    // UPDATE post likes
+
+    mysqli_query($connection, "UPDATE posts SET post_likes=$likes-1 WHERE post_id=$post_id");
+    
+    // CREATE likes for the post in the likes column
+
+    mysqli_query($connection, "DELETE FROM likes WHERE post_id=$post_id AND user_id=$user_id");
+    }
+    exit();
 
 }
 
@@ -280,6 +307,33 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
                         const data = {
                             'liked': 1,
+                            'post_id': post_id,
+                            'user_id': user_id
+                        }
+                       
+
+                        xhttp.send(JSON.stringify(data));
+
+                    })
+
+                    const unlike = document.querySelector('.unlike');
+                    unlike.addEventListener('click', function() {
+                        let post_id = <?php echo $the_post_id ;?>;
+                        let user_id = 25;
+                        let xhttp = new XMLHttpRequest();
+                        xhttp.open('POST', "post.php?p_id=<?php echo $the_post_id; ?>", true );
+                        xhttp.setRequestHeader('Content-type', 'application/json');
+                        xhttp.onreadystatechange = function () {
+
+                            if(this.readyState == 4 && this.status == 200) {
+                                var response = this.responseText;
+                            }
+                          
+                        };
+
+
+                        const data = {
+                            'unliked': 1,
                             'post_id': post_id,
                             'user_id': user_id
                         }
