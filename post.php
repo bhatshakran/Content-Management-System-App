@@ -212,6 +212,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     // GET post_id and user_id
 
     $post_id = $value['post_id'];
+    $user_id = $value['user_id'];
 
 
 
@@ -226,7 +227,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
     mysqli_query($connection, "UPDATE posts SET post_likes=$likes+1 WHERE post_id=$post_id");
     
+    // CREATE likes for the post in the likes column
 
+    mysqli_query($connection, "INSERT INTO likes(user_id, post_id) VALUES($user_id, $post_id)");
+
+    exit();
 
 
 
