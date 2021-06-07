@@ -266,7 +266,19 @@ if(isset($_POST['liked'])){
 
                         let post_id = <?php echo $post_id; ?>;
                         let user_id = <?php echo $user_id; ?>;
-                        
+                        <?php
+                       $liked = isLikedOrNot($post_id);
+                       
+                      ?>
+                      let liked = <?php echo $liked; ?>;
+
+                      if(!liked == 0){
+ 
+                        heart_icon.removeEventListener('mouseover', showFilled);
+                        heart_icon.removeEventListener('mouseout', removeFilled);
+                      }
+                       
+                     
                         $('.heart_icon').click(function() {
 
                             $.ajax({
