@@ -20,7 +20,10 @@
             
             <div class="grid grid-cols-1 gap-4 m-2 sm:w-full">
                 <?php 
-                 $user_id = $_SESSION['user_id'];
+                if(isset($_SESSION['role'])){
+                    $user_id = $_SESSION['user_id'];
+                }
+                
                 
                 ?>
                 
