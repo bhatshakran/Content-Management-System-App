@@ -260,8 +260,26 @@ function loggedInUserId() {
 
 }
 
-    
+// get total likes of a post
+function getTotalLikes($post_id) {
+    global $connection;
+       //  get total likes on the post 
+       $query = "SELECT * FROM likes WHERE post_id=$post_id ";
+       $likesResult = mysqli_query($connection, $query);
+       $getLikes = mysqli_num_rows($likesResult);
+       return $getLikes;
+}
 
+    
+// is post liked or not
+function isLikedOrNot($post_id){
+    global $connection;
+   $user_id = loggedInUserId();
+    $query = "SELECT * FROM likes WHERE post_id=$post_id AND user_id=$user_id ";
+    $likedOrNotResult = mysqli_query($connection, $query);
+    $fetchIt = mysqli_num_rows($likedOrNotResult);
+    return $fetchIt;
+}
     
 
 

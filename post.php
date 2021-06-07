@@ -1,6 +1,7 @@
 
 <?php include "./includes/db.php";?>
     <?php  include "./includes/header.php"; ?>
+    <?php  include "./admin/functions.php"; ?>
     <div class="container mx-auto my-4 lg:w-3/4">
     <!-- Navigation -->
    <?php include "includes/navigation.php"; ?>
@@ -47,17 +48,12 @@
                <form action="" method="post" class="flex items-center w-full gap-4 mx-3">
                 <?php
 
-                 //  get total likes on the post 
-                 $query = "SELECT * FROM likes WHERE post_id=$post_id ";
-                 $likesResult = mysqli_query($connection, $query);
-                 $getLikes = mysqli_num_rows($likesResult);
-               echo  "<p class='mt-3 text-3xl text-gray-500 font-league'>$getLikes</p>";
+               $postLikes = getTotalLikes($post_id);
+               echo  "<p class='mt-3 text-3xl text-gray-500 font-league'>$postLikes</p>";
 
-               
-                    $query = "SELECT * FROM likes WHERE post_id=$post_id AND user_id=$user_id ";
-                    $likedOrNotResult = mysqli_query($connection, $query);
-                    $fetchIt = mysqli_num_rows($likedOrNotResult);
-                    
+                 
+                   $fetchIt = isLikedOrNot($post_id);
+                  
                     if($fetchIt == 0 ){
                         $image = 'dist/images/heart_hollow.png';
                     }else{
@@ -201,9 +197,7 @@ if(isset($_POST['liked'])){
     
     
        
-        $query = "SELECT * FROM likes WHERE post_id=$post_id and user_id=$user_id";
-        $likedOrNotResult = mysqli_query($connection, $query);
-        $fetchIt = mysqli_num_rows($likedOrNotResult);
+        $fetchIt = isLikedOrNot($post_id);
         
     
     
@@ -239,11 +233,9 @@ if(isset($_POST['liked'])){
         
       
     }
-    echo "<script>window.location.reload()</script>";
+   
 
-    // header("Refresh:0");
-    // header("Location: index.php");
-    // header("Location: post.php?p_id=$post_id&u_id=$user_id");
+
       
      }
 ?>
